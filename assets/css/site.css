@@ -150,8 +150,10 @@ dialog.sheet[open] { animation: sheetIn 0.25s ease-out; }
 }
 .member strong { overflow-wrap: anywhere; }
 
-/* Public website (view-only): no ordering or staff controls. */
-.view-only .staff-link,
+/* Public website: no staff link; ordering controls appear only once menu.js has confirmed a
+   table QR code (it then removes .view-only). The table comes from the code, so the chip is a label. */
+.public-site .staff-link { display: none !important; }
+.public-site #tableChip { pointer-events: none; }
 .view-only .order-bar,
 .view-only #tableChip,
 .view-only #photoAdd,

@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Thong Heng Lee Portal</title>
-<meta name="description" content="ท่งเฮงหลี · 同興利 · Thong Heng Lee — ร้านอาหารไทยในชุมชนท่าช้าง ดูเมนูพร้อมรูปได้ 8 ภาษา">
+<meta name="description" content="ท่งเฮงหลี · 同興利 · Thong Heng Lee — ร้านอาหารไทยในชุมชนท่าช้าง ดูเมนูและสั่งอาหารได้จากโต๊ะ">
 <meta property="og:title" content="Thong Heng Lee (ท่งเฮงหลี)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -520,6 +520,10 @@
       </div>
     </a>
     <button type="button" id="changeLanguage" class="btn">Language / ภาษา</button>
+    <a class="staff-link" href="staff.html" data-i18n-aria="staffAria">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      <span data-i18n="staffLink"></span>
+    </a>
   </div>
 </header>
 
@@ -758,6 +762,32 @@
     },
   };
 
+  // ---------- Public website ----------
+  // A guest who scanned a table QR code arrives with ?table=5&k=<key> and can order. Any other
+  // visitor to the public website gets the menu to look at, so the big card says so.
+  const qrParams = new URLSearchParams(location.search);
+  const qrTable = /^\d{1,2}$/.test(qrParams.get('table') || '') ? qrParams.get('table') : '';
+  const qrKey = /^[a-z0-9]{8,40}$/.test(qrParams.get('k') || '') ? qrParams.get('k') : '';
+  if (THL.PUBLIC && !(qrTable && qrKey)) {
+    const VIEW = {
+      th: { custTitle: 'ดูเมนูของร้าน', custDesc: 'ดูเมนูทั้งหมดพร้อมรูปและราคาในภาษาของคุณก่อนมาที่ร้าน', step1: 'เลือกภาษา', step2: 'เลือกดูอาหารตามหมวด', step3: 'กดดูรูปอาหารขนาดใหญ่', custCta: 'ดูเมนู', line: 'กดการ์ดสีเหลืองเพื่อดูเมนูของเราได้เลยครับ' },
+      en: { custTitle: 'See our menu', custDesc: 'Browse the full menu with photos and prices in your language before you visit.', step1: 'Pick your language', step2: 'Browse dishes by category', step3: 'Open a dish to see its photo up close', custCta: 'View the menu', line: 'Tap the big card below to see our menu.' },
+      'zh-Hans': { custTitle: '查看菜单', custDesc: '来店之前，先用您的语言浏览带照片和价格的完整菜单。', step1: '选择语言', step2: '按分类浏览餐点', step3: '点开餐点查看大图', custCta: '查看菜单', line: '点下方的大卡片就能查看菜单哦。' },
+      ja: { custTitle: 'メニューを見る', custDesc: 'ご来店の前に、写真と価格付きのメニューをお好きな言語でご覧いただけます。', step1: '言語を選ぶ', step2: 'カテゴリーから料理を探す', step3: '料理の写真を大きく表示', custCta: 'メニューを見る', line: '下の大きなカードからメニューを見られますよ。' },
+      my: { custTitle: 'မီနူးကြည့်ရန်', custDesc: 'ဆိုင်သို့မလာမီ ဓာတ်ပုံနှင့် ဈေးနှုန်းပါသော မီနူးကို သင့်ဘာသာစကားဖြင့် ကြည့်နိုင်ပါသည်။', step1: 'ဘာသာစကား ရွေးပါ', step2: 'အမျိုးအစားအလိုက် ဟင်းပွဲများကို ကြည့်ပါ', step3: 'ဟင်းပွဲ၏ ဓာတ်ပုံအကြီးကို ကြည့်ပါ', custCta: 'မီနူးကြည့်မည်', line: 'အောက်ပါကတ်ပြားကိုနှိပ်ပြီး မီနူးကို ကြည့်နိုင်ပါတယ်။' },
+      ko: { custTitle: '메뉴 보기', custDesc: '방문 전에 사진과 가격이 있는 전체 메뉴를 원하는 언어로 살펴보세요.', step1: '언어 선택', step2: '카테고리별로 메뉴 둘러보기', step3: '메뉴 사진 크게 보기', custCta: '메뉴 보기', line: '아래 큰 카드를 누르면 메뉴를 볼 수 있어요.' },
+      es: { custTitle: 'Consulta nuestra carta', custDesc: 'Mira la carta completa con fotos y precios en tu idioma antes de venir.', step1: 'Elige tu idioma', step2: 'Explora los platos por categoría', step3: 'Abre un plato para ver la foto en grande', custCta: 'Ver la carta', line: 'Toca la tarjeta grande de abajo para ver nuestra carta.' },
+      fr: { custTitle: 'Découvrez notre carte', custDesc: 'Consultez toute la carte avec photos et prix dans votre langue avant de venir.', step1: 'Choisissez votre langue', step2: 'Parcourez les plats par catégorie', step3: 'Ouvrez un plat pour voir la photo en grand', custCta: 'Voir la carte', line: 'Touchez la grande carte ci-dessous pour voir notre carte.' },
+    };
+    Object.keys(VIEW).forEach((k) => {
+      if (!DICT[k]) return;
+      const v = Object.assign({}, VIEW[k]);
+      if (Array.isArray(DICT[k].lines) && DICT[k].lines.length > 2) DICT[k].lines[2] = v.line;
+      delete v.line;
+      Object.assign(DICT[k], v);
+    });
+  }
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = (s) => document.querySelector(s);
 
@@ -869,10 +899,11 @@
 
   // Carry a QR-code table number through to the menu
   const tableParam = new URLSearchParams(location.search).get('table');
-  if (!THL.VIEW_ONLY && /^\d{1,2}$/.test(tableParam || '')) {
+  if (/^\d{1,2}$/.test(tableParam || '')) {
+    const keyPart = THL.PUBLIC && qrKey ? '&k=' + qrKey : ''; // public website: the table's QR key travels with the table number
     try { sessionStorage.setItem('thl-table', tableParam); sessionStorage.setItem('thl-table-at', String(Date.now())); } catch (e) {} // menu.js expires it after an hour
-    $('#custLink').href = 'menu.html?table=' + tableParam;
-    document.querySelectorAll('.fav[data-dish]').forEach((a) => { a.href = `menu.html?table=${tableParam}&dish=${a.dataset.dish}`; });
+    $('#custLink').href = 'menu.html?table=' + tableParam + keyPart;
+    document.querySelectorAll('.fav[data-dish]').forEach((a) => { a.href = `menu.html?table=${tableParam}${keyPart}&dish=${a.dataset.dish}`; });
   }
   document.querySelectorAll('.fav img').forEach((img) => THL.imgFallback(img));
 
@@ -898,26 +929,6 @@
   $('#changeLanguage').addEventListener('click', showLanguageSetup);
 
 
-  // Public website (view-only): the big card opens the menu for browsing, not ordering.
-  if (THL.VIEW_ONLY) {
-    const VIEW = {
-      th: { custTitle: 'ดูเมนูของร้าน', custDesc: 'ดูเมนูทั้งหมดพร้อมรูปและราคาในภาษาของคุณก่อนมาที่ร้าน', step1: 'เลือกภาษา', step2: 'เลือกดูอาหารตามหมวด', step3: 'กดดูรูปอาหารขนาดใหญ่', custCta: 'ดูเมนู', line: 'กดการ์ดสีเหลืองเพื่อดูเมนูของเราได้เลยครับ' },
-      en: { custTitle: 'See our menu', custDesc: 'Browse the full menu with photos and prices in your language before you visit.', step1: 'Pick your language', step2: 'Browse dishes by category', step3: 'Open a dish to see its photo up close', custCta: 'View the menu', line: 'Tap the big card below to see our menu.' },
-      'zh-Hans': { custTitle: '查看菜单', custDesc: '来店之前，先用您的语言浏览带照片和价格的完整菜单。', step1: '选择语言', step2: '按分类浏览餐点', step3: '点开餐点查看大图', custCta: '查看菜单', line: '点下方的大卡片就能查看菜单哦。' },
-      ja: { custTitle: 'メニューを見る', custDesc: 'ご来店の前に、写真と価格付きのメニューをお好きな言語でご覧いただけます。', step1: '言語を選ぶ', step2: 'カテゴリーから料理を探す', step3: '料理の写真を大きく表示', custCta: 'メニューを見る', line: '下の大きなカードからメニューを見られますよ。' },
-      my: { custTitle: 'မီနူးကြည့်ရန်', custDesc: 'ဆိုင်သို့မလာမီ ဓာတ်ပုံနှင့် ဈေးနှုန်းပါသော မီနူးကို သင့်ဘာသာစကားဖြင့် ကြည့်နိုင်ပါသည်။', step1: 'ဘာသာစကား ရွေးပါ', step2: 'အမျိုးအစားအလိုက် ဟင်းပွဲများကို ကြည့်ပါ', step3: 'ဟင်းပွဲ၏ ဓာတ်ပုံအကြီးကို ကြည့်ပါ', custCta: 'မီနူးကြည့်မည်', line: 'အောက်ပါကတ်ပြားကိုနှိပ်ပြီး မီနူးကို ကြည့်နိုင်ပါတယ်။' },
-      ko: { custTitle: '메뉴 보기', custDesc: '방문 전에 사진과 가격이 있는 전체 메뉴를 원하는 언어로 살펴보세요.', step1: '언어 선택', step2: '카테고리별로 메뉴 둘러보기', step3: '메뉴 사진 크게 보기', custCta: '메뉴 보기', line: '아래 큰 카드를 누르면 메뉴를 볼 수 있어요.' },
-      es: { custTitle: 'Consulta nuestra carta', custDesc: 'Mira la carta completa con fotos y precios en tu idioma antes de venir.', step1: 'Elige tu idioma', step2: 'Explora los platos por categoría', step3: 'Abre un plato para ver la foto en grande', custCta: 'Ver la carta', line: 'Toca la tarjeta grande de abajo para ver nuestra carta.' },
-      fr: { custTitle: 'Découvrez notre carte', custDesc: 'Consultez toute la carte avec photos et prix dans votre langue avant de venir.', step1: 'Choisissez votre langue', step2: 'Parcourez les plats par catégorie', step3: 'Ouvrez un plat pour voir la photo en grand', custCta: 'Voir la carte', line: 'Touchez la grande carte ci-dessous pour voir notre carte.' },
-    };
-    Object.keys(VIEW).forEach((k) => {
-      if (!DICT[k]) return;
-      const v = Object.assign({}, VIEW[k]);
-      if (Array.isArray(DICT[k].lines) && DICT[k].lines.length > 2) DICT[k].lines[2] = v.line;
-      delete v.line;
-      Object.assign(DICT[k], v);
-    });
-  }
   THL.init(DICT);
   THL.onLang(() => { document.querySelectorAll('[data-name-zh-svg]').forEach((n) => { n.textContent = THL.zhName(); }); if (botStarted) greet(true); });
   document.querySelectorAll('[data-name-zh-svg]').forEach((n) => { n.textContent = THL.zhName(); });

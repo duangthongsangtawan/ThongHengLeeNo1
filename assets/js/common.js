@@ -4,9 +4,15 @@
 (function () {
   'use strict';
 
-  // Public website build: browse the menu only (see assets/js/site-config.js).
-  const VIEW_ONLY = !!(window.THL_CONFIG && window.THL_CONFIG.viewOnly);
-  if (VIEW_ONLY) document.documentElement.classList.add('view-only');
+  // ---------- Public website ----------
+  // On the public website's host names (assets/js/site-config.js → publicSite) the pages talk to
+  // the shop computer over the internet at publicSite.api, and stay a look-only menu until
+  // menu.js has confirmed a table QR code. Everywhere else (the shop Wi-Fi) nothing changes.
+  const PUB = (window.THL_CONFIG && window.THL_CONFIG.publicSite) || {};
+  const PUBLIC = Array.isArray(PUB.hosts) && PUB.hosts.includes(String(location.hostname || '').toLowerCase());
+  const API_BASE = PUBLIC ? String(PUB.api || '').replace(/\/+$/, '') : '';
+  const API_READY = !PUBLIC || Boolean(API_BASE);
+  if (PUBLIC) document.documentElement.classList.add('public-site', 'view-only');
 
   // ===========================================================================
   //  RESTAURANT INFO — fill in here. The footer on every page updates from it.
@@ -470,10 +476,11 @@
   const POLL_TIMEOUT_MS = 8000;
   async function request(path, opts, timeoutMs) {
     if (navigator.onLine === false) throw Object.assign(new Error('offline'), { kind: 'network' });
+    if (!API_READY) throw Object.assign(new Error('ordering is not connected'), { kind: 'network' });
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
-      const res = await fetch(path, Object.assign({ cache: 'no-store', signal: ctrl.signal }, opts));
+      const res = await fetch(API_BASE + path, Object.assign({ cache: 'no-store', signal: ctrl.signal }, opts));
       if (!res.ok) throw httpError(res);
       return await res.json();
     } catch (e) {
@@ -523,6 +530,11 @@
     return request('/api/orders/lookup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ orders }) }, POLL_TIMEOUT_MS);
   }
 
+  // Public website: is this table's QR key (still) good? Fails with status 403 when it is not.
+  async function checkTable(table, key) {
+    return request('/api/table/check', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ table, key }) }, POLL_TIMEOUT_MS);
+  }
+
   // Staff screen feed: polls every 2 seconds. Calls onChange(state) whenever the
   // orders change and onStatus('live' | 'demo' | 'offline' | 'auth'). Returns a function that stops it.
   const POLL_MS = 2000;
@@ -568,7 +580,8 @@
   }
 
   window.THL = {
-    SITE, LANGS, init, t, pick, baht, money, imgFallback, toast, post, subscribe, LIVE, VIEW_ONLY, businessDay,
+    SITE, LANGS, init, t, pick, baht, money, imgFallback, toast, post, subscribe, LIVE, businessDay,
+    PUBLIC, API_READY, checkTable,
     login, logout, getStaffState, forgetStaffToken, getSales, orderStatus, hasToken: () => Boolean(getToken()),
     get lang() { return lang; },
     setLang,

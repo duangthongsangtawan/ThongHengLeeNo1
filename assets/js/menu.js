@@ -198,6 +198,16 @@
   Object.assign(DICT["es"], {"rateTitle": "Demasiadas solicitudes", "rateWait": "Espera {s} segundos y vuelve a intentarlo. Tu cesta está guardada."});
   Object.assign(DICT["fr"], {"rateTitle": "Trop de demandes", "rateWait": "Attendez {s} secondes avant de réessayer. Votre panier est conservé."});
 
+  // Public website (ordering through a table QR code): notices and the no-connection message.
+  Object.assign(DICT["th"], {"qrNeeded": "สั่งอาหารได้โดยสแกน QR code ที่โต๊ะในร้าน", "qrInvalid": "QR code ของโต๊ะนี้ใช้ไม่ได้แล้ว กรุณาแจ้งพนักงาน", "orderOffline": "ขณะนี้ยังสั่งอาหารออนไลน์ไม่ได้ กรุณาสั่งกับพนักงาน", "qrExpired": "ผ่านไปเกิน 1 ชั่วโมงแล้ว กรุณาสแกน QR code ที่โต๊ะอีกครั้ง", "errNetTitlePub": "เชื่อมต่อกับร้านไม่ได้", "errNetPub": "ออเดอร์ยังไม่ถูกส่ง เพราะอินเทอร์เน็ตของโทรศัพท์หรือระบบของร้านไม่ตอบสนอง รายการที่เลือกยังอยู่ครบ ลองส่งอีกครั้ง หรือสั่งกับพนักงาน"});
+  Object.assign(DICT["en"], {"qrNeeded": "To order, scan the QR code on your table at the restaurant.", "qrInvalid": "This table’s QR code is no longer valid. Please ask our staff.", "orderOffline": "Online ordering isn’t available right now. Please order with our staff.", "qrExpired": "It’s been over an hour — please scan your table’s QR code again.", "errNetTitlePub": "Can’t reach the restaurant", "errNetPub": "The order was not sent: your phone’s internet or the restaurant’s system is not responding. Your items are still here. Try again, or order with our staff."});
+  Object.assign(DICT["zh-Hans"], {"qrNeeded": "请在店内扫描桌上的二维码点餐。", "qrInvalid": "此桌的二维码已失效，请联系店员。", "orderOffline": "目前无法在线点餐，请向店员点餐。", "qrExpired": "已超过 1 小时，请重新扫描桌上的二维码。", "errNetTitlePub": "无法连接餐厅", "errNetPub": "订单尚未送出：手机网络或餐厅系统没有响应。已选餐点仍然保留。请再试一次，或直接向店员点餐。"});
+  Object.assign(DICT["ja"], {"qrNeeded": "ご注文は、店内のテーブルにあるQRコードを読み取ってください。", "qrInvalid": "このテーブルのQRコードは無効になっています。スタッフにお声がけください。", "orderOffline": "ただいまオンライン注文をご利用いただけません。スタッフにご注文ください。", "qrExpired": "1時間以上たったため、テーブルのQRコードをもう一度読み取ってください。", "errNetTitlePub": "お店のシステムに接続できません", "errNetPub": "注文はまだ送信されていません。スマートフォンの通信、またはお店のシステムが応答していません。選んだ料理はそのまま残っています。もう一度お試しいただくか、スタッフにご注文ください。"});
+  Object.assign(DICT["my"], {"qrNeeded": "အော်ဒါမှာရန် ဆိုင်ရှိ သင့်စားပွဲပေါ်က QR ကုဒ်ကို စကင်ဖတ်ပါ။", "qrInvalid": "ဤစားပွဲ၏ QR ကုဒ်သည် အသုံးမပြုနိုင်တော့ပါ။ ဝန်ထမ်းကို ပြောပါ။", "orderOffline": "ယခုအချိန်တွင် အွန်လိုင်းမှ အော်ဒါမမှာနိုင်ပါ။ ဝန်ထမ်းထံ မှာယူပါ။", "qrExpired": "တစ်နာရီကျော်သွားပါပြီ။ စားပွဲပေါ်က QR ကုဒ်ကို ထပ်မံစကင်ဖတ်ပါ။", "errNetTitlePub": "ဆိုင်စနစ်နှင့် ချိတ်ဆက်၍မရပါ", "errNetPub": "အော်ဒါ မပို့ရသေးပါ။ သင့်ဖုန်းအင်တာနက် သို့မဟုတ် ဆိုင်စနစ်က တုံ့ပြန်မှုမရှိပါ။ ရွေးထားသောဟင်းပွဲများ ကျန်ရှိနေပါသည်။ ထပ်မံကြိုးစားပါ သို့မဟုတ် ဝန်ထမ်းထံ မှာယူပါ။"});
+  Object.assign(DICT["ko"], {"qrNeeded": "주문하시려면 매장 테이블의 QR 코드를 스캔해 주세요.", "qrInvalid": "이 테이블의 QR 코드는 더 이상 사용할 수 없습니다. 직원에게 문의해 주세요.", "orderOffline": "지금은 온라인 주문을 이용할 수 없습니다. 직원에게 주문해 주세요.", "qrExpired": "1시간이 지났습니다. 테이블의 QR 코드를 다시 스캔해 주세요.", "errNetTitlePub": "매장 시스템에 연결할 수 없습니다", "errNetPub": "주문이 아직 전송되지 않았습니다. 휴대폰 인터넷 또는 매장 시스템이 응답하지 않습니다. 담은 메뉴는 그대로 있습니다. 다시 시도하거나 직원에게 주문해 주세요."});
+  Object.assign(DICT["es"], {"qrNeeded": "Para pedir, escanea el código QR de tu mesa en el restaurante.", "qrInvalid": "El código QR de esta mesa ya no es válido. Avisa al personal, por favor.", "orderOffline": "Ahora mismo no se puede pedir en línea. Pide al personal, por favor.", "qrExpired": "Ha pasado más de una hora: vuelve a escanear el código QR de tu mesa.", "errNetTitlePub": "No se puede conectar con el restaurante", "errNetPub": "El pedido no se ha enviado: no responde la conexión de tu teléfono o el sistema del restaurante. Tus platos siguen aquí. Inténtalo de nuevo o pide al personal."});
+  Object.assign(DICT["fr"], {"qrNeeded": "Pour commander, scannez le code QR de votre table au restaurant.", "qrInvalid": "Le code QR de cette table n’est plus valable. Merci de prévenir le personnel.", "orderOffline": "La commande en ligne n’est pas disponible pour le moment. Merci de commander auprès du personnel.", "qrExpired": "Plus d’une heure s’est écoulée : merci de scanner à nouveau le code QR de votre table.", "errNetTitlePub": "Impossible de joindre le restaurant", "errNetPub": "La commande n’a pas été envoyée : la connexion de votre téléphone ou le système du restaurant ne répond pas. Vos plats sont toujours là. Réessayez ou commandez auprès du personnel."});
+
   // ---------- Persistent state ----------
   const store = {
     get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
@@ -215,6 +225,15 @@
   // Sent orders on this phone: [{ id, key, status, time, lines: [{ id, qty, egg, price }] }]
   const getSent = () => (table ? store.get(sentKey(), []).filter((o) => o && o.lines && o.time > Date.now() - SENT_HOURS * 3600e3) : []);
 
+  // ---------- Public website ----------
+  // On the public website (THL.PUBLIC) the table comes only from the QR code on the table, which
+  // also carries that table's key. Until the shop computer has confirmed the key the page is a
+  // menu to look at: no table picker, no "+ Add", no order bar (site.css: html.view-only).
+  const PUBLIC = Boolean(THL.PUBLIC);
+  let ordering = !PUBLIC;
+  let tableKey = '';
+  const KEY_RE = /^[a-z0-9]{8,40}$/;
+
   // ---------- Table (this browser tab only) ----------
   // The chosen table expires an hour after it was set — e.g. a phone left open after the guests
   // have gone — and the guest has to pick it again. Scanning the table's QR code counts as picking it.
@@ -224,22 +243,34 @@
   function initTable() {
     const params = new URLSearchParams(location.search);
     const rawTable = params.get('table');
+    const rawKey = params.get('k');
     const fromUrl = /^[1-9]\d*$/.test(rawTable || '') ? Number(rawTable) : NaN;
-    if (params.has('table')) {
-      // Drop ?table= from the address so a reload hours later doesn't quietly pick the table again
-      params.delete('table');
+    if (params.has('table') || params.has('k')) {
+      // Drop ?table= (and the QR key) from the address so a reload hours later doesn't quietly pick the table again
+      params.delete('table'); params.delete('k');
       try { history.replaceState(null, '', location.pathname + (params.toString() ? '?' + params : '') + location.hash); } catch (e) {}
     }
-    if (validTable(fromUrl)) { setTable(fromUrl, false); return; }
     const saved = parseInt(session.get('thl-table'), 10);
+    const savedKey = String(session.get('thl-table-key') || '');
+    if (validTable(fromUrl)) {
+      setTable(fromUrl, false);
+      setTableKey(KEY_RE.test(rawKey || '') ? rawKey : saved === fromUrl ? savedKey : '');
+      return;
+    }
     const setAt = Number(session.get('thl-table-at'));
-    if (validTable(saved) && setAt && Date.now() - setAt < TABLE_TTL_MS) setTable(saved, false, setAt);
+    if (validTable(saved) && setAt && Date.now() - setAt < TABLE_TTL_MS) { setTable(saved, false, setAt); setTableKey(savedKey); }
     else { expiredOnLoad = validTable(saved); clearTable(); }
   }
   function clearTable() {
     if (table) session.set(nameKey(table), null);
     table = null; guestName = '';
     session.set('thl-table', null); session.set('thl-table-at', null);
+    setTableKey('');
+  }
+  // The key from the table's QR code. Only the public website uses it.
+  function setTableKey(key) {
+    tableKey = PUBLIC && KEY_RE.test(key || '') ? key : '';
+    if (PUBLIC) session.set('thl-table-key', tableKey);
   }
   // Called on a timer, when the page comes back into view, and before adding or sending.
   // Returns true if the table had just expired (and the picker is now open).
@@ -250,7 +281,8 @@
     clearTimeout(statusTimer); statusTimer = null; // no more status polling for the old table
     renderTableChip();
     if ($('#orderSheet').open) renderCart();
-    openTablePicker(true);
+    if (PUBLIC) setOrdering(false, 'qrExpired'); // the guest scans the table's code again
+    else openTablePicker(true);
     return true;
   }
   // Optional guest name, sent with each order so staff can total up per name when two groups share
@@ -292,7 +324,7 @@
 
   let optionDraft = null;
   function addToCart(id) {
-    if (THL.VIEW_ONLY) return;
+    if (!ordering) return;
     if (MENU.optionsFor(byId[id]).length) return openOptions(id);
     commitLine(id, []);
   }
@@ -517,7 +549,7 @@
   }
 
   function openTablePicker(expired = false) {
-    if (THL.VIEW_ONLY) return;
+    if (PUBLIC) return; // the table comes from the QR code
     $('#tableExpired').hidden = !expired;
     const grid = $('#tables');
     grid.textContent = '';
@@ -563,8 +595,8 @@
     if (!sendError) return;
     const { kind, code } = sendError;
     if (code === 429) { box.append(h('strong', {}, t('rateTitle')), h('p', {}, fmt(t('rateWait'), { s: sendError.retryAfter || 60 }))); return; }
-    if (kind === 'network' && navigator.onLine) { box.append(h('p', {}, t('backOnline'))); return; }
-    const [title, text] = kind === 'network' ? [t('errNetTitle'), t('errNet')]
+    if (!PUBLIC && kind === 'network' && navigator.onLine) { box.append(h('p', {}, t('backOnline'))); return; }
+    const [title, text] = kind === 'network' ? (PUBLIC ? [t('errNetTitlePub'), t('errNetPub')] : [t('errNetTitle'), t('errNet')])
       : kind === 'timeout' ? [t('errTimeoutTitle'), t('errTimeout')]
       : [t('errServerTitle'), fmt(t('errServer'), { code })];
     box.append(h('strong', {}, title), h('p', {}, text));
@@ -574,8 +606,7 @@
   window.addEventListener('offline', () => { if (sendError && sendError.kind === 'network') renderSendState(); });
 
   async function sendOrder() {
-    if (THL.VIEW_ONLY) return;
-    if (!cart.length || sending) return;
+    if (!ordering || !cart.length || sending) return;
     if (expireTable()) return;
     if (!table) return openTablePicker();
     const items = cart.map((l) => {
@@ -589,7 +620,9 @@
     sending = true; sendError = null;
     renderSendState();
     try {
-      const order = await THL.post('/api/orders', { table, customerName: guestName, items, note: $('#orderNote').value.trim(), lang: THL.lang, clientId });
+      const payload = { table, customerName: guestName, items, note: $('#orderNote').value.trim(), lang: THL.lang, clientId };
+      if (PUBLIC) payload.tableKey = tableKey;
+      const order = await THL.post('/api/orders', payload);
       // The cart is only cleared here, after the kitchen has confirmed the order
       const sent = getSent();
       sent.push({ id: order.id, key: order.key, status: order.status || 'new', time: Date.now(), name: guestName,
@@ -608,11 +641,45 @@
     } catch (e) {
       // Cart, note and clientId are all kept, so "Try sending again" resends the very same order
       sending = false;
+      // The table's QR code was replaced while this phone was ordering: back to the look-only menu.
+      if (PUBLIC && e.status === 403) { sendError = null; renderSendState(); clearTable(); setOrdering(false, 'qrInvalid'); return; }
       sendError = { kind: e.kind || 'network', code: e.status || '', retryAfter: e.retryAfter || 60 };
       renderSendState();
       $('#sendError').scrollIntoView({ block: 'nearest' });
     }
   }
+
+  // ---------- Ordering on / off (public website) ----------
+  // noticeKey: why ordering is off, shown above the menu (and re-translated on a language change).
+  function setOrdering(on, noticeKey) {
+    ordering = on;
+    document.documentElement.classList.toggle('view-only', !on);
+    const note = $('#orderNotice');
+    if (noticeKey) note.dataset.i18n = noticeKey; else delete note.dataset.i18n;
+    note.textContent = noticeKey ? t(noticeKey) : '';
+    note.hidden = !noticeKey;
+    if (!on) ['orderSheet', 'optionsSheet'].forEach((id) => { const d = document.getElementById(id); if (d.open) d.close(); });
+    renderTableChip();
+  }
+  // Ask the shop computer whether the scanned table key is good. No key → look-only menu;
+  // no answer (shop closed, computer off) → look-only menu, asking again every 30 seconds.
+  let verifyTimer = null, verifying = false;
+  async function verifyTable() {
+    clearTimeout(verifyTimer);
+    if (!PUBLIC || verifying) return;
+    if (!table || !tableKey) return setOrdering(false, expiredOnLoad ? 'qrExpired' : 'qrNeeded');
+    if (!THL.API_READY) return setOrdering(false, 'orderOffline');
+    verifying = true;
+    try {
+      await THL.checkTable(table, tableKey);
+      setOrdering(true);
+      checkStatus();
+    } catch (e) {
+      if (e.status === 403) { clearTable(); setOrdering(false, 'qrInvalid'); }
+      else { if (!ordering) setOrdering(false, 'orderOffline'); verifyTimer = setTimeout(verifyTable, 30000); }
+    } finally { verifying = false; }
+  }
+  document.addEventListener('visibilitychange', () => { if (PUBLIC && !document.hidden && !ordering && tableKey) verifyTable(); });
 
   // ---------- Live status of sent orders ----------
   // Asks the server about this phone's own unfinished orders (id + key) and stops as soon as
@@ -673,7 +740,7 @@
   // ---------- Wire up ----------
   THL.init(DICT);
   $('#sampleNotice').hidden = !THL.SITE.samplePrices;
-  if (!THL.VIEW_ONLY) initTable();
+  initTable();
   renderMenu();
   renderTableChip();
   stickTabs();
@@ -720,7 +787,8 @@
   // The name is part of the order too: changing it after a failed send makes it a new order (fresh clientId)
   $('#orderName').addEventListener('input', (e) => { setGuestName(e.target.value); if (clientId || sendError) { newAttempt(); renderSendState(); } });
 
-  if (THL.VIEW_ONLY || table) spotlightDish(); else openTablePicker(expiredOnLoad);
+  if (PUBLIC) { spotlightDish(); verifyTable(); }
+  else if (!table) openTablePicker(expiredOnLoad); else spotlightDish();
   checkStatus(); // pick up anything that changed while the page was closed
   setInterval(() => { if (!document.hidden) expireTable(); }, 30000);
 })();
