@@ -203,6 +203,11 @@
   .fav:first-child { grid-row: span 2; }
   .fav img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(.2,.7,.2,1); }
   .fav:hover img, .fav:focus-visible img { transform: scale(1.1); }
+  /* The next photo fades in on top of the current one (see "House favourites" in the script). */
+  .fav img.fav-in { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; }
+  .fav img.fav-in.on { opacity: 1; }
+  .fav .cap > span { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  @media (prefers-reduced-motion: reduce) { .fav img.fav-in { transition: none; } }
   .fav .cap { position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 28px 12px 10px; font-weight: 700; color: #fff; background: linear-gradient(transparent, rgba(43,29,20,0.82)); }
   .fav .cap::after { content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ochre); color: var(--teak-dark); font-size: 1.1rem; }
   @media (max-width: 899px) { .fav-grid { min-height: 0; aspect-ratio: 5 / 4; } }
@@ -649,9 +654,9 @@
     <section class="fav-card" aria-labelledby="favTitle">
       <div class="fav-head"><h2 id="favTitle" data-i18n="favTitle"></h2><span data-i18n="favBadge"></span></div>
       <div class="fav-grid">
-        <a class="fav" href="menu.html?dish=R02" data-dish="R02"><img src="assets/images/dishes/pad-krapow.jpg" alt="" data-i18n-alt="dish2"><span class="cap" data-i18n="dish2"></span></a>
-        <a class="fav" href="menu.html?dish=10001" data-dish="10001"><img src="assets/images/dishes/pad-thai.jpg" alt="" data-i18n-alt="dish1"><span class="cap" data-i18n="dish1"></span></a>
-        <a class="fav" href="menu.html?dish=70040" data-dish="70040"><img src="assets/images/dishes/coconut-ice-cream.jpg" alt="" data-i18n-alt="dish3"><span class="cap" data-i18n="dish3"></span></a>
+        <a class="fav" href="menu.html?dish=R02" data-dish="R02"><img src="assets/images/dishes/pad-krapow.jpg" alt=""><span class="cap"><span></span></span></a>
+        <a class="fav" href="menu.html?dish=10001" data-dish="10001"><img src="assets/images/dishes/pad-thai.jpg" alt=""><span class="cap"><span></span></span></a>
+        <a class="fav" href="menu.html?dish=70040" data-dish="70040"><img src="assets/images/dishes/coconut-ice-cream.jpg" alt=""><span class="cap"><span></span></span></a>
       </div>
     </section>
   </section>
@@ -661,6 +666,7 @@
 
 <script src="assets/js/site-config.js"></script>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/menu-data.js"></script>
 <script>
 (function () {
   const DICT = {
@@ -859,7 +865,8 @@
     lineIdx = first ? 0 : (lineIdx + 1) % lines().length;
     wave(); say(lines()[lineIdx]);
   }
-  function startBot() { if (botStarted) return; botStarted = true; greet(true); }
+  // Runs once, when the guest has picked a language and can see the page.
+  function startBot() { if (botStarted) return; botStarted = true; greet(true); favSchedule(); }
 
   mascot.addEventListener('click', () => greet(false));
   let lastHover = 0;
@@ -899,12 +906,82 @@
 
   // Carry a QR-code table number through to the menu
   const tableParam = new URLSearchParams(location.search).get('table');
+  let tableQuery = ''; // "table=5&" (plus the table's QR key on the public website) for links into the menu
   if (/^\d{1,2}$/.test(tableParam || '')) {
     const keyPart = THL.PUBLIC && qrKey ? '&k=' + qrKey : ''; // public website: the table's QR key travels with the table number
     try { sessionStorage.setItem('thl-table', tableParam); sessionStorage.setItem('thl-table-at', String(Date.now())); } catch (e) {} // menu.js expires it after an hour
+    tableQuery = 'table=' + tableParam + keyPart + '&';
     $('#custLink').href = 'menu.html?table=' + tableParam + keyPart;
-    document.querySelectorAll('.fav[data-dish]').forEach((a) => { a.href = `menu.html?table=${tableParam}${keyPart}&dish=${a.dataset.dish}`; });
   }
+
+  // ---------- House favourites: a new set of photos every 5 seconds ----------
+  // Starts with the three house favourites (the photos already in the page), then goes through
+  // the tom yum soups and ice creams, and round again. To change what is shown, edit FAV_SETS:
+  // each row is [big photo, top right, bottom right], by dish id from menu-data.js. Names follow
+  // the menu; the first set keeps its short names (dish1–3 above). The change waits while the
+  // mouse or keyboard focus is on the photos, and while the page is in a background tab.
+  const FAV_MS = 5000;
+  const FAV_SETS = [
+    [{ id: 'R02', key: 'dish2', src: 'assets/images/dishes/pad-krapow.jpg' }, { id: '10001', key: 'dish1', src: 'assets/images/dishes/pad-thai.jpg' }, { id: '70040', key: 'dish3', src: 'assets/images/dishes/coconut-ice-cream.jpg' }],
+    [{ id: '40020' }, { id: '70030' }, { id: '70036' }], // tom yum chicken · Hua Hin coconut · Hua Hin Thai tea
+    [{ id: '70040' }, { id: '40010' }, { id: '70032' }], // coconut ice cream with toppings · tom yum seafood · Hua Hin durian
+  ];
+  const favTiles = [...document.querySelectorAll('.fav')];
+  const favMenu = Object.fromEntries(((window.THL_MENU && window.THL_MENU.items) || []).map((it) => [it.id, it]));
+  const favSets = FAV_SETS.filter((set, i) => i === 0 || set.every((d) => favMenu[d.id])); // a dish that left the menu drops its set
+  const favName = (d) => (d.key ? THL.t(d.key) : THL.pick(favMenu[d.id].name));
+  const favPhoto = (d) => d.src || `assets/images/menu/full/${d.id}.jpg`;
+  let favAt = 0, favTimer = null, favHold = false, favBusy = false;
+  // Names, alt text and links for the set on show (also after a language change).
+  function favLabel() {
+    favTiles.forEach((a, i) => {
+      const d = favSets[favAt][i];
+      a.dataset.dish = d.id;
+      a.href = 'menu.html?' + tableQuery + 'dish=' + d.id;
+      a.querySelector('.cap > span').textContent = favName(d);
+      a.querySelectorAll('img').forEach((img) => { img.alt = favName(d); });
+    });
+  }
+  // Resolves with an address that is known to load: the large photo, else the small one, else the placeholder.
+  const favLoad = (d) => new Promise((done) => {
+    const tries = [favPhoto(d), `assets/images/menu/${d.id}.jpg`, 'assets/images/menu/placeholder.svg'];
+    (function attempt() {
+      const src = tries.shift();
+      if (!tries.length) return done(src);
+      const probe = new Image();
+      probe.onload = () => done(src);
+      probe.onerror = attempt;
+      probe.src = src;
+    })();
+  });
+  async function favNext() {
+    if (favBusy || favSets.length < 2) return;
+    favBusy = true;
+    try {
+      const next = (favAt + 1) % favSets.length;
+      const srcs = await Promise.all(favSets[next].map(favLoad)); // all three change together
+      if (favHold || document.hidden) return;
+      favAt = next;
+      favTiles.forEach((a, i) => {
+        const old = [...a.querySelectorAll('img')];
+        const img = document.createElement('img');
+        img.className = 'fav-in'; img.alt = ''; img.src = srcs[i];
+        a.insertBefore(img, a.querySelector('.cap'));
+        requestAnimationFrame(() => requestAnimationFrame(() => img.classList.add('on')));
+        setTimeout(() => { old.forEach((o) => o.remove()); img.classList.remove('fav-in', 'on'); }, reduceMotion ? 0 : 900);
+      });
+      favLabel();
+    } finally { favBusy = false; }
+  }
+  function favSchedule() {
+    clearTimeout(favTimer);
+    favTimer = setTimeout(async () => { if (!favHold && !document.hidden) await favNext(); favSchedule(); }, FAV_MS);
+  }
+  const favGrid = document.querySelector('.fav-grid');
+  favGrid.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') favHold = true; });
+  favGrid.addEventListener('pointerleave', () => { favHold = false; });
+  favGrid.addEventListener('focusin', () => { favHold = true; });
+  favGrid.addEventListener('focusout', () => { favHold = false; });
   document.querySelectorAll('.fav img').forEach((img) => THL.imgFallback(img));
 
   // ---------- Start ----------
@@ -930,6 +1007,8 @@
 
 
   THL.init(DICT);
+  favLabel(); // the photos start changing once a language is picked (startBot)
+  THL.onLang(favLabel);
   THL.onLang(() => { document.querySelectorAll('[data-name-zh-svg]').forEach((n) => { n.textContent = THL.zhName(); }); if (botStarted) greet(true); });
   document.querySelectorAll('[data-name-zh-svg]').forEach((n) => { n.textContent = THL.zhName(); });
 
