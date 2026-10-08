@@ -15,7 +15,7 @@
       // Internet address of the shop computer's order server (the tunnel address), for example
       // 'https://shop-pc.example.ts.net'. Leave '' until the tunnel is set up: the public
       // website then shows the menu only.
-      api: '',
+      api: 'https://donor-arbor-implement-hampton.trycloudflare.com',
     }),
   });
   if (typeof module === 'object' && module.exports) module.exports = config;

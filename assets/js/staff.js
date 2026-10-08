@@ -170,13 +170,15 @@
     "offTitle": "ขาดการเชื่อมต่อกับเซิร์ฟเวอร์ ออเดอร์ใหม่จะไม่แสดง",
     "offHelp": "ตรวจ Wi-Fi ของเครื่องนี้ และดูว่าคอมพิวเตอร์ที่รันเซิร์ฟเวอร์ยังเปิดอยู่ ระบบจะเชื่อมต่อใหม่เองเมื่อกลับมา",
     "lastOk": "อัปเดตล่าสุด {t}",
-    "reconnected": "เชื่อมต่อกลับมาแล้ว"
+    "reconnected": "เชื่อมต่อกลับมาแล้ว",
+    "noServerPub": "หน้าจอพนักงานออนไลน์ยังเชื่อมต่อไม่ได้ — ตรวจว่าคอมพิวเตอร์ที่ร้านเปิดเซิร์ฟเวอร์และ tunnel อยู่"
   },
   "en": {
     "offTitle": "Connection to the server lost — new orders will not appear",
     "offHelp": "Check this device’s Wi-Fi and that the server computer is on. It reconnects by itself.",
     "lastOk": "Last update {t}",
-    "reconnected": "Reconnected"
+    "reconnected": "Reconnected",
+    "noServerPub": "Online staff screen isn’t connected yet — check that the shop computer’s server and tunnel are running"
   }
 };
   // Tables tab: running total per customer name
@@ -724,7 +726,7 @@
       $('#pw').value = '';
     } catch (err) {
       if (epoch !== authEpoch) return;
-      showLogin(err.status === 401 ? t('wrongPw') : err.status === 429 ? t('tooMany') : t('noServer'));
+      showLogin(err.status === 401 ? t('wrongPw') : err.status === 429 ? t('tooMany') : t(THL.PUBLIC ? 'noServerPub' : 'noServer'));
     } finally {
       if (epoch === authEpoch) { loginBusy = false; btn.disabled = !THL.LIVE; }
     }
