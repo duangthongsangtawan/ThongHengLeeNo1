@@ -109,10 +109,10 @@
   {
     "name": "Sangtawan Duangthong",
     "role": {
-      "th": "ผู้พัฒนาเว็บไซต์",
+      "th": "ผู้พัฒนาเว็บไซต์（OSK143・ศิษย์เก่า KOSEN-KMITL）",
       "en": "Web developer",
       "zs": "网站开发者",
-      "ja": "ウェブ開発者",
+      "ja": "ウェブ開発者（沼津高専卒）",
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
       "es": "Desarrollador web",
@@ -124,10 +124,10 @@
   {
     "name": "Teerapat Phinitkit",
     "role": {
-      "th": "ผู้พัฒนาเว็บไซต์",
-      "en": "Web developer",
+      "th": "ผู้พัฒนาเว็บไซต์（ศิษย์เก่า KOSEN-KMITL）",
+      "en": "Web developer（Thai KOSEN Grad.）",
       "zs": "网站开发者",
-      "ja": "ウェブ開発者",
+      "ja": "ウェブ開発者（タイ高専卒）",
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
       "es": "Desarrollador web",
