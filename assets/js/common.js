@@ -789,7 +789,18 @@
     apply();
   }
 
+  // Small line icons for the five menu categories (rice, Pad Thai, soups & sides, desserts, drinks).
+  const CAT_ICONS = {
+    rice: '<path d="M3 13h18a9 9 0 0 1-18 0z"/><path d="M6.5 13a5.5 5 0 0 1 11 0"/><path d="M9.5 9.5l.01 0M12.5 8.5l.01 0M14.5 10l.01 0"/>',
+    noodles: '<path d="M3 14h18a9 7 0 0 1-18 0z"/><path d="M6 11c1.4-2.2 2.8 2.2 4.2 0s2.8 2.2 4.2 0 2.2 1.2 3.6 0"/><path d="M15 2.5l-3.5 7M18.5 3.5L14 9.5"/>',
+    sides: '<path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M8 8.5c-1-1.5 1-2.5 0-4.5M12 8.5c-1-1.5 1-2.5 0-4.5M16 8.5c-1-1.5 1-2.5 0-4.5"/>',
+    dessert: '<circle cx="12" cy="8" r="4.5"/><path d="M7.7 12.2L12 22l4.3-9.8"/><path d="M9.8 6.5l.01 0"/>',
+    drinks: '<path d="M6 8h12l-1.4 13H7.4z"/><path d="M6.7 13.5h10.6"/><path d="M13 8l2.5-5.5H19"/>',
+  };
+  const catIcon = (id, size = 24) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${CAT_ICONS[id] || CAT_ICONS.rice}</svg>`;
+
   window.THL = {
+    catIcon,
     SITE, LANGS, init, t, pick, baht, money, imgFallback, toast, post, subscribe, LIVE, businessDay,
     PUBLIC, API_READY, checkTable,
     login, logout, getStaffState, forgetStaffToken, getSales, orderStatus, hasToken: () => Boolean(getToken()),

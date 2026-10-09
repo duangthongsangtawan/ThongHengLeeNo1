@@ -461,7 +461,7 @@
       catsRow.append(h('button', {
         class: 'cat-btn', type: 'button', 'data-cat': cat.id, 'aria-current': i === 0 ? 'true' : 'false',
         onclick: () => document.getElementById('cat-' + cat.id).scrollIntoView({ behavior: 'smooth' }),
-      }, pick(cat.name)));
+      }, (() => { const ic = document.createElement('span'); ic.className = 'cat-ico'; ic.innerHTML = THL.catIcon(cat.id, 18); return ic; })(), pick(cat.name)));
 
       const grid = h('div', { class: 'grid' });
       MENU.items.filter((it) => it.cat === cat.id).forEach((it) => {

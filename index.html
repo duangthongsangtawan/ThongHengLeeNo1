@@ -183,7 +183,9 @@
   .cust-card:hover { transform: translateY(-3px); box-shadow: 0 9px 0 var(--teak); }
   .cust-card:active { transform: translateY(3px); box-shadow: 0 3px 0 var(--teak); }
   .cust-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; border-radius: 19px 19px 0 0; background: repeating-linear-gradient(90deg, var(--sky) 0 26px, var(--ivory) 26px 30px); }
-  .cust-icon { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: var(--sky-soft); color: var(--sky-deep); margin-top: 6px; }
+  .cust-icons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .cust-icon { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--sky-soft); color: var(--sky-deep); }
+  @media (max-width: 420px) { .cust-icon { width: 46px; height: 46px; } .cust-icon svg { width: 22px; height: 22px; } }
   .cust-tag { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky-deep); }
   .cust-card h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.6rem, 3.4vw, 2.15rem); line-height: 1.22; color: var(--teak-dark); }
   .cust-card .desc { margin: 0; line-height: 1.6; color: rgba(43,29,20,0.8); }
@@ -637,9 +639,7 @@
   <!-- ================= Customer entry + favourites ================= -->
   <section class="entry">
     <a class="cust-card" id="custLink" href="menu.html">
-      <span class="cust-icon" aria-hidden="true">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M14 3l-2 7M19 4l-4 6"/></svg>
-      </span>
+      <span class="cust-icons" id="custIcons" aria-hidden="true"></span>
       <span class="cust-tag" data-i18n="custTag"></span>
       <h2 data-i18n="custTitle"></h2>
       <p class="desc" data-i18n="custDesc"></p>
@@ -953,6 +953,11 @@
     [{ id: '18110' }, { id: '40010' }, { id: '70060' }], // Set 2, manager's recommendation: stewed pork cartilage rice · tom yum seafood · mango sticky rice
     [{ id: 'R06' }, { id: '40030' }, { id: '70010' }],   // Set 3, what Thai people love: seafood holy basil rice · stewed pork cartilage soup · grass jelly with fresh milk
   ];
+  // One icon for each menu category (rice, Pad Thai, soups & sides, desserts, drinks).
+  ((window.THL_MENU && window.THL_MENU.categories) || []).forEach((c) => {
+    const ic = document.createElement('span'); ic.className = 'cust-icon'; ic.innerHTML = THL.catIcon(c.id, 28);
+    $('#custIcons').append(ic);
+  });
   const favTiles = [...document.querySelectorAll('.fav')];
   const favMenu = Object.fromEntries(((window.THL_MENU && window.THL_MENU.items) || []).map((it) => [it.id, it]));
   const favSets = FAV_SETS.map((set, i) => ({ n: i + 1, dishes: set })).filter((set) => set.dishes.every((d) => favMenu[d.id])); // a dish that left the menu drops its set
