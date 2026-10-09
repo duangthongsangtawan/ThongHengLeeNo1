@@ -144,6 +144,13 @@ dialog.sheet[open] { animation: sheetIn 0.25s ease-out; }
 .team-group-proofreader .member strong { font-weight: 400; font-size: 0.85rem; }
 .team-group-proofreader .member span { font-size: 0.75rem; }
 .team-group-proofreader .member .avatar { display: none; }
+.team-layout[data-reveal] .team-group { position: relative; border-inline-start-color: transparent; }
+.team-layout[data-reveal] .team-group::before { content: ''; position: absolute; inset-inline-start: -2px; top: 0; bottom: 0; width: 2px; background: var(--sky); transform: scaleY(0); transform-origin: top; transition: transform .7s cubic-bezier(.22,.8,.3,1) var(--g, 0s); }
+.team-layout[data-reveal] .team-group h4 { opacity: 0; transition: opacity .5s ease calc(var(--g, 0s) + .2s); }
+.team-layout[data-reveal] .member { opacity: 0; transform: translateX(-36px); transition: opacity .6s ease var(--d, 0s), transform .7s cubic-bezier(.22,.8,.3,1) var(--d, 0s); }
+.team-layout[data-reveal].in .team-group::before { transform: scaleY(1); }
+.team-layout[data-reveal].in .team-group h4 { opacity: 1; }
+.team-layout[data-reveal].in .member { opacity: 1; transform: none; }
 .team-group h4 { margin: 0 0 12px; color: var(--sky-soft); }
 .team-group .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .team-group-kitchen .team-grid { grid-template-columns: minmax(0, 1fr); }

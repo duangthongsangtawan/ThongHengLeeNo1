@@ -452,6 +452,7 @@
   const todo = () => el('span', 'todo', t('fTodo'));
   const personIcon = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>';
 
+  let teamRevealed = false;
   function renderFooter() {
     const root = document.getElementById('site-footer');
     if (!root) return;
@@ -500,11 +501,12 @@
     const team = el('div', 'wrap team');
     team.append(el('h3', null, t('fTeam')));
     const teamLayout = el('div', 'team-layout');
-    (SITE.teamGroups || []).forEach(group => {
+    (SITE.teamGroups || []).forEach((group, gi) => {
       const section = el('section', 'team-group team-group-' + group.id);
+      section.style.setProperty('--g', (gi * 0.45) + 's');
       section.append(el('h4', null, pick(group.name)));
       const tg = el('div', 'team-grid');
-      SITE.team.filter(m => m.group === group.id).forEach(m => {
+      SITE.team.filter(m => m.group === group.id).forEach((m, mi) => {
         const name = typeof m.name === 'string' ? m.name : pick(m.name);
         const card = el('div', 'member' + (m.placeholder ? ' placeholder' : ''));
         const av = el('div', 'avatar');
@@ -515,6 +517,7 @@
           av.append(im);
         }
         else av.innerHTML = personIcon;
+        card.style.setProperty('--d', (gi * 0.45 + 0.55 + mi * 0.15) + 's');
         card.append(av, el('strong', null, name), el('span', null, pick(m.role)));
         tg.append(card);
       });
@@ -522,6 +525,20 @@
     });
 
     team.append(teamLayout);
+
+    // Scroll reveal: when the team section comes into view, each group's blue bar draws downward,
+    // then its cards slide in from the left, group after group. Plays once per page load
+    // (language switches re-render the footer without replaying it) and is skipped for reduced motion.
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!teamRevealed && !reduce && 'IntersectionObserver' in window) {
+      teamLayout.setAttribute('data-reveal', '');
+      const io = new IntersectionObserver((entries) => {
+        if (!entries.some(e => e.isIntersecting)) return;
+        io.disconnect(); teamRevealed = true;
+        requestAnimationFrame(() => teamLayout.classList.add('in'));
+      }, { threshold: 0.2 });
+      io.observe(teamLayout);
+    } else teamRevealed = true;
 
     const bottom = el('div', 'wrap foot-bottom');
     bottom.append(el('span', null, `© ${new Date().getFullYear()} ${SITE.nameEn} · ${SITE.nameTh}`));
