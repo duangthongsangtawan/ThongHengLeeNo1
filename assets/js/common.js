@@ -205,6 +205,20 @@
       "fr": "Traducteur français"
     },
     "group": "translator"
+  },
+  {
+    "name": "開発中",
+    "role": {
+      "th": "ผู้แปลภาษาอินโดนีเซีย",
+      "en": "Indonesian translator",
+      "zs": "印尼语翻译",
+      "ja": "インドネシア語翻訳",
+      "my": "အင်ဒိုနီးရှားဘာသာပြန်",
+      "ko": "인도네시아어 번역",
+      "es": "Traductor de indonesio",
+      "fr": "Traducteur indonésien"
+    },
+    "group": "translator"
   }
 ],
     teamGroups: [
