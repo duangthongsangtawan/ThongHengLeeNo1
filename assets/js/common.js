@@ -135,90 +135,89 @@
     },
     "group": "development",
     "photo": "assets/images/team/Theeraphat_profile.jpg"
-  },
-  {
+  },  {
     "name": "Ye Yint Tun",
     "role": {
-      "th": "ผู้แปลภาษาพม่า",
-      "en": "Burmese translator",
-      "zs": "缅甸语翻译",
-      "ja": "ミャンマー語翻訳",
-      "my": "မြန်မာဘာသာပြန်",
-      "ko": "미얀마어 번역",
-      "es": "Traductor de birmano",
-      "fr": "Traducteur birman"
+      "th": "ผู้ตรวจทานภาษาพม่า",
+      "en": "Burmese proofreader",
+      "zs": "缅甸语校对",
+      "ja": "ミャンマー語校正",
+      "my": "မြန်မာစာစစ်သူ",
+      "ko": "미얀마어 교정",
+      "es": "Revisor de birmano",
+      "fr": "Relecteur birman"
     },
-    "group": "translator"
+    "group": "proofreader"
   },
   {
     "name": "Lee Jun Lin",
     "role": {
-      "th": "ผู้แปลภาษาจีน",
-      "en": "Chinese translator",
-      "zs": "中文翻译",
-      "ja": "中国語翻訳",
-      "my": "တရုတ်ဘာသာပြန်",
-      "ko": "중국어 번역",
-      "es": "Traductor de chino",
-      "fr": "Traducteur chinois"
+      "th": "ผู้ตรวจทานภาษาจีน",
+      "en": "Chinese proofreader",
+      "zs": "中文校对",
+      "ja": "中国語校正",
+      "my": "တရုတ်စာစစ်သူ",
+      "ko": "중국어 교정",
+      "es": "Revisor de chino",
+      "fr": "Relecteur chinois"
     },
-    "group": "translator"
+    "group": "proofreader"
   },
   {
     "name": "開発中",
     "role": {
-      "th": "ผู้แปลภาษาญี่ปุ่น",
-      "en": "Japanese translator",
-      "zs": "日语翻译",
-      "ja": "日本語翻訳",
-      "my": "ဂျပန်ဘာသာပြန်",
-      "ko": "일본어 번역",
-      "es": "Traductor de japonés",
-      "fr": "Traducteur japonais"
+      "th": "ผู้ตรวจทานภาษาญี่ปุ่น",
+      "en": "Japanese proofreader",
+      "zs": "日语校对",
+      "ja": "日本語校正",
+      "my": "ဂျပန်စာစစ်သူ",
+      "ko": "일본어 교정",
+      "es": "Revisor de japonés",
+      "fr": "Relecteur japonais"
     },
-    "group": "translator"
+    "group": "proofreader"
   },
   {
     "name": "開発中",
     "role": {
-      "th": "ผู้แปลภาษาเกาหลี",
-      "en": "Korean translator",
-      "zs": "韩语翻译",
-      "ja": "韓国語翻訳",
-      "my": "ကိုးရီးယားဘာသာပြန်",
-      "ko": "한국어 번역",
-      "es": "Traductor de coreano",
-      "fr": "Traducteur coréen"
+      "th": "ผู้ตรวจทานภาษาเกาหลี",
+      "en": "Korean proofreader",
+      "zs": "韩语校对",
+      "ja": "韓国語校正",
+      "my": "ကိုးရီးယားစာစစ်သူ",
+      "ko": "한국어 교정",
+      "es": "Revisor de coreano",
+      "fr": "Relecteur coréen"
     },
-    "group": "translator"
+    "group": "proofreader"
   },
   {
     "name": "開発中",
     "role": {
-      "th": "ผู้แปลภาษาฝรั่งเศส",
-      "en": "French translator",
-      "zs": "法语翻译",
-      "ja": "フランス語翻訳",
-      "my": "ပြင်သစ်ဘာသာပြန်",
-      "ko": "프랑스어 번역",
-      "es": "Traductor de francés",
-      "fr": "Traducteur français"
+      "th": "ผู้ตรวจทานภาษาฝรั่งเศส",
+      "en": "French proofreader",
+      "zs": "法语校对",
+      "ja": "フランス語校正",
+      "my": "ပြင်သစ်စာစစ်သူ",
+      "ko": "프랑스어 교정",
+      "es": "Revisor de francés",
+      "fr": "Relecteur français"
     },
-    "group": "translator"
+    "group": "proofreader"
   },
   {
     "name": "開発中",
     "role": {
-      "th": "ผู้แปลภาษาอินโดนีเซีย",
-      "en": "Indonesian translator",
-      "zs": "印尼语翻译",
-      "ja": "インドネシア語翻訳",
-      "my": "အင်ဒိုနီးရှားဘာသာပြန်",
-      "ko": "인도네시아어 번역",
-      "es": "Traductor de indonesio",
-      "fr": "Traducteur indonésien"
+      "th": "ผู้ตรวจทานภาษาอินโดนีเซีย",
+      "en": "Indonesian proofreader",
+      "zs": "印尼语校对",
+      "ja": "インドネシア語校正",
+      "my": "အင်ဒိုနီးရှားစာစစ်သူ",
+      "ko": "인도네시아어 교정",
+      "es": "Revisor de indonesio",
+      "fr": "Relecteur indonésien"
     },
-    "group": "translator"
+    "group": "proofreader"
   }
 ],
     teamGroups: [
@@ -260,18 +259,17 @@
       "es": "Desarrollador web",
       "fr": "Développeur web"
     }
-  },
-  {
-    "id": "translator",
+  },  {
+    "id": "proofreader",
     "name": {
-      "th": "ผู้แปล",
-      "en": "Translator",
-      "zs": "翻译",
-      "ja": "翻訳",
-      "my": "ဘာသာပြန်",
-      "ko": "번역",
-      "es": "Traductor",
-      "fr": "Traducteur"
+      "th": "ผู้ตรวจทาน",
+      "en": "Proofreader",
+      "zs": "校对",
+      "ja": "校正",
+      "my": "စာစစ်သူ",
+      "ko": "교정",
+      "es": "Revisor",
+      "fr": "Relecteur"
     }
   }
 ],
