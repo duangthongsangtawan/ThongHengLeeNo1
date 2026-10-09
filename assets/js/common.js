@@ -282,7 +282,7 @@
     samplePrices: true,  // set to false once real prices are in menu-data.js (hides the "sample prices" notice)
   };
 
-  const LANGS = ['th', 'en', 'zh-Hans', 'ja', 'my', 'ko', 'es', 'fr'];
+  const LANGS = ['th', 'en', 'zh-Hans', 'ja', 'ko', 'my', 'fr', 'es'];
   const KEY = { th: 'th', en: 'en', 'zh-Hans': 'zs', ja: 'ja', my: 'my', ko: 'ko', es: 'es', fr: 'fr' };
 
   const COMMON = {
