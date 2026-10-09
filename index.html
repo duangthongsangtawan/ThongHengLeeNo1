@@ -824,6 +824,11 @@
   let botStarted = false;
 
   let introPending = false;
+  // The doors play once per browser tab: a reload in the same tab skips them, a new tab
+  // (typed link or QR scan) plays them again. The footer's Replay button always plays them.
+  const INTRO_KEY = 'thl-intro-played';
+  const introPlayed = () => { try { return sessionStorage.getItem(INTRO_KEY) === '1'; } catch (_) { return false; } };
+  const markIntroPlayed = () => { try { sessionStorage.setItem(INTRO_KEY, '1'); } catch (_) {} };
   function resetIntro() {
     introTimers.forEach(clearTimeout); introTimers = [];
     intro.hidden = true;
@@ -841,6 +846,7 @@
     // A home page opened in a background tab starts when the guest actually sees it.
     if (document.hidden) { introPending = true; return; }
     introPending = false;
+    markIntroPlayed();
     intro.hidden = false;
     document.body.classList.add('intro-lock');
     void intro.offsetWidth;
@@ -858,7 +864,7 @@
   });
   // Back/Forward may restore a finished page without executing its script again.
   window.addEventListener('pagehide', () => { introPending = false; resetIntro(); });
-  window.addEventListener('pageshow', (e) => { if (e.persisted) playIntro(); });
+  window.addEventListener('pageshow', (e) => { if (e.persisted && !introPlayed()) playIntro(); });
 
   // ---------- Chatbot ----------
   const mascot = $('#mascot');
@@ -1033,8 +1039,8 @@
   THL.onLang(() => { document.querySelectorAll('[data-name-zh-svg]').forEach((n) => { n.textContent = THL.zhName(); }); if (botStarted) greet(true); });
   document.querySelectorAll('[data-name-zh-svg]').forEach((n) => { n.textContent = THL.zhName(); });
 
-  // Play on every home-page visit; old "already seen" storage flags are ignored.
-  playIntro();
+  // First visit in this tab: play the doors. Reload in the same tab: straight to the language picker.
+  if (introPlayed()) showLanguageSetup(); else playIntro();
 })();
 </script>
 </body>
