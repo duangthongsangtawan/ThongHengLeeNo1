@@ -25,6 +25,9 @@
   //  The STAFF PASSWORD is NOT here (this file is sent to every guest's phone).
   //  It is in data/settings.json.
   // ===========================================================================
+  // Placeholder name for team members not yet chosen ("under development"), one per language
+  const TBD_NAME = { th: 'อยู่ระหว่างพัฒนา', en: 'In development', zs: '开发中', ja: '開発中', my: 'ဖန်တီးဆဲ', ko: '개발 중', es: 'En desarrollo', fr: 'En développement', id: 'Dalam pengembangan' };
+
   const SITE = {
     // ---- Name ----
     nameTh: 'ท่งเฮงหลี',
@@ -172,7 +175,7 @@
     "group": "proofreader"
   },
   {
-    "name": "開発中",
+    "name": TBD_NAME,
     "role": {
       "th": "ผู้ตรวจทานภาษาญี่ปุ่น",
       "en": "Japanese proofreader",
@@ -187,7 +190,7 @@
     "group": "proofreader"
   },
   {
-    "name": "開発中",
+    "name": TBD_NAME,
     "role": {
       "th": "ผู้ตรวจทานภาษาเกาหลี",
       "en": "Korean proofreader",
@@ -202,7 +205,7 @@
     "group": "proofreader"
   },
   {
-    "name": "開発中",
+    "name": TBD_NAME,
     "role": {
       "th": "ผู้ตรวจทานภาษาฝรั่งเศส",
       "en": "French proofreader",
@@ -217,7 +220,7 @@
     "group": "proofreader"
   },
   {
-    "name": "開発中",
+    "name": TBD_NAME,
     "role": {
       "th": "ผู้ตรวจทานภาษาอินโดนีเซีย",
       "en": "Indonesian proofreader",
