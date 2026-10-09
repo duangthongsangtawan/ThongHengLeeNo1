@@ -53,7 +53,7 @@
 
     // ---- Contact (leave null to hide a line) ----
     phone: '+66 81-649-4890', // International format omits the domestic leading zero.
-    phones: ['+66 81-649-4890', '+66 99-148-1731'],
+    phones: ['+66 81-649-4890', '+66 94 354 2462'],
     line: null,      // e.g. '@your-line-id'
     email: null,     // e.g. 'hello@example.com'
     facebook: null,  // full URL, e.g. 'https://www.facebook.com/...'
