@@ -139,7 +139,7 @@ dialog.sheet[open] { animation: sheetIn 0.25s ease-out; }
 .team-group-kitchen { grid-column: 3; grid-row: 1; }
 .team-group-development { grid-column: 1 / 3; grid-row: 2; }
 .team-group-proofreader { grid-column: 3; grid-row: 2; }
-.team-group-proofreader .team-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.team-group.team-group-proofreader .team-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
 .team-group-proofreader .member { height: auto; gap: 2px; padding: 9px 10px; }
 .team-group-proofreader .member .avatar { display: none; }
 .team-group h4 { margin: 0 0 12px; color: var(--sky-soft); }
@@ -149,7 +149,7 @@ dialog.sheet[open] { animation: sheetIn 0.25s ease-out; }
 @media (max-width: 560px) {
   .team-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .team-group-management, .team-group-kitchen, .team-group-development, .team-group-proofreader { grid-column: 1; grid-row: auto; }
-  .team-group-proofreader .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team-group.team-group-proofreader .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .team-group-kitchen .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .member .avatar { width: 88px; height: 88px; }
 }
