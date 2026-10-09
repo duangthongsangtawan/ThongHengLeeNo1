@@ -176,6 +176,55 @@
       nameLabel: 'Votre nom (facultatif)', namePh: 'ex. : Somchai', nameHint: 'Vous partagez la table avec un autre groupe ? Chaque groupe indique son propre nom pour que le personnel distingue les commandes.',
       cancel: 'Annuler', needTable: 'Choisissez votre table pour envoyer la commande', tableExpired: 'Plus d’une heure s’est écoulée : merci de choisir à nouveau votre table.',
     },
+    id: {
+      title: 'Menu',
+      sample: 'Harga contoh — hanya untuk pratinjau.',
+      myOrder: 'Pesanan saya',
+      keepBrowsing: 'Lanjut melihat menu',
+      send: 'Kirim pesanan ke dapur',
+      placeOrder: 'Pesan sekarang',
+      note: 'Catatan untuk dapur',
+      notePh: 'mis. tidak pedas, tanpa sayur',
+      viewPhoto: 'Foto',
+      addShort: '+ Tambah',
+      add: '+ Tambah ke pesanan',
+      table: 'Meja',
+      noTable: 'Pilih meja',
+      pickTable: 'Anda duduk di meja nomor berapa?',
+      pickTableHint: 'Nomor tertera pada papan di meja Anda.',
+      added: 'Ditambahkan: {name}',
+      emptyCart: 'Belum ada yang ditambahkan — ketuk “+ Tambah” pada sebuah hidangan.',
+      total: 'Total',
+      eggFried: 'Telur mata sapi',
+      eggOmelette: 'Telur dadar',
+      sentTitle: 'Sudah dikirim ke dapur',
+      sentTotal: 'Total pesanan sejauh ini',
+      orderOkTitle: 'Pesanan terkirim!',
+      orderOkText: 'Dapur telah menerima pesanan untuk meja {t}. Mohon tunggu sebentar.',
+      orderNo: 'Pesanan #{n}',
+      ok: 'OK',
+      sending: 'Mengirim…',
+      retrySend: 'Coba kirim lagi',
+      errNetTitle: 'Tidak terhubung ke Wi-Fi restoran',
+      errNet: 'Ponsel Anda tidak terhubung ke Wi-Fi restoran (atau sinyal terputus), sehingga pesanan belum terkirim. Pesanan Anda masih tersimpan di sini — periksa Wi-Fi, lalu ketuk “Coba kirim lagi”.',
+      errTimeoutTitle: 'Sistem restoran lambat merespons',
+      errTimeout: 'Pesanan sudah kami kirim tetapi tidak ada balasan, jadi mungkin sudah atau belum sampai ke dapur. Ketuk “Coba kirim lagi” — pesanan tidak akan terkirim dua kali.',
+      errServerTitle: 'Sistem restoran tidak dapat menerima pesanan',
+      errServer: 'Sistem mengembalikan kesalahan (kode {code}) dan pesanan tidak terkirim. Coba lagi, atau tunjukkan layar ini kepada staf.',
+      backOnline: 'Anda sudah terhubung kembali — ketuk “Coba kirim lagi” untuk mengirim pesanan.',
+      stNew: 'Diterima',
+      stPreparing: 'Sedang disiapkan',
+      stServed: 'Sudah disajikan',
+      stCancelled: 'Dibatalkan',
+      cancelledHint: 'Pesanan ini dibatalkan dan tidak dihitung dalam total.',
+      demo: 'Mode demo: hanya tersimpan di peramban ini. Jalankan server.js untuk terhubung ke layar staf lewat Wi-Fi.',
+      nameLabel: 'Nama Anda (opsional)',
+      namePh: 'mis. Somchai',
+      nameHint: 'Berbagi meja dengan rombongan lain? Setiap rombongan memakai nama sendiri agar staf dapat memisahkan pesanan.',
+      cancel: 'Batal',
+      needTable: 'Pilih meja Anda untuk mengirim pesanan',
+      tableExpired: 'Sudah lebih dari satu jam — silakan pilih meja Anda lagi.',
+    },
   };
 
 
@@ -188,6 +237,7 @@
   Object.assign(DICT["ko"], {"optionHint": "추가 옵션을 선택하거나 그대로 담으세요", "editOptions": "옵션 수정", "saveOptions": "옵션 저장"});
   Object.assign(DICT["es"], {"optionHint": "Elige extras o añade sin extras", "editOptions": "Editar opciones", "saveOptions": "Guardar opciones"});
   Object.assign(DICT["fr"], {"optionHint": "Choisissez des options ou ajoutez sans supplément", "editOptions": "Modifier les options", "saveOptions": "Enregistrer les options"});
+  Object.assign(DICT["id"], {"optionHint":"Pilih tambahan, atau pesan tanpa tambahan","editOptions":"Ubah pilihan","saveOptions":"Simpan pilihan"});
 
   Object.assign(DICT["th"], {"rateTitle": "ส่งออเดอร์ถี่เกินไป", "rateWait": "กรุณารอ {s} วินาทีแล้วลองส่งอีกครั้ง รายการในตะกร้ายังอยู่"});
   Object.assign(DICT["en"], {"rateTitle": "Too many order requests", "rateWait": "Wait {s} seconds, then try again. Your basket is saved."});
@@ -197,6 +247,7 @@
   Object.assign(DICT["ko"], {"rateTitle": "주문 요청이 너무 많습니다", "rateWait": "{s}초 후 다시 시도하세요. 장바구니는 저장되어 있습니다."});
   Object.assign(DICT["es"], {"rateTitle": "Demasiadas solicitudes", "rateWait": "Espera {s} segundos y vuelve a intentarlo. Tu cesta está guardada."});
   Object.assign(DICT["fr"], {"rateTitle": "Trop de demandes", "rateWait": "Attendez {s} secondes avant de réessayer. Votre panier est conservé."});
+  Object.assign(DICT["id"], {"rateTitle":"Terlalu banyak permintaan pesanan","rateWait":"Tunggu {s} detik, lalu coba lagi. Keranjang Anda tersimpan."});
 
   // Public website (ordering through a table QR code): notices and the no-connection message.
   Object.assign(DICT["th"], {"qrNeeded": "สั่งอาหารได้โดยสแกน QR code ที่โต๊ะในร้าน", "qrInvalid": "QR code ของโต๊ะนี้ใช้ไม่ได้แล้ว กรุณาแจ้งพนักงาน", "orderOffline": "ขณะนี้ยังสั่งอาหารออนไลน์ไม่ได้ กรุณาสั่งกับพนักงาน", "qrExpired": "ผ่านไปเกิน 1 ชั่วโมงแล้ว กรุณาสแกน QR code ที่โต๊ะอีกครั้ง", "errNetTitlePub": "เชื่อมต่อกับร้านไม่ได้", "errNetPub": "ออเดอร์ยังไม่ถูกส่ง เพราะอินเทอร์เน็ตของโทรศัพท์หรือระบบของร้านไม่ตอบสนอง รายการที่เลือกยังอยู่ครบ ลองส่งอีกครั้ง หรือสั่งกับพนักงาน"});
@@ -207,6 +258,7 @@
   Object.assign(DICT["ko"], {"qrNeeded": "주문하시려면 매장 테이블의 QR 코드를 스캔해 주세요.", "qrInvalid": "이 테이블의 QR 코드는 더 이상 사용할 수 없습니다. 직원에게 문의해 주세요.", "orderOffline": "지금은 온라인 주문을 이용할 수 없습니다. 직원에게 주문해 주세요.", "qrExpired": "1시간이 지났습니다. 테이블의 QR 코드를 다시 스캔해 주세요.", "errNetTitlePub": "매장 시스템에 연결할 수 없습니다", "errNetPub": "주문이 아직 전송되지 않았습니다. 휴대폰 인터넷 또는 매장 시스템이 응답하지 않습니다. 담은 메뉴는 그대로 있습니다. 다시 시도하거나 직원에게 주문해 주세요."});
   Object.assign(DICT["es"], {"qrNeeded": "Para pedir, escanea el código QR de tu mesa en el restaurante.", "qrInvalid": "El código QR de esta mesa ya no es válido. Avisa al personal, por favor.", "orderOffline": "Ahora mismo no se puede pedir en línea. Pide al personal, por favor.", "qrExpired": "Ha pasado más de una hora: vuelve a escanear el código QR de tu mesa.", "errNetTitlePub": "No se puede conectar con el restaurante", "errNetPub": "El pedido no se ha enviado: no responde la conexión de tu teléfono o el sistema del restaurante. Tus platos siguen aquí. Inténtalo de nuevo o pide al personal."});
   Object.assign(DICT["fr"], {"qrNeeded": "Pour commander, scannez le code QR de votre table au restaurant.", "qrInvalid": "Le code QR de cette table n’est plus valable. Merci de prévenir le personnel.", "orderOffline": "La commande en ligne n’est pas disponible pour le moment. Merci de commander auprès du personnel.", "qrExpired": "Plus d’une heure s’est écoulée : merci de scanner à nouveau le code QR de votre table.", "errNetTitlePub": "Impossible de joindre le restaurant", "errNetPub": "La commande n’a pas été envoyée : la connexion de votre téléphone ou le système du restaurant ne répond pas. Vos plats sont toujours là. Réessayez ou commandez auprès du personnel."});
+  Object.assign(DICT["id"], {"qrNeeded":"Untuk memesan, pindai kode QR di meja Anda di restoran.","qrInvalid":"Kode QR meja ini sudah tidak berlaku. Silakan tanyakan kepada staf kami.","orderOffline":"Pemesanan online sedang tidak tersedia. Silakan pesan melalui staf kami.","qrExpired":"Sudah lebih dari satu jam — silakan pindai kembali kode QR meja Anda.","errNetTitlePub":"Tidak dapat terhubung ke restoran","errNetPub":"Pesanan tidak terkirim: internet ponsel Anda atau sistem restoran tidak merespons. Pesanan Anda masih tersimpan di sini. Coba lagi, atau pesan melalui staf kami."});
 
   // ---------- Persistent state ----------
   const store = {
@@ -475,7 +527,7 @@
     renderSent();
   }
 
-  const PAID_LABELS = {"th":"ชำระเงินแล้ว","en":"Bill completed","zh-Hans":"已结账","ja":"会計済み","my":"ငွေရှင်းပြီး","ko":"결제 완료","es":"Cuenta pagada","fr":"Addition réglée"};
+  const PAID_LABELS = {"th":"ชำระเงินแล้ว","en":"Bill completed","zh-Hans":"已结账","ja":"会計済み","my":"ငွေရှင်းပြီး","ko":"결제 완료","es":"Cuenta pagada","fr":"Addition réglée","id":"Tagihan lunas"};
   Object.keys(PAID_LABELS).forEach(k => DICT[k].stPaid = PAID_LABELS[k]);
   const STATUS_LABEL = { new: 'stNew', preparing: 'stPreparing', served: 'stServed', paid: 'stPaid', cancelled: 'stCancelled' };
   const orderTotal = (o) => o.lines.reduce((s, l) => s + l.price * l.qty, 0);

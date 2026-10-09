@@ -9,7 +9,8 @@ window.THL_INGREDIENTS = {
     "my": "ကုန်ပစ္စည်းတံဆိပ်မှ ပါဝင်ပစ္စည်းများ စစ်ဆေးရန်",
     "ko": "제품 라벨 성분 확인 예정",
     "es": "Ingredientes pendientes de la etiqueta",
-    "fr": "Ingrédients à confirmer sur l’étiquette"
+    "fr": "Ingrédients à confirmer sur l’étiquette",
+    "id": "Bahan menunggu konfirmasi dari label produk"
   },
   "scope": {
     "th": "ส่วนประกอบหลัก ไม่ใช่รายการทั้งหมด หากแพ้อาหารโปรดแจ้งพนักงาน",
@@ -19,7 +20,8 @@ window.THL_INGREDIENTS = {
     "my": "အဓိကပါဝင်ပစ္စည်းများသာ။ အစားအစာဓာတ်မတည့်မှုရှိပါက ဝန်ထမ်းကိုပြောပါ။",
     "ko": "주요 재료만 표시합니다. 음식 알레르기가 있으면 직원에게 알려 주세요.",
     "es": "Solo ingredientes principales. Informe al personal de alergias.",
-    "fr": "Principaux ingrédients uniquement. Signalez vos allergies au personnel."
+    "fr": "Principaux ingrédients uniquement. Signalez vos allergies au personnel.",
+    "id": "Hanya bahan utama, bukan daftar lengkap. Beri tahu staf jika Anda memiliki alergi makanan."
   },
   "items": {
     "10000": {
@@ -56,6 +58,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Riz",
           "Eau"
+        ],
+        "id": [
+          "Nasi",
+          "Air"
         ]
       }
     },
@@ -109,6 +115,12 @@ window.THL_INGREDIENTS = {
           "Œuf",
           "Pousses de soja",
           "Cacahuètes"
+        ],
+        "id": [
+          "Mi beras",
+          "Telur",
+          "Tauge",
+          "Kacang tanah"
         ]
       }
     },
@@ -162,6 +174,12 @@ window.THL_INGREDIENTS = {
           "Poulet",
           "Œuf",
           "Cacahuètes"
+        ],
+        "id": [
+          "Mi beras",
+          "Ayam",
+          "Telur",
+          "Kacang tanah"
         ]
       }
     },
@@ -215,6 +233,12 @@ window.THL_INGREDIENTS = {
           "Crevettes",
           "Œuf",
           "Cacahuètes"
+        ],
+        "id": [
+          "Mi beras",
+          "Udang",
+          "Telur",
+          "Kacang tanah"
         ]
       }
     },
@@ -268,6 +292,12 @@ window.THL_INGREDIENTS = {
           "Poisson, crevettes et calamar",
           "Œuf",
           "Cacahuètes"
+        ],
+        "id": [
+          "Mi beras",
+          "Ikan, udang & cumi",
+          "Telur",
+          "Kacang tanah"
         ]
       }
     },
@@ -321,6 +351,12 @@ window.THL_INGREDIENTS = {
           "Poisson, crevettes et calamar",
           "Curry en poudre",
           "Œuf"
+        ],
+        "id": [
+          "Nasi",
+          "Ikan, udang & cumi",
+          "Bubuk kari",
+          "Telur"
         ]
       }
     },
@@ -374,6 +410,12 @@ window.THL_INGREDIENTS = {
           "Crevettes",
           "Œuf",
           "Ail"
+        ],
+        "id": [
+          "Nasi",
+          "Udang",
+          "Telur",
+          "Bawang putih"
         ]
       }
     },
@@ -427,6 +469,12 @@ window.THL_INGREDIENTS = {
           "Cartilage de porc",
           "Carotte",
           "Bouillon"
+        ],
+        "id": [
+          "Nasi",
+          "Tulang rawan babi",
+          "Wortel",
+          "Kaldu"
         ]
       }
     },
@@ -480,6 +528,12 @@ window.THL_INGREDIENTS = {
           "Poulet",
           "Poudre de riz grillé",
           "Piment"
+        ],
+        "id": [
+          "Nasi",
+          "Ayam",
+          "Bubuk beras sangrai",
+          "Cabai"
         ]
       }
     },
@@ -533,6 +587,12 @@ window.THL_INGREDIENTS = {
           "Blanc de poulet",
           "Curry en poudre",
           "Œuf"
+        ],
+        "id": [
+          "Nasi",
+          "Dada ayam",
+          "Bubuk kari",
+          "Telur"
         ]
       }
     },
@@ -578,6 +638,11 @@ window.THL_INGREDIENTS = {
           "Riz",
           "Blanc de poulet",
           "Pâte de curry rouge"
+        ],
+        "id": [
+          "Nasi",
+          "Dada ayam",
+          "Pasta kari merah"
         ]
       }
     },
@@ -623,6 +688,11 @@ window.THL_INGREDIENTS = {
           "Riz",
           "Blanc de poulet",
           "Pâte de curry vert"
+        ],
+        "id": [
+          "Nasi",
+          "Dada ayam",
+          "Pasta kari hijau"
         ]
       }
     },
@@ -676,6 +746,12 @@ window.THL_INGREDIENTS = {
           "Poulet",
           "Ail",
           "Poivre"
+        ],
+        "id": [
+          "Nasi",
+          "Ayam",
+          "Bawang putih",
+          "Lada"
         ]
       }
     },
@@ -721,6 +797,11 @@ window.THL_INGREDIENTS = {
           "Riz",
           "Blanc de poulet",
           "Poivre noir"
+        ],
+        "id": [
+          "Nasi",
+          "Dada ayam",
+          "Lada hitam"
         ]
       }
     },
@@ -750,6 +831,9 @@ window.THL_INGREDIENTS = {
         ],
         "fr": [
           "Glace"
+        ],
+        "id": [
+          "Es batu"
         ]
       }
     },
@@ -795,6 +879,11 @@ window.THL_INGREDIENTS = {
           "Roselle",
           "Jujube",
           "Sucre"
+        ],
+        "id": [
+          "Rosela",
+          "Bidara Cina",
+          "Gula"
         ]
       }
     },
@@ -840,6 +929,11 @@ window.THL_INGREDIENTS = {
           "Thé thaï",
           "Lait",
           "Sucre"
+        ],
+        "id": [
+          "Teh Thai",
+          "Susu",
+          "Gula"
         ]
       }
     },
@@ -877,6 +971,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Chrysanthème",
           "Sucre"
+        ],
+        "id": [
+          "Krisan",
+          "Gula"
         ]
       }
     },
@@ -922,6 +1020,11 @@ window.THL_INGREDIENTS = {
           "Prune salée",
           "Sucre",
           "Eau"
+        ],
+        "id": [
+          "Plum asin",
+          "Gula",
+          "Air"
         ]
       }
     },
@@ -967,6 +1070,11 @@ window.THL_INGREDIENTS = {
           "Fruit de bael",
           "Sucre",
           "Eau"
+        ],
+        "id": [
+          "Buah maja",
+          "Gula",
+          "Air"
         ]
       }
     },
@@ -1012,6 +1120,11 @@ window.THL_INGREDIENTS = {
           "Concentré d’orange",
           "Eau",
           "Glace"
+        ],
+        "id": [
+          "Konsentrat jeruk",
+          "Air",
+          "Es batu"
         ]
       }
     },
@@ -1057,6 +1170,11 @@ window.THL_INGREDIENTS = {
           "Fleurs de pois papillon",
           "Citron vert",
           "Sucre"
+        ],
+        "id": [
+          "Bunga telang",
+          "Jeruk nipis",
+          "Gula"
         ]
       }
     },
@@ -1102,6 +1220,11 @@ window.THL_INGREDIENTS = {
           "Café",
           "Sucre",
           "Eau"
+        ],
+        "id": [
+          "Kopi",
+          "Gula",
+          "Air"
         ]
       }
     },
@@ -1147,6 +1270,11 @@ window.THL_INGREDIENTS = {
           "Café",
           "Lait",
           "Sucre"
+        ],
+        "id": [
+          "Kopi",
+          "Susu",
+          "Gula"
         ]
       }
     },
@@ -1160,7 +1288,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "32020": {
@@ -1173,7 +1302,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "32040": {
@@ -1186,7 +1316,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "32050": {
@@ -1199,7 +1330,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "32060": {
@@ -1212,7 +1344,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "33010": {
@@ -1225,7 +1358,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "33020": {
@@ -1238,7 +1372,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "33021": {
@@ -1251,7 +1386,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34000": {
@@ -1264,7 +1400,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34010": {
@@ -1277,7 +1414,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34020": {
@@ -1290,7 +1428,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34100": {
@@ -1303,7 +1442,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34101": {
@@ -1316,7 +1456,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34102": {
@@ -1329,7 +1470,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34200": {
@@ -1342,7 +1484,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34300": {
@@ -1355,7 +1498,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34301": {
@@ -1368,7 +1512,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34400": {
@@ -1381,7 +1526,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "34401": {
@@ -1394,7 +1540,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "37100": {
@@ -1438,6 +1585,11 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Pastèque",
           "Glace",
+          "Sirop"
+        ],
+        "id": [
+          "Semangka",
+          "Es batu",
           "Sirop"
         ]
       }
@@ -1484,6 +1636,11 @@ window.THL_INGREDIENTS = {
           "Mangue",
           "Glace",
           "Sirop"
+        ],
+        "id": [
+          "Mangga",
+          "Es batu",
+          "Sirop"
         ]
       }
     },
@@ -1529,6 +1686,11 @@ window.THL_INGREDIENTS = {
           "Noix de coco",
           "Lait",
           "Glace"
+        ],
+        "id": [
+          "Kelapa",
+          "Susu",
+          "Es batu"
         ]
       }
     },
@@ -1542,7 +1704,8 @@ window.THL_INGREDIENTS = {
         "my": [],
         "ko": [],
         "es": [],
-        "fr": []
+        "fr": [],
+        "id": []
       }
     },
     "39010": {
@@ -1571,6 +1734,9 @@ window.THL_INGREDIENTS = {
         ],
         "fr": [
           "Eau"
+        ],
+        "id": [
+          "Air"
         ]
       }
     },
@@ -1600,6 +1766,9 @@ window.THL_INGREDIENTS = {
         ],
         "fr": [
           "Eau"
+        ],
+        "id": [
+          "Air"
         ]
       }
     },
@@ -1653,6 +1822,12 @@ window.THL_INGREDIENTS = {
           "Citronnelle",
           "Citron vert",
           "Piment"
+        ],
+        "id": [
+          "Ikan, udang & cumi",
+          "Serai",
+          "Jeruk nipis",
+          "Cabai"
         ]
       }
     },
@@ -1706,6 +1881,12 @@ window.THL_INGREDIENTS = {
           "Citronnelle",
           "Citron vert",
           "Piment"
+        ],
+        "id": [
+          "Ayam",
+          "Serai",
+          "Jeruk nipis",
+          "Cabai"
         ]
       }
     },
@@ -1751,6 +1932,11 @@ window.THL_INGREDIENTS = {
           "Cartilage de porc",
           "Bouillon",
           "Ail"
+        ],
+        "id": [
+          "Tulang rawan babi",
+          "Kaldu",
+          "Bawang putih"
         ]
       }
     },
@@ -1796,6 +1982,11 @@ window.THL_INGREDIENTS = {
           "Tofu",
           "Porc",
           "Bouillon"
+        ],
+        "id": [
+          "Tahu",
+          "Babi",
+          "Kaldu"
         ]
       }
     },
@@ -1833,6 +2024,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Œuf",
           "Huile"
+        ],
+        "id": [
+          "Telur",
+          "Minyak"
         ]
       }
     },
@@ -1870,6 +2065,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Œuf",
           "Huile"
+        ],
+        "id": [
+          "Telur",
+          "Minyak"
         ]
       }
     },
@@ -1907,6 +2106,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Gelée d’herbe",
           "Lait"
+        ],
+        "id": [
+          "Cincau",
+          "Susu"
         ]
       }
     },
@@ -1943,6 +2146,10 @@ window.THL_INGREDIENTS = {
         ],
         "fr": [
           "Gelée d’herbe",
+          "Sirop"
+        ],
+        "id": [
+          "Cincau",
           "Sirop"
         ]
       }
@@ -1981,6 +2188,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Glace",
           "Noix de coco"
+        ],
+        "id": [
+          "Es krim",
+          "Kelapa"
         ]
       }
     },
@@ -2018,6 +2229,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Glace",
           "Jacque"
+        ],
+        "id": [
+          "Es krim",
+          "Nangka"
         ]
       }
     },
@@ -2054,6 +2269,10 @@ window.THL_INGREDIENTS = {
         ],
         "fr": [
           "Glace",
+          "Durian"
+        ],
+        "id": [
+          "Es krim",
           "Durian"
         ]
       }
@@ -2092,6 +2311,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Glace",
           "Maïs"
+        ],
+        "id": [
+          "Es krim",
+          "Jagung"
         ]
       }
     },
@@ -2129,6 +2352,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Glace",
           "Haricots noirs"
+        ],
+        "id": [
+          "Es krim",
+          "Kacang hitam"
         ]
       }
     },
@@ -2166,6 +2393,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Glace",
           "Taro"
+        ],
+        "id": [
+          "Es krim",
+          "Talas"
         ]
       }
     },
@@ -2203,6 +2434,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Glace",
           "Thé thaï"
+        ],
+        "id": [
+          "Es krim",
+          "Teh Thai"
         ]
       }
     },
@@ -2240,6 +2475,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Glace",
           "Thé vert"
+        ],
+        "id": [
+          "Es krim",
+          "Teh hijau"
         ]
       }
     },
@@ -2277,6 +2516,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Lait de coco",
           "Sucre"
+        ],
+        "id": [
+          "Santan",
+          "Gula"
         ]
       }
     },
@@ -2322,6 +2565,11 @@ window.THL_INGREDIENTS = {
           "Lait de coco",
           "Sucre",
           "Cornet de glace"
+        ],
+        "id": [
+          "Santan",
+          "Gula",
+          "Cone es krim"
         ]
       }
     },
@@ -2359,6 +2607,10 @@ window.THL_INGREDIENTS = {
         "fr": [
           "Glace",
           "Cacao"
+        ],
+        "id": [
+          "Es krim",
+          "Kakao"
         ]
       }
     },
@@ -2404,6 +2656,11 @@ window.THL_INGREDIENTS = {
           "Mangue",
           "Riz gluant",
           "Lait de coco"
+        ],
+        "id": [
+          "Mangga",
+          "Ketan",
+          "Santan"
         ]
       }
     },
@@ -2449,6 +2706,11 @@ window.THL_INGREDIENTS = {
           "Porc",
           "Pâte à wonton",
           "Huile"
+        ],
+        "id": [
+          "Babi",
+          "Kulit pangsit",
+          "Minyak"
         ]
       }
     },
@@ -2502,6 +2764,12 @@ window.THL_INGREDIENTS = {
           "Poulet",
           "Basilic sacré",
           "Piment"
+        ],
+        "id": [
+          "Nasi",
+          "Ayam",
+          "Kemangi suci",
+          "Cabai"
         ]
       }
     },
@@ -2555,6 +2823,12 @@ window.THL_INGREDIENTS = {
           "Porc",
           "Basilic sacré",
           "Piment"
+        ],
+        "id": [
+          "Nasi",
+          "Babi",
+          "Kemangi suci",
+          "Cabai"
         ]
       }
     },
@@ -2608,6 +2882,12 @@ window.THL_INGREDIENTS = {
           "Bœuf",
           "Basilic sacré",
           "Piment"
+        ],
+        "id": [
+          "Nasi",
+          "Daging sapi",
+          "Kemangi suci",
+          "Cabai"
         ]
       }
     },
@@ -2661,6 +2941,12 @@ window.THL_INGREDIENTS = {
           "Cartilage de porc",
           "Basilic sacré",
           "Piment"
+        ],
+        "id": [
+          "Nasi",
+          "Tulang rawan babi",
+          "Kemangi suci",
+          "Cabai"
         ]
       }
     },
@@ -2714,6 +3000,12 @@ window.THL_INGREDIENTS = {
           "Porc",
           "Ail",
           "Poivre"
+        ],
+        "id": [
+          "Nasi",
+          "Babi",
+          "Bawang putih",
+          "Lada"
         ]
       }
     },
@@ -2759,6 +3051,11 @@ window.THL_INGREDIENTS = {
           "Riz",
           "Poisson, crevettes et calamar",
           "Basilic sacré"
+        ],
+        "id": [
+          "Nasi",
+          "Ikan, udang & cumi",
+          "Kemangi suci"
         ]
       }
     },
@@ -2804,6 +3101,11 @@ window.THL_INGREDIENTS = {
           "Riz",
           "Poisson, crevettes et calamar",
           "Pâte de piment grillé"
+        ],
+        "id": [
+          "Nasi",
+          "Ikan, udang & cumi",
+          "Pasta cabai sangrai"
         ]
       }
     },
@@ -2849,6 +3151,11 @@ window.THL_INGREDIENTS = {
           "Riz",
           "Poisson, crevettes et calamar",
           "Pâte de curry rouge"
+        ],
+        "id": [
+          "Nasi",
+          "Ikan, udang & cumi",
+          "Pasta kari merah"
         ]
       }
     }

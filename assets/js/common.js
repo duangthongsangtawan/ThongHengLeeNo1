@@ -19,7 +19,7 @@
   //  Anything left as null / [] shows "(to be added)" on the site.
   //  Text shown to guests has one entry per language:
   //    th = Thai, en = English, zs = Chinese (Simplified), ja = Japanese, my = Burmese (Myanmar),
-  //    ko = Korean, es = Spanish, fr = French
+  //    ko = Korean, id = Indonesian, es = Spanish, fr = French
   //  (If a language is missing, English is shown instead.)
   //
   //  The STAFF PASSWORD is NOT here (this file is sent to every guest's phone).
@@ -42,14 +42,15 @@
       ko: '방콕 프라나콘구 마하랏 로드 192–194 (타창) 10200',
       es: 'Maha Rat Road 192–194, Phra Borommaharatchawang, Phra Nakhon, Bangkok 10200 (Tha Chang)',
       fr: '192–194 Maha Rat Road, Phra Borommaharatchawang, Phra Nakhon, Bangkok 10200 (Tha Chang)',
+      id: 'Jl. Maha Rat 192–194, Phra Borommaharatchawang, Phra Nakhon, Bangkok 10200 (Tha Chang)',
     },
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Thong+Heng+Lee+Maha+Rat+Road+Bangkok',
 
     // ---- Opening hours: one row per line shown in the footer ----
     hours: [
-      { days: { th: 'อังคาร–อาทิตย์', en: 'Tue–Sun', zs: '周二至周日', ja: '火〜日', my: 'အင်္ဂါ–တနင်္ဂနွေ', ko: '화–일', es: 'mar.–dom.', fr: 'mar.–dim.' }, time: '08:30–16:30' },
+      { days: { th: 'อังคาร–อาทิตย์', en: 'Tue–Sun', zs: '周二至周日', ja: '火〜日', my: 'အင်္ဂါ–တနင်္ဂနွေ', ko: '화–일', es: 'mar.–dom.', fr: 'mar.–dim.', id: 'Sel–Min' }, time: '08:30–16:30' },
     ],
-    closedNote: { th: 'หยุดทุกวันจันทร์', en: 'Closed Mondays', zs: '每周一休息', ja: '月曜定休', my: 'တနင်္လာနေ့ ပိတ်သည်', ko: '매주 월요일 휴무', es: 'Cerrado los lunes', fr: 'Fermé le lundi' },
+    closedNote: { th: 'หยุดทุกวันจันทร์', en: 'Closed Mondays', zs: '每周一休息', ja: '月曜定休', my: 'တနင်္လာနေ့ ပိတ်သည်', ko: '매주 월요일 휴무', es: 'Cerrado los lunes', fr: 'Fermé le lundi', id: 'Tutup setiap Senin' },
 
     // ---- Contact (leave null to hide a line) ----
     phone: '+66 81-649-4890', // International format omits the domestic leading zero.
@@ -71,7 +72,8 @@
       "my": "စားသောက်ဆိုင်မန်နေဂျာ",
       "ko": "매니저",
       "es": "Gerente del restaurante",
-      "fr": "Responsable du restaurant"
+      "fr": "Responsable du restaurant",
+      "id":"Manajer restoran"
     },
     "group": "management",
     "photo": "assets/images/team/Sriprapha_profile.jpg"
@@ -86,7 +88,8 @@
       "my": "စားသောက်ဆိုင်မန်နေဂျာ",
       "ko": "매니저",
       "es": "Gerente del restaurante",
-      "fr": "Responsable du restaurant"
+      "fr": "Responsable du restaurant",
+      "id":"Manajer restoran"
     },
     "group": "management",
     "photo": "assets/images/team/Sriprapai_profile.jpg"
@@ -101,7 +104,8 @@
       "my": "အထူးစားဖိုမှူး",
       "ko": "스페셜 셰프",
       "es": "Chef especial",
-      "fr": "Chef spécial"
+      "fr": "Chef spécial",
+      "id":"Chef spesial"
     },
     "group": "kitchen",
     "photo": "assets/images/team/Sayan_profile.png"
@@ -116,7 +120,8 @@
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
       "es": "Desarrollador web",
-      "fr": "Développeur web"
+      "fr": "Développeur web",
+      "id":"Pengembang web"
     },
     "group": "development",
     "photo": "assets/images/team/Sangtawan_profile.jpg"
@@ -131,7 +136,8 @@
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
       "es": "Desarrollador web",
-      "fr": "Développeur web"
+      "fr": "Développeur web",
+      "id":"Pengembang web（Lulusan KOSEN Thailand）"
     },
     "group": "development",
     "photo": "assets/images/team/Theeraphat_profile.jpg"
@@ -145,7 +151,8 @@
       "my": "မြန်မာစာစစ်သူ",
       "ko": "미얀마어 교정",
       "es": "Revisor de birmano",
-      "fr": "Relecteur birman"
+      "fr": "Relecteur birman",
+      "id":"Korektor bahasa Burma"
     },
     "group": "proofreader"
   },
@@ -159,7 +166,8 @@
       "my": "တရုတ်စာစစ်သူ",
       "ko": "중국어 교정",
       "es": "Revisor de chino",
-      "fr": "Relecteur chinois"
+      "fr": "Relecteur chinois",
+      "id":"Korektor bahasa Mandarin"
     },
     "group": "proofreader"
   },
@@ -173,7 +181,8 @@
       "my": "ဂျပန်စာစစ်သူ",
       "ko": "일본어 교정",
       "es": "Revisor de japonés",
-      "fr": "Relecteur japonais"
+      "fr": "Relecteur japonais",
+      "id":"Korektor bahasa Jepang"
     },
     "group": "proofreader"
   },
@@ -187,7 +196,8 @@
       "my": "ကိုးရီးယားစာစစ်သူ",
       "ko": "한국어 교정",
       "es": "Revisor de coreano",
-      "fr": "Relecteur coréen"
+      "fr": "Relecteur coréen",
+      "id":"Korektor bahasa Korea"
     },
     "group": "proofreader"
   },
@@ -201,7 +211,8 @@
       "my": "ပြင်သစ်စာစစ်သူ",
       "ko": "프랑스어 교정",
       "es": "Revisor de francés",
-      "fr": "Relecteur français"
+      "fr": "Relecteur français",
+      "id":"Korektor bahasa Prancis"
     },
     "group": "proofreader"
   },
@@ -215,7 +226,8 @@
       "my": "အင်ဒိုနီးရှားစာစစ်သူ",
       "ko": "인도네시아어 교정",
       "es": "Revisor de indonesio",
-      "fr": "Relecteur indonésien"
+      "fr": "Relecteur indonésien",
+      "id":"Korektor bahasa Indonesia"
     },
     "group": "proofreader"
   }
@@ -231,7 +243,8 @@
       "my": "စားသောက်ဆိုင်မန်နေဂျာ",
       "ko": "매니저",
       "es": "Gerente del restaurante",
-      "fr": "Responsable du restaurant"
+      "fr": "Responsable du restaurant",
+      "id":"Manajer restoran"
     }
   },
   {
@@ -244,7 +257,8 @@
       "my": "အထူးစားဖိုမှူး",
       "ko": "스페셜 셰프",
       "es": "Chef especial",
-      "fr": "Chef spécial"
+      "fr": "Chef spécial",
+      "id":"Chef spesial"
     }
   },
   {
@@ -257,7 +271,8 @@
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
       "es": "Desarrollador web",
-      "fr": "Développeur web"
+      "fr": "Développeur web",
+      "id":"Pengembang web"
     }
   },  {
     "id": "proofreader",
@@ -269,7 +284,8 @@
       "my": "စာစစ်သူ",
       "ko": "교정",
       "es": "Revisor",
-      "fr": "Relecteur"
+      "fr": "Relecteur",
+      "id":"Korektor"
     }
   }
 ],
@@ -280,8 +296,8 @@
     samplePrices: true,  // set to false once real prices are in menu-data.js (hides the "sample prices" notice)
   };
 
-  const LANGS = ['th', 'en', 'zh-Hans', 'ja', 'ko', 'my', 'fr', 'es'];
-  const KEY = { th: 'th', en: 'en', 'zh-Hans': 'zs', ja: 'ja', my: 'my', ko: 'ko', es: 'es', fr: 'fr' };
+  const LANGS = ['th', 'en', 'zh-Hans', 'ja', 'ko', 'my', 'id', 'fr', 'es'];
+  const KEY = { th: 'th', en: 'en', 'zh-Hans': 'zs', ja: 'ja', my: 'my', ko: 'ko', es: 'es', fr: 'fr', id: 'id' };
 
   const COMMON = {
     th: {
@@ -340,6 +356,24 @@
       fMap: 'Voir la carte', fTodo: '(à compléter)', fMember: 'Membre de l’équipe', fReplay: 'Revoir l’animation d’ouverture',
       phone: 'Téléphone', line: 'LINE', email: 'E-mail', facebook: 'Facebook', instagram: 'Instagram',
     },
+    id: {
+      staffLink: 'Staf',
+      staffAria: 'Layar staf',
+      fAbout: 'Restoran Thailand di kawasan Tha Chang, dikelola oleh keluarga Thai-Tionghoa.',
+      fAddress: 'Alamat',
+      fHours: 'Jam buka',
+      fContact: 'Kontak',
+      fTeam: 'Tim kami',
+      fMap: 'Buka peta',
+      fTodo: '(akan ditambahkan)',
+      fMember: 'Anggota tim',
+      fReplay: 'Putar ulang animasi pembuka',
+      phone: 'Telepon',
+      line: 'LINE',
+      email: 'Email',
+      facebook: 'Facebook',
+      instagram: 'Instagram',
+    },
   };
 
   let pageDict = {};
@@ -387,6 +421,7 @@
     if (nav.startsWith('ja')) return 'ja';
     if (nav.startsWith('my')) return 'my';
     if (nav.startsWith('ko')) return 'ko';
+    if (nav.startsWith('id') || nav.startsWith('in')) return 'id';
     if (nav.startsWith('es')) return 'es';
     if (nav.startsWith('fr')) return 'fr';
     if (nav.startsWith('en')) return 'en';
