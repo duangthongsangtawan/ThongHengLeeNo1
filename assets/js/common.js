@@ -127,7 +127,10 @@
       "id":"Pengembang web"
     },
     "group": "development",
-    "photo": "assets/images/team/Sangtawan_profile.jpg"
+    "photo": "assets/images/team/Sangtawan_profile.jpg",
+    // LINE / Facebook icons that pop out of the card. line = path of a LINE QR picture,
+    // facebook = profile URL. Leave null to show "coming soon".
+    "social": { "line": null, "facebook": null }
   },
   {
     "name": "Teerapat Phinitkit",
@@ -143,7 +146,8 @@
       "id":"Pengembang web（Lulusan KOSEN Thailand）"
     },
     "group": "development",
-    "photo": "assets/images/team/Theeraphat_profile.jpg"
+    "photo": "assets/images/team/Theeraphat_profile.jpg",
+    "social": { "line": null, "facebook": null }
   },  {
     "name": "Ye Yint Tun",
     "role": {
@@ -455,6 +459,61 @@
   const todo = () => el('span', 'todo', t('fTodo'));
   const personIcon = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>';
 
+  // ---------- Developer social icons (LINE / Facebook) ----------
+  // Hovering (PC), focusing or tapping (phone) a card with "social" makes the two icons fan out
+  // above it, like picking an item in a game. LINE opens a QR window; Facebook opens the profile.
+  const SOCIAL_TEXT = {
+    soon: { th: 'เร็ว ๆ นี้', en: 'Coming soon', zs: '即将推出', ja: '近日公開', my: 'မကြာမီ', ko: '곧 공개', es: 'Próximamente', fr: 'Bientôt disponible', id: 'Segera hadir' },
+    scan: { th: 'สแกน QR เพื่อเพิ่มเพื่อนใน LINE', en: 'Scan the QR code to add on LINE', zs: '扫描二维码添加 LINE 好友', ja: 'QRコードを読み取ってLINEで友だち追加', my: 'LINE တွင် မိတ်ဆွေထည့်ရန် QR ကို စကင်ဖတ်ပါ', ko: 'QR 코드를 스캔해 LINE 친구 추가', es: 'Escanea el código QR para añadir en LINE', fr: 'Scannez le QR code pour ajouter sur LINE', id: 'Pindai kode QR untuk menambahkan di LINE' },
+    close: { th: 'ปิด', en: 'Close', zs: '关闭', ja: '閉じる', my: 'ပိတ်ရန်', ko: '닫기', es: 'Cerrar', fr: 'Fermer', id: 'Tutup' },
+  };
+  const LINE_ICON = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#06C755"/><path fill="#fff" d="M20 8.5c-7.7 0-14 5-14 11.1 0 5.5 5 10.1 11.7 11 .5.1 1.1.3 1.2.7.1.4.1.9 0 1.3l-.2 1.2c-.1.4-.3 1.4 1.2.8 1.5-.6 8.1-4.8 11-8.2 2-2.2 3.1-4.4 3.1-6.8 0-6.1-6.3-11.1-14-11.1z"/><text x="20" y="22.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.6" fill="#06C755">LINE</text></svg>';
+  const FB_ICON = '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#1877F2"/><path fill="#fff" d="M22.2 32V21.8h3.4l.5-4h-3.9v-2.5c0-1.1.3-1.9 2-1.9h2.1V9.8c-.4 0-1.6-.2-3-.2-3 0-5 1.8-5 5.2v3h-3.4v4h3.4V32z"/></svg>';
+
+  let qrDialog;
+  function showLineQr(m, name) {
+    if (!qrDialog) {
+      qrDialog = el('dialog', 'sheet social-qr');
+      qrDialog.addEventListener('click', (e) => { if (e.target === qrDialog) qrDialog.close(); });
+      document.body.append(qrDialog);
+    }
+    qrDialog.textContent = '';
+    const body = el('div', 'sheet-body');
+    body.append(el('h3', null, 'LINE · ' + name));
+    if (m.social.line) {
+      const im = el('img'); im.src = m.social.line; im.alt = 'LINE QR · ' + name; im.width = 240; im.height = 240;
+      body.append(im, el('p', null, pick(SOCIAL_TEXT.scan)));
+    } else body.append(el('p', 'social-soon', pick(SOCIAL_TEXT.soon)));
+    const close = el('button', 'social-close', pick(SOCIAL_TEXT.close)); close.type = 'button';
+    close.addEventListener('click', () => qrDialog.close());
+    body.append(close); qrDialog.append(body);
+    try { qrDialog.showModal(); } catch (_) { qrDialog.setAttribute('open', ''); }
+    close.focus();
+  }
+  function socialPop(card, m, name) {
+    card.classList.add('has-social');
+    const pop = el('div', 'social-pop');
+    const line = el('button', 'social-ico social-line'); line.type = 'button';
+    line.innerHTML = LINE_ICON; line.setAttribute('aria-label', 'LINE · ' + name);
+    line.addEventListener('click', (e) => { e.stopPropagation(); showLineQr(m, name); });
+    let fb;
+    if (m.social.facebook) {
+      fb = el('a', 'social-ico social-fb'); fb.href = m.social.facebook; fb.target = '_blank'; fb.rel = 'noopener';
+      fb.addEventListener('click', (e) => e.stopPropagation());
+    } else {
+      fb = el('button', 'social-ico social-fb'); fb.type = 'button';
+      fb.addEventListener('click', (e) => { e.stopPropagation(); toast(pick(SOCIAL_TEXT.soon)); });
+    }
+    fb.innerHTML = FB_ICON; fb.setAttribute('aria-label', 'Facebook · ' + name);
+    pop.append(line, fb);
+    // Phones have no hover: a tap on the card opens / closes the icons.
+    card.addEventListener('click', () => card.classList.toggle('social-open'));
+    return pop;
+  }
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.member.social-open').forEach((c) => { if (!c.contains(e.target)) c.classList.remove('social-open'); });
+  });
+
   let teamRevealed = false;
   function renderFooter() {
     const root = document.getElementById('site-footer');
@@ -522,6 +581,7 @@
         else av.innerHTML = personIcon;
         card.style.setProperty('--d', (gi * 0.45 + 0.55 + mi * 0.15) + 's');
         card.append(av, el('strong', null, name), el('span', null, pick(m.role)));
+        if (m.social) card.append(socialPop(card, m, name));
         tg.append(card);
       });
       section.append(tg); teamLayout.append(section);

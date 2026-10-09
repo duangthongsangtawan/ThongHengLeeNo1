@@ -172,3 +172,22 @@ dialog.sheet[open] { animation: sheetIn 0.25s ease-out; }
 .view-only #photoAdd,
 .view-only .card .actions .btn-primary { display: none !important; }
 @media (max-width: 340px) { .langs button { font-size: 0.7rem; } }
+
+/* Developer cards: LINE / Facebook icons fan out above the card on hover, focus or tap. */
+.member.has-social { position: relative; cursor: pointer; transition: box-shadow .3s ease, background-color .3s ease; }
+.team-layout[data-reveal] .member.has-social { transition: opacity .6s ease var(--d, 0s), transform .7s cubic-bezier(.22,.8,.3,1) var(--d, 0s), box-shadow .3s ease, background-color .3s ease; }
+.member.has-social:hover, .member.has-social:focus-within, .member.social-open { background: rgba(247,242,231,0.09); box-shadow: 0 0 0 1.5px rgba(237,190,90,0.6), 0 0 22px rgba(237,190,90,0.28); }
+.social-pop { position: absolute; left: 50%; top: 0; width: 0; height: 0; z-index: 5; }
+.social-ico { --x: 0px; --y: 46px; --r: 0deg; --s: 0.2; position: absolute; left: -22px; top: -22px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: none; color: inherit; cursor: pointer; opacity: 0; pointer-events: none; transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(var(--s)); transition: transform .5s cubic-bezier(.34,1.7,.6,1), opacity .25s ease, filter .2s ease; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35)); }
+.social-ico svg { display: block; width: 100%; height: 100%; }
+.social-fb { transition-delay: .07s; }
+.member.has-social:hover .social-ico, .member.has-social:focus-within .social-ico, .member.social-open .social-ico { --y: -14px; --s: 1; opacity: 1; pointer-events: auto; }
+.member.has-social:hover .social-line, .member.has-social:focus-within .social-line, .member.social-open .social-line { --x: -30px; --r: -14deg; }
+.member.has-social:hover .social-fb, .member.has-social:focus-within .social-fb, .member.social-open .social-fb { --x: 30px; --r: 14deg; }
+.member.has-social .social-ico:hover, .member.has-social .social-ico:focus-visible { --s: 1.18; --r: 0deg; outline: none; filter: drop-shadow(0 0 6px rgba(237,190,90,0.95)) drop-shadow(0 0 14px rgba(237,190,90,0.6)); transition-delay: 0s; }
+dialog.social-qr { width: min(340px, calc(100% - 32px)); text-align: center; }
+.social-qr h3 { margin: 0 0 12px; font-size: 1.05rem; }
+.social-qr img { display: block; width: 100%; max-width: 240px; height: auto; margin: 0 auto 10px; border-radius: 12px; }
+.social-qr p { margin: 0 0 14px; }
+.social-qr .social-soon { padding: 40px 0; color: rgba(43,29,20,0.6); font-style: italic; }
+.social-close { min-height: 40px; padding: 8px 22px; border: 0; border-radius: 999px; background: var(--sky); color: #fff; font: inherit; cursor: pointer; }
