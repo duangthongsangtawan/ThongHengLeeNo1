@@ -135,6 +135,76 @@
     },
     "group": "development",
     "photo": "assets/images/team/Theeraphat_profile.jpg"
+  },
+  {
+    "name": "Ye Yint Tun",
+    "role": {
+      "th": "ผู้แปลภาษาพม่า",
+      "en": "Burmese translator",
+      "zs": "缅甸语翻译",
+      "ja": "ミャンマー語翻訳",
+      "my": "မြန်မာဘာသာပြန်",
+      "ko": "미얀마어 번역",
+      "es": "Traductor de birmano",
+      "fr": "Traducteur birman"
+    },
+    "group": "translator"
+  },
+  {
+    "name": "Lee Jun Lin",
+    "role": {
+      "th": "ผู้แปลภาษาจีน",
+      "en": "Chinese translator",
+      "zs": "中文翻译",
+      "ja": "中国語翻訳",
+      "my": "တရုတ်ဘာသာပြန်",
+      "ko": "중국어 번역",
+      "es": "Traductor de chino",
+      "fr": "Traducteur chinois"
+    },
+    "group": "translator"
+  },
+  {
+    "name": "開発中",
+    "role": {
+      "th": "ผู้แปลภาษาญี่ปุ่น",
+      "en": "Japanese translator",
+      "zs": "日语翻译",
+      "ja": "日本語翻訳",
+      "my": "ဂျပန်ဘာသာပြန်",
+      "ko": "일본어 번역",
+      "es": "Traductor de japonés",
+      "fr": "Traducteur japonais"
+    },
+    "group": "translator"
+  },
+  {
+    "name": "開発中",
+    "role": {
+      "th": "ผู้แปลภาษาเกาหลี",
+      "en": "Korean translator",
+      "zs": "韩语翻译",
+      "ja": "韓国語翻訳",
+      "my": "ကိုးရီးယားဘာသာပြန်",
+      "ko": "한국어 번역",
+      "es": "Traductor de coreano",
+      "fr": "Traducteur coréen"
+    },
+    "group": "translator"
+  },
+  {
+    "name": "開発中",
+    "role": {
+      "th": "ผู้แปลภาษาฝรั่งเศส",
+      "en": "French translator",
+      "zs": "法语翻译",
+      "ja": "フランス語翻訳",
+      "my": "ပြင်သစ်ဘာသာပြန်",
+      "ko": "프랑스어 번역",
+      "es": "Traductor de francés",
+      "fr": "Traducteur français"
+    },
+    "group": "translator"
   }
 ],
     teamGroups: [
@@ -175,6 +245,19 @@
       "ko": "웹 개발자",
       "es": "Desarrollador web",
       "fr": "Développeur web"
+    }
+  },
+  {
+    "id": "translator",
+    "name": {
+      "th": "ผู้แปล",
+      "en": "Translator",
+      "zs": "翻译",
+      "ja": "翻訳",
+      "my": "ဘာသာပြန်",
+      "ko": "번역",
+      "es": "Traductor",
+      "fr": "Traducteur"
     }
   }
 ],
