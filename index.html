@@ -197,7 +197,7 @@
   .fav-card { display: flex; flex-direction: column; background: var(--paper); border: 3px solid var(--teak); border-radius: 22px; overflow: hidden; box-shadow: 0 6px 0 rgba(92,58,33,0.35); }
   .fav-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 18px 22px 14px; }
   .fav-head h2 { margin: 0; font-family: var(--font-display); font-size: 1.35rem; color: var(--teak-dark); }
-  .fav-head span { font-size: 0.8rem; font-weight: 700; color: var(--teak-dark); background: var(--ochre); padding: 4px 10px; border-radius: 999px; }
+  .fav-head span { text-align: end; font-size: 0.8rem; font-weight: 700; color: var(--teak-dark); background: var(--ochre); padding: 4px 10px; border-radius: 999px; }
   .fav-grid { flex: 1; display: grid; grid-template-columns: 1.25fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; padding: 0 6px 6px; min-height: 320px; }
   .fav { position: relative; display: block; margin: 0; overflow: hidden; border-radius: 14px; background: var(--ivory-2); text-decoration: none; }
   .fav:first-child { grid-row: span 2; }
@@ -652,11 +652,11 @@
     </a>
 
     <section class="fav-card" aria-labelledby="favTitle">
-      <div class="fav-head"><h2 id="favTitle" data-i18n="favTitle"></h2><span data-i18n="favBadge"></span></div>
+      <div class="fav-head"><h2 id="favTitle" data-i18n="favTitle"></h2><span id="favSet" aria-live="polite"></span></div>
       <div class="fav-grid">
-        <a class="fav" href="menu.html?dish=R02" data-dish="R02"><img src="assets/images/dishes/pad-krapow.jpg" alt=""><span class="cap"><span></span></span></a>
-        <a class="fav" href="menu.html?dish=10001" data-dish="10001"><img src="assets/images/dishes/pad-thai.jpg" alt=""><span class="cap"><span></span></span></a>
-        <a class="fav" href="menu.html?dish=70040" data-dish="70040"><img src="assets/images/dishes/coconut-ice-cream.jpg" alt=""><span class="cap"><span></span></span></a>
+        <a class="fav" href="menu.html?dish=R03" data-dish="R03"><img src="assets/images/menu/full/R03.jpg" alt=""><span class="cap"><span></span></span></a>
+        <a class="fav" href="menu.html?dish=10003" data-dish="10003"><img src="assets/images/menu/full/10003.jpg" alt=""><span class="cap"><span></span></span></a>
+        <a class="fav" href="menu.html?dish=70040" data-dish="70040"><img src="assets/images/menu/full/70040.jpg" alt=""><span class="cap"><span></span></span></a>
       </div>
     </section>
   </section>
@@ -678,7 +678,7 @@
       custTag: 'สำหรับลูกค้า', custTitle: 'สำหรับลูกค้า กดที่นี่เพื่อสั่งอาหาร',
       custDesc: 'ดูเมนูพร้อมรูป เลือกอาหาร แล้วส่งออเดอร์เข้าครัวได้เลยจากโต๊ะของคุณ',
       step1: 'เลือกหมายเลขโต๊ะ', step2: 'กด “+ สั่ง” ที่เมนูที่ชอบ', step3: 'ส่งออเดอร์ แล้วรออาหารที่โต๊ะได้เลย',
-      custCta: 'สั่งอาหาร', favTitle: 'เมนูแนะนำ', favBadge: 'ขายดี',
+      custCta: 'สั่งอาหาร', favTitle: 'เมนูแนะนำ', favBadge: 'ขายดี', set1: 'ชุดที่ 1：ขายดีที่สุด', set2: 'ชุดที่ 2：ผู้จัดการแนะนำ', set3: 'ชุดที่ 3：เมนูที่คนไทยชอบ',
       dish1: 'ผัดไทย', dish2: 'ข้าวกะเพราไก่', dish3: 'ไอศกรีมมะพร้าว',
       lines: ['สวัสดีครับ! ยินดีต้อนรับสู่ท่งเฮงหลี!', 'ลองข้าวกะเพรา ผัดไทย และไอศกรีมมะพร้าวของเราสิครับ!', 'กดการ์ดสีเหลืองเพื่อสั่งอาหารจากโต๊ะได้เลยครับ', 'หิวหรือยังครับ? ครัวพร้อมแล้ว!'],
     },
@@ -690,7 +690,7 @@
       custTag: 'For guests', custTitle: 'If you are a customer, please click here to order food',
       custDesc: 'See the menu with photos, pick your dishes, and send your order to the kitchen right from your table.',
       step1: 'Choose your table number', step2: 'Tap “+ Add” on the dishes you like', step3: 'Send your order — we’ll bring it to your table',
-      custCta: 'Order food', favTitle: 'House favourites', favBadge: 'Popular',
+      custCta: 'Order food', favTitle: 'House favourites', favBadge: 'Popular', set1: 'Set 1: Most popular', set2: 'Set 2: Manager’s pick', set3: 'Set 3: What Thai people love',
       dish1: 'Pad Thai', dish2: 'Pad Krapow', dish3: 'Coconut ice cream',
       lines: ['Hi! Welcome to Thong Heng Lee!', 'Try our Pad Krapow, Pad Thai and coconut ice cream!', 'Tap the big card below to order from your table.', 'Hungry? The kitchen is ready!'],
     },
@@ -702,7 +702,7 @@
       custTag: '顾客专区', custTitle: '顾客请点这里点餐',
       custDesc: '浏览带照片的菜单，选好餐点，就能在座位上直接把订单发送到厨房。',
       step1: '选择您的桌号', step2: '在喜欢的餐点上点“+ 加点”', step3: '发送订单，我们会把餐点送到您的桌上',
-      custCta: '点餐', favTitle: '招牌推荐', favBadge: '人气',
+      custCta: '点餐', favTitle: '招牌推荐', favBadge: '人气', set1: '套餐1：人气第一', set2: '套餐2：店长推荐', set3: '套餐3：泰国人爱吃',
       dish1: '泰式炒河粉', dish2: '打抛鸡饭', dish3: '椰子冰淇淋',
       lines: ['你好！欢迎光临！', '快来尝尝打抛鸡饭、泰式炒河粉和椰子冰淇淋！', '点下方的大卡片就能在座位上点餐哦。', '饿了吗？厨房准备好啦！'],
     },
@@ -714,7 +714,7 @@
       custTag: 'お客様', custTitle: 'お客様はこちらをタップしてご注文ください',
       custDesc: '写真付きメニューから料理を選び、お席からそのままキッチンへ注文できます。',
       step1: 'テーブル番号を選ぶ', step2: '好きな料理の「+ 追加」をタップ', step3: '注文を送信。お料理はお席までお持ちします',
-      custCta: '注文する', favTitle: 'おすすめ', favBadge: '人気',
+      custCta: '注文する', favTitle: 'おすすめ', favBadge: '人気', set1: 'セット1：一番人気', set2: 'セット2：店長からおすすめ', set3: 'セット3：タイ人が好きな料理',
       dish1: 'パッタイ', dish2: 'ガパオライス', dish3: 'ココナッツアイス',
       lines: ['こんにちは！いらっしゃいませ！', 'ガパオ、パッタイ、ココナッツアイスをぜひ！', '下の大きなカードからお席で注文できますよ。', 'お腹すきました？キッチンの準備はOK！'],
     },
@@ -726,7 +726,7 @@
       custTag: 'ဧည့်သည်များအတွက်', custTitle: 'ဧည့်သည်များ အစားအသောက်မှာရန် ဤနေရာကို နှိပ်ပါ',
       custDesc: 'ဓာတ်ပုံပါမီနူးကို ကြည့်ပါ။ ဟင်းပွဲရွေးပြီး သင့်စားပွဲမှ မီးဖိုချောင်သို့ တိုက်ရိုက် အော်ဒါပို့နိုင်ပါသည်။',
       step1: 'စားပွဲနံပါတ် ရွေးပါ', step2: 'နှစ်သက်ရာဟင်းပွဲပေါ်ရှိ “+ မှာမည်” ကို နှိပ်ပါ', step3: 'အော်ဒါပို့ပါ — သင့်စားပွဲသို့ ယူလာပေးပါမည်',
-      custCta: 'အစားအသောက် မှာမည်', favTitle: 'အကြံပြုဟင်းလျာများ', favBadge: 'လူကြိုက်များ',
+      custCta: 'အစားအသောက် မှာမည်', favTitle: 'အကြံပြုဟင်းလျာများ', favBadge: 'လူကြိုက်များ', set1: 'အစုံ ၁ — လူကြိုက်အများဆုံး', set2: 'အစုံ ၂ — မန်နေဂျာ အကြံပြု', set3: 'အစုံ ၃ — ထိုင်းလူမျိုးကြိုက်သော',
       dish1: 'ပဒ်ထိုင်း', dish2: 'ကြက်သားပင်စိမ်းကြော် ထမင်း', dish3: 'အုန်းနို့ရေခဲမုန့်',
       lines: ['မင်္ဂလာပါ! Thong Heng Lee မှ ကြိုဆိုပါတယ်!', 'ကျွန်တော်တို့ရဲ့ ပင်စိမ်းကြော်၊ ပဒ်ထိုင်းနဲ့ အုန်းနို့ရေခဲမုန့်ကို စမ်းကြည့်ပါ!', 'အောက်ပါကတ်ပြားကိုနှိပ်ပြီး စားပွဲကနေမှာလို့ရပါတယ်။', 'ဗိုက်ဆာပြီလား? ချက်ပြုတ်ရန် အသင့်ပါ!'],
     },
@@ -738,7 +738,7 @@
       custTag: '손님용', custTitle: '손님은 여기를 눌러 주문해 주세요',
       custDesc: '사진이 있는 메뉴를 보고 음식을 고른 뒤, 자리에서 바로 주방으로 주문을 보낼 수 있습니다.',
       step1: '테이블 번호 선택', step2: '원하는 메뉴의 “+ 담기” 누르기', step3: '주문 보내기 — 자리로 가져다 드립니다',
-      custCta: '주문하기', favTitle: '추천 메뉴', favBadge: '인기',
+      custCta: '주문하기', favTitle: '추천 메뉴', favBadge: '인기', set1: '세트 1: 가장 인기', set2: '세트 2: 점장 추천', set3: '세트 3: 태국인이 좋아하는 요리',
       dish1: '팟타이', dish2: '팟끄라파우', dish3: '코코넛 아이스크림',
       lines: ['안녕하세요! 통헹리에 오신 것을 환영합니다!', '팟끄라파우, 팟타이, 코코넛 아이스크림을 드셔 보세요!', '아래 큰 카드를 누르면 자리에서 주문할 수 있어요.', '배고프세요? 주방은 준비됐어요!'],
     },
@@ -750,7 +750,7 @@
       custTag: 'Para clientes', custTitle: 'Si eres cliente, toca aquí para pedir',
       custDesc: 'Mira la carta con fotos, elige tus platos y envía el pedido a la cocina desde tu mesa.',
       step1: 'Elige el número de tu mesa', step2: 'Toca “+ Añadir” en los platos que quieras', step3: 'Envía el pedido: te lo llevamos a la mesa',
-      custCta: 'Pedir comida', favTitle: 'Favoritos de la casa', favBadge: 'Popular',
+      custCta: 'Pedir comida', favTitle: 'Favoritos de la casa', favBadge: 'Popular', set1: 'Menú 1: El más popular', set2: 'Menú 2: Recomendación del gerente', set3: 'Menú 3: Lo que más gusta a los tailandeses',
       dish1: 'Pad thai', dish2: 'Pad krapow', dish3: 'Helado de coco',
       lines: ['¡Hola! ¡Bienvenidos a Thong Heng Lee!', '¡Prueba nuestro pad krapow, el pad thai y el helado de coco!', 'Toca la tarjeta grande de abajo para pedir desde tu mesa.', '¿Tienes hambre? ¡La cocina está lista!'],
     },
@@ -762,7 +762,7 @@
       custTag: 'Pour les clients', custTitle: 'Clients : touchez ici pour commander',
       custDesc: 'Consultez la carte avec photos, choisissez vos plats et envoyez la commande en cuisine depuis votre table.',
       step1: 'Choisissez votre numéro de table', step2: 'Touchez « + Ajouter » sur les plats qui vous plaisent', step3: 'Envoyez la commande : on vous l’apporte à table',
-      custCta: 'Commander', favTitle: 'Nos incontournables', favBadge: 'Populaire',
+      custCta: 'Commander', favTitle: 'Nos incontournables', favBadge: 'Populaire', set1: 'Menu 1 : Le plus populaire', set2: 'Menu 2 : Choix du responsable', set3: 'Menu 3 : Les préférés des Thaïlandais',
       dish1: 'Pad thaï', dish2: 'Pad krapow', dish3: 'Glace à la noix de coco',
       lines: ['Bonjour ! Bienvenue chez Thong Heng Lee !', 'Goûtez notre pad krapow, notre pad thaï et notre glace coco !', 'Touchez la grande carte ci-dessous pour commander depuis votre table.', 'Une petite faim ? La cuisine est prête !'],
     },
@@ -781,7 +781,7 @@
       step3: 'Kirim pesanan — kami akan mengantarnya ke meja Anda',
       custCta: 'Pesan makanan',
       favTitle: 'Favorit andalan kami',
-      favBadge: 'Populer',
+      favBadge: 'Populer', set1: 'Paket 1: Terpopuler', set2: 'Paket 2: Rekomendasi manajer', set3: 'Paket 3: Favorit orang Thailand',
       dish1: 'Pad Thai',
       dish2: 'Pad Kra Pao',
       dish3: 'Es krim kelapa',
@@ -941,28 +941,29 @@
     $('#custLink').href = 'menu.html?table=' + tableParam + keyPart;
   }
 
-  // ---------- House favourites: a new set of photos every 5 seconds ----------
-  // Starts with the three house favourites (the photos already in the page), then goes through
-  // the tom yum soups and ice creams, and round again. To change what is shown, edit FAV_SETS:
-  // each row is [big photo, top right, bottom right], by dish id from menu-data.js. Names follow
-  // the menu; the first set keeps its short names (dish1–3 above). The change waits while the
-  // mouse or keyboard focus is on the photos, and while the page is in a background tab.
+  // ---------- House favourites: three recommended sets, one after another every 5 seconds ----------
+  // Each set is three dishes from three different menu categories (a rice dish, a noodle or soup
+  // dish, and a dessert). Drinks are not included. To change a set, edit FAV_SETS: each row is
+  // [big photo, top right, bottom right], by dish id from menu-data.js; the title shown above the
+  // photos is the matching set1 / set2 / set3 text in the language tables of this page. The change
+  // waits while the mouse or keyboard focus is on the photos, and while the page is in a background tab.
   const FAV_MS = 5000;
   const FAV_SETS = [
-    [{ id: 'R02', key: 'dish2', src: 'assets/images/dishes/pad-krapow.jpg' }, { id: '10001', key: 'dish1', src: 'assets/images/dishes/pad-thai.jpg' }, { id: '70040', key: 'dish3', src: 'assets/images/dishes/coconut-ice-cream.jpg' }],
-    [{ id: '40020' }, { id: '70030' }, { id: '70036' }], // tom yum chicken · Hua Hin coconut · Hua Hin Thai tea
-    [{ id: '70040' }, { id: '40010' }, { id: '70032' }], // coconut ice cream with toppings · tom yum seafood · Hua Hin durian
+    [{ id: 'R03' }, { id: '10003' }, { id: '70040' }],   // Set 1, most popular: minced beef holy basil rice · pad thai with shrimp · Chaokoh coconut ice cream with toppings
+    [{ id: '18110' }, { id: '40010' }, { id: '70060' }], // Set 2, manager's recommendation: stewed pork cartilage rice · tom yum seafood · mango sticky rice
+    [{ id: 'R06' }, { id: '40030' }, { id: '70010' }],   // Set 3, what Thai people love: seafood holy basil rice · stewed pork cartilage soup · grass jelly with fresh milk
   ];
   const favTiles = [...document.querySelectorAll('.fav')];
   const favMenu = Object.fromEntries(((window.THL_MENU && window.THL_MENU.items) || []).map((it) => [it.id, it]));
-  const favSets = FAV_SETS.filter((set, i) => i === 0 || set.every((d) => favMenu[d.id])); // a dish that left the menu drops its set
-  const favName = (d) => (d.key ? THL.t(d.key) : THL.pick(favMenu[d.id].name));
-  const favPhoto = (d) => d.src || `assets/images/menu/full/${d.id}.jpg`;
+  const favSets = FAV_SETS.map((set, i) => ({ n: i + 1, dishes: set })).filter((set) => set.dishes.every((d) => favMenu[d.id])); // a dish that left the menu drops its set
+  const favName = (d) => THL.pick(favMenu[d.id].name);
+  const favPhoto = (d) => `assets/images/menu/full/${d.id}.jpg`;
   let favAt = 0, favTimer = null, favHold = false, favBusy = false;
   // Names, alt text and links for the set on show (also after a language change).
   function favLabel() {
+    $('#favSet').textContent = THL.t('set' + favSets[favAt].n);
     favTiles.forEach((a, i) => {
-      const d = favSets[favAt][i];
+      const d = favSets[favAt].dishes[i];
       a.dataset.dish = d.id;
       a.href = 'menu.html?' + tableQuery + 'dish=' + d.id;
       a.querySelector('.cap > span').textContent = favName(d);
@@ -986,7 +987,7 @@
     favBusy = true;
     try {
       const next = (favAt + 1) % favSets.length;
-      const srcs = await Promise.all(favSets[next].map(favLoad)); // all three change together
+      const srcs = await Promise.all(favSets[next].dishes.map(favLoad)); // all three change together
       if (favHold || document.hidden) return;
       favAt = next;
       favTiles.forEach((a, i) => {
