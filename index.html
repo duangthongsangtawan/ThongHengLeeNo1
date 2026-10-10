@@ -795,7 +795,8 @@
   const qrParams = new URLSearchParams(location.search);
   const qrTable = /^\d{1,2}$/.test(qrParams.get('table') || '') ? qrParams.get('table') : '';
   const qrKey = /^[a-z0-9]{8,40}$/.test(qrParams.get('k') || '') ? qrParams.get('k') : '';
-  if (THL.PUBLIC && !(qrTable && qrKey)) {
+  // (While ordering without a QR code is open — site-config.js, opening hours — the ordering card stays.)
+  if (THL.PUBLIC && !(qrTable && qrKey) && !THL.orderWithoutQr()) {
     const VIEW = {
       th: { custTitle: 'ดูเมนูของร้าน', custDesc: 'ดูเมนูทั้งหมดพร้อมรูปและราคาในภาษาของคุณก่อนมาที่ร้าน', step1: 'เลือกภาษา', step2: 'เลือกดูอาหารตามหมวด', step3: 'กดดูรูปอาหารขนาดใหญ่', custCta: 'ดูเมนู', line: 'กดการ์ดสีเหลืองเพื่อดูเมนูของเราได้เลยครับ' },
       en: { custTitle: 'See our menu', custDesc: 'Browse the full menu with photos and prices in your language before you visit.', step1: 'Pick your language', step2: 'Browse dishes by category', step3: 'Open a dish to see its photo up close', custCta: 'View the menu', line: 'Tap the big card below to see our menu.' },

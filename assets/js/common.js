@@ -12,6 +12,19 @@
   const PUBLIC = Array.isArray(PUB.hosts) && PUB.hosts.includes(String(location.hostname || '').toLowerCase());
   const API_BASE = PUBLIC ? String(PUB.api || '').replace(/\/+$/, '') : '';
   const API_READY = !PUBLIC || Boolean(API_BASE);
+  // Ordering without a table QR code (publicSite.orderWithoutQr): the guest picks the table on the
+  // page. Open only during publicSite.orderWithoutQrHours, Bangkok time (fixed UTC+7, whatever the
+  // phone's own timezone). Same rule as cloud/src/hours.mjs — keep the two in step.
+  function orderWithoutQr(now = Date.now()) {
+    if (!PUBLIC || !API_READY || PUB.orderWithoutQr !== true) return false;
+    const hrs = PUB.orderWithoutQrHours;
+    if (!hrs) return true;
+    const mins = (v) => { const m = /^(\d{1,2}):(\d{2})$/.exec(String(v)); return m ? Number(m[1]) * 60 + Number(m[2]) : NaN; };
+    const local = new Date(now + 7 * 3600e3), at = local.getUTCHours() * 60 + local.getUTCMinutes();
+    const from = mins(hrs.from), to = mins(hrs.to);
+    if (!Array.isArray(hrs.days) || Number.isNaN(from) || Number.isNaN(to)) return false; // unreadable setting: stay closed
+    return hrs.days.includes(local.getUTCDay()) && at >= from && at < to;
+  }
   if (PUBLIC) document.documentElement.classList.add('public-site', 'view-only');
 
   // ===========================================================================
@@ -71,7 +84,7 @@
       "th": "ผู้จัดการร้าน",
       "en": "Restaurant manager",
       "zs": "餐厅经理",
-      "ja": "レストランマネージャー",
+      "ja": "店長",
       "my": "စားသောက်ဆိုင်မန်နေဂျာ",
       "ko": "매니저",
       "es": "Gerente del restaurante",
@@ -84,15 +97,15 @@
   {
     "name": "Sriprapai Sonjaipanich",
     "role": {
-      "th": "ผู้จัดการร้าน",
-      "en": "Restaurant manager",
-      "zs": "餐厅经理",
-      "ja": "レストランマネージャー",
-      "my": "စားသောက်ဆိုင်မန်နေဂျာ",
-      "ko": "매니저",
-      "es": "Gerente del restaurante",
-      "fr": "Responsable du restaurant",
-      "id":"Manajer restoran"
+      "th": "รองผู้จัดการร้าน",
+      "en": "Assistant manager",
+      "zs": "副店长",
+      "ja": "副店長",
+      "my": "လက်ထောက်မန်နေဂျာ",
+      "ko": "부점장",
+      "es": "Subgerente del restaurante",
+      "fr": "Responsable adjoint(e) du restaurant",
+      "id": "Wakil manajer restoran"
     },
     "group": "management",
     "photo": "assets/images/team/Sriprapai_profile.jpg"
@@ -830,7 +843,7 @@
   window.THL = {
     catIcon,
     SITE, LANGS, init, t, pick, baht, money, imgFallback, toast, post, subscribe, LIVE, businessDay,
-    PUBLIC, API_READY, checkTable,
+    PUBLIC, API_READY, orderWithoutQr, checkTable,
     login, logout, getStaffState, forgetStaffToken, getSales, orderStatus, hasToken: () => Boolean(getToken()),
     get lang() { return lang; },
     setLang,

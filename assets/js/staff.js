@@ -202,6 +202,9 @@
 
   const WORKFLOW = {"th":{"colNew":"รับออเดอร์แล้ว","colPrep":"เสิร์ฟครบแล้ว","colDone":"ชำระเงินแล้ววันนี้","served":"เสิร์ฟครบแล้ว","stServed":"เสิร์ฟครบแล้ว","paid":"ชำระเงินแล้ว","emptyNew":"ไม่มีออเดอร์รอเสิร์ฟ","emptyPrep":"ไม่มีออเดอร์รอชำระเงิน","emptyDone":"ยังไม่มีรายการชำระเงินหรือยกเลิกวันนี้","doneSum":"ชำระเงินแล้ว {n} ออเดอร์ · {sum}","confirmPaid":"ยืนยันว่าได้รับเงิน {sum} สำหรับออเดอร์ #{n} โต๊ะ {t} แล้ว?","confirmReopen":"ย้อนสถานะออเดอร์ #{n} ที่ชำระเงินแล้ว?","note":"กรุณาออกจากระบบเมื่อใช้เสร็จ ต้องเข้าสู่ระบบใหม่เมื่อเปิดหน้านี้","totalSales":"ยอดสั่งรวม","collected":"ชำระแล้ว","outstanding":"ค้างชำระ","tablesEmpty":"ไม่มีออเดอร์ค้างชำระ","tableTotal":"ยอดค้างชำระ","tablesNote":"รวมออเดอร์ที่ยังไม่ชำระเงินของแต่ละชื่อและโต๊ะ รวมวันก่อนหน้า ไม่รวมออเดอร์ที่ยกเลิก","salesNote":"วันขายนับตั้งแต่ 18:00 เมื่อวานถึง 17:59 วันนี้ ยอดสั่งรวมไม่รวมรายการยกเลิก ยอดชำระแล้วและค้างชำระเป็นสถานะล่าสุดของออเดอร์ที่สั่งในวันนั้น"},"en":{"colNew":"Ordered","colPrep":"All served","colDone":"Bill completed today","served":"All served","stServed":"All served","paid":"Bill completed","emptyNew":"No orders waiting to be served","emptyPrep":"No served orders awaiting payment","emptyDone":"No completed bills or cancellations today","doneSum":"{n} bills completed · {sum}","confirmPaid":"Confirm payment of {sum} received for order #{n}, table {t}?","confirmReopen":"Reopen paid order #{n}?","note":"Sign out when finished. Opening this page requires a new sign-in.","totalSales":"Order value","collected":"Paid","outstanding":"Outstanding","tablesEmpty":"No unpaid orders","tableTotal":"Outstanding","tablesNote":"Unpaid orders grouped by name and table, including earlier days. Cancelled orders are excluded.","salesNote":"Business day: 18:00 the previous evening to 17:59. Order value excludes cancellations. Paid and outstanding show the current status of orders placed on the selected day."}};
   Object.keys(WORKFLOW).forEach(k => Object.assign(DICT[k], WORKFLOW[k]));
+  // Orders sent from the public website without a table QR code (the guest picked the table).
+  Object.assign(DICT.th, { noQr: 'ไม่ได้สแกน QR · ยืนยันที่โต๊ะก่อน' });
+  Object.assign(DICT.en, { noQr: 'No QR · confirm at table' });
 
   const LANG_NAMES = { th: 'Thai / ไทย', en: 'English', 'zh-Hans': 'Chinese', ja: 'Japanese', my: 'Burmese', id: 'Indonesian', ko: 'Korean', es: 'Spanish', fr: 'French' };
   const LATE_MIN = 15; // waiting this long turns the ticket's timer red
@@ -301,6 +304,7 @@
     const who = el('span', 't-who');
     who.append(el('span', 't-table', `${t('table')} ${o.table}`));
     if (o.customerName) who.append(el('span', 't-name', '👤 ' + o.customerName));
+    if (o.qr === false) who.append(el('span', 't-noqr', t('noQr'))); // the guest picked the table on the page: check with them first
     head.append(who, meta);
 
     const ul = el('ul', 't-items');

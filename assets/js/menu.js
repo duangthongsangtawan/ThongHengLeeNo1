@@ -26,8 +26,8 @@
       stNew: 'ได้รับแล้ว', stPreparing: 'กำลังทำ', stServed: 'เสิร์ฟแล้ว', stCancelled: 'ยกเลิกแล้ว',
       cancelledHint: 'ออเดอร์นี้ถูกยกเลิก ไม่รวมในยอด',
       demo: 'โหมดทดลอง: ข้อมูลบันทึกในเบราว์เซอร์นี้เท่านั้น',
-      nameLabel: 'ชื่อของคุณ (ไม่บังคับ)', namePh: 'เช่น สมชาย', nameHint: 'ถ้านั่งโต๊ะเดียวกับอีกกลุ่ม ให้แต่ละกลุ่มใส่ชื่อของตัวเอง พนักงานจะแยกรายการได้ถูก',
-      cancel: 'ยกเลิก', needTable: 'เลือกโต๊ะก่อน จึงจะส่งออเดอร์ได้', tableExpired: 'ผ่านไปเกิน 1 ชั่วโมงแล้ว กรุณาเลือกโต๊ะอีกครั้ง',
+      nameLabel: 'ชื่อของคุณ (กรอกเป็นภาษาอังกฤษหรือภาษาไทย · ไม่บังคับ)', namePh: 'เช่น สมชาย / Somchai', nameHint: 'ถ้านั่งโต๊ะเดียวกับอีกกลุ่ม ให้แต่ละกลุ่มใส่ชื่อของตัวเอง พนักงานจะแยกรายการได้ถูก',
+      cancel: 'ยกเลิก', needTable: 'เลือกโต๊ะก่อน จึงจะส่งออเดอร์ได้', tableExpired: 'ผ่านไปเกิน 3 ชั่วโมงแล้ว กรุณาเลือกโต๊ะอีกครั้ง',
     },
     en: {
       title: 'Menu', sample: 'Sample prices — for preview only.',
@@ -47,8 +47,8 @@
       stNew: 'Received', stPreparing: 'Preparing', stServed: 'Served', stCancelled: 'Cancelled',
       cancelledHint: 'This order was cancelled and isn’t counted in the total.',
       demo: 'Demo mode: saved in this browser only. Run server.js to reach the staff screen over Wi-Fi.',
-      nameLabel: 'Your name (optional)', namePh: 'e.g. Somchai', nameHint: 'Sharing the table with another group? Each group uses its own name so the staff can keep the orders apart.',
-      cancel: 'Cancel', needTable: 'Choose your table to send an order', tableExpired: 'It’s been over an hour — please choose your table again.',
+      nameLabel: 'Your name (fill in English or Thai · optional)', namePh: 'e.g. Somchai', nameHint: 'Sharing the table with another group? Each group uses its own name so the staff can keep the orders apart.',
+      cancel: 'Cancel', needTable: 'Choose your table to send an order', tableExpired: 'It’s been over 3 hours — please choose your table again.',
     },
     'zh-Hans': {
       title: '菜单', sample: '本页价格为预览用示范价格。',
@@ -68,8 +68,8 @@
       stNew: '已接收', stPreparing: '制作中', stServed: '已上菜', stCancelled: '已取消',
       cancelledHint: '此订单已取消，不计入金额。',
       demo: '演示模式：数据仅保存在此浏览器。',
-      nameLabel: '您的姓名（选填）', namePh: '例如：小王', nameHint: '如果和其他客人同桌，请每组填写各自的姓名，方便店员区分订单。',
-      cancel: '取消', needTable: '请先选择桌号才能下单', tableExpired: '已超过 1 小时，请重新选择桌号。',
+      nameLabel: '您的姓名（请用英文或泰文填写 · 选填）', namePh: '例如：Somchai', nameHint: '如果和其他客人同桌，请每组填写各自的姓名，方便店员区分订单。',
+      cancel: '取消', needTable: '请先选择桌号才能下单', tableExpired: '已超过 3 小时，请重新选择桌号。',
     },
     ja: {
       title: 'メニュー', sample: '表示価格はプレビュー用のサンプルです。',
@@ -89,8 +89,8 @@
       stNew: '受付済み', stPreparing: '調理中', stServed: '提供済み', stCancelled: '取消済み',
       cancelledHint: 'この注文は取り消されました。合計には含まれません。',
       demo: 'デモモード：このブラウザにのみ保存されます。',
-      nameLabel: 'お名前（任意）', namePh: '例：ソムチャイ', nameHint: '他のグループと相席の場合は、グループごとにお名前を入れてください。スタッフが注文を区別できます。',
-      cancel: 'キャンセル', needTable: '注文するにはテーブルを選んでください', tableExpired: '1時間以上たったため、もう一度テーブルを選んでください。',
+      nameLabel: 'お名前（英語またはタイ語で入力・任意）', namePh: '例：Somchai', nameHint: '他のグループと相席の場合は、グループごとにお名前を入れてください。スタッフが注文を区別できます。',
+      cancel: 'キャンセル', needTable: '注文するにはテーブルを選んでください', tableExpired: '3時間以上たったため、もう一度テーブルを選んでください。',
     },
     my: {
       title: 'မီနူး', sample: 'နမူနာဈေးနှုန်း ဖြစ်ပါသည်။',
@@ -110,8 +110,8 @@
       stNew: 'လက်ခံပြီး', stPreparing: 'ချက်နေသည်', stServed: 'ချပေးပြီး', stCancelled: 'ပယ်ဖျက်ပြီး',
       cancelledHint: 'ဤအော်ဒါကို ပယ်ဖျက်ထားပြီး စုစုပေါင်းတွင် အကျုံးမဝင်ပါ။',
       demo: 'စမ်းသပ်မုဒ်: ဤဘရောက်ဇာတွင်သာ သိမ်းဆည်းထားပါသည်။',
-      nameLabel: 'သင့်အမည် (မထည့်လည်းရသည်)', namePh: 'ဥပမာ - ဆွမ်ချိုင်', nameHint: 'အခြားအဖွဲ့နှင့် စားပွဲတူထိုင်ပါက အဖွဲ့တစ်ဖွဲ့စီ ကိုယ့်အမည်ကိုထည့်ပါ — ဝန်ထမ်းများ အော်ဒါများကို ခွဲခြားနိုင်ပါမည်။',
-      cancel: 'မလုပ်တော့ပါ', needTable: 'အော်ဒါပို့ရန် စားပွဲကို အရင်ရွေးပါ', tableExpired: 'တစ်နာရီကျော်သွားပြီ — စားပွဲကို ထပ်မံရွေးပေးပါ။',
+      nameLabel: 'သင့်အမည် (အင်္ဂလိပ် သို့မဟုတ် ထိုင်းဘာသာဖြင့် ဖြည့်ပါ · မထည့်လည်းရသည်)', namePh: 'ဥပမာ - Somchai', nameHint: 'အခြားအဖွဲ့နှင့် စားပွဲတူထိုင်ပါက အဖွဲ့တစ်ဖွဲ့စီ ကိုယ့်အမည်ကိုထည့်ပါ — ဝန်ထမ်းများ အော်ဒါများကို ခွဲခြားနိုင်ပါမည်။',
+      cancel: 'မလုပ်တော့ပါ', needTable: 'အော်ဒါပို့ရန် စားပွဲကို အရင်ရွေးပါ', tableExpired: '၃ နာရီကျော်သွားပြီ — စားပွဲကို ထပ်မံရွေးပေးပါ။',
     },
     ko: {
       title: '메뉴', sample: '표시된 가격은 미리보기용 예시 가격입니다.',
@@ -131,8 +131,8 @@
       stNew: '접수됨', stPreparing: '조리 중', stServed: '서빙 완료', stCancelled: '취소됨',
       cancelledHint: '이 주문은 취소되어 합계에 포함되지 않습니다.',
       demo: '데모 모드: 이 브라우저에만 저장됩니다.',
-      nameLabel: '이름 (선택)', namePh: '예: 솜차이', nameHint: '다른 일행과 합석했다면 일행마다 각자 이름을 입력해 주세요. 직원이 주문을 구분할 수 있습니다.',
-      cancel: '취소', needTable: '주문하려면 테이블을 먼저 선택하세요', tableExpired: '1시간이 지났습니다. 테이블을 다시 선택해 주세요.',
+      nameLabel: '이름 (영어 또는 태국어로 입력 · 선택)', namePh: '예: Somchai', nameHint: '다른 일행과 합석했다면 일행마다 각자 이름을 입력해 주세요. 직원이 주문을 구분할 수 있습니다.',
+      cancel: '취소', needTable: '주문하려면 테이블을 먼저 선택하세요', tableExpired: '3시간이 지났습니다. 테이블을 다시 선택해 주세요.',
     },
     es: {
       title: 'Carta', sample: 'Precios de ejemplo, solo para la vista previa.',
@@ -152,8 +152,8 @@
       stNew: 'Recibido', stPreparing: 'Preparando', stServed: 'Servido', stCancelled: 'Cancelado',
       cancelledHint: 'Este pedido se canceló y no cuenta en el total.',
       demo: 'Modo demo: se guarda solo en este navegador.',
-      nameLabel: 'Tu nombre (opcional)', namePh: 'p. ej.: Somchai', nameHint: '¿Compartes mesa con otro grupo? Que cada grupo use su propio nombre para que el personal separe los pedidos.',
-      cancel: 'Cancelar', needTable: 'Elige tu mesa para poder enviar el pedido', tableExpired: 'Ha pasado más de una hora: vuelve a elegir tu mesa, por favor.',
+      nameLabel: 'Tu nombre (escríbelo en inglés o tailandés · opcional)', namePh: 'p. ej.: Somchai', nameHint: '¿Compartes mesa con otro grupo? Que cada grupo use su propio nombre para que el personal separe los pedidos.',
+      cancel: 'Cancelar', needTable: 'Elige tu mesa para poder enviar el pedido', tableExpired: 'Han pasado más de 3 horas: vuelve a elegir tu mesa, por favor.',
     },
     fr: {
       title: 'Carte', sample: 'Prix d’exemple, pour l’aperçu uniquement.',
@@ -173,8 +173,8 @@
       stNew: 'Reçue', stPreparing: 'En préparation', stServed: 'Servie', stCancelled: 'Annulée',
       cancelledHint: 'Cette commande a été annulée et n’est pas comptée dans le total.',
       demo: 'Mode démo : enregistré dans ce navigateur uniquement.',
-      nameLabel: 'Votre nom (facultatif)', namePh: 'ex. : Somchai', nameHint: 'Vous partagez la table avec un autre groupe ? Chaque groupe indique son propre nom pour que le personnel distingue les commandes.',
-      cancel: 'Annuler', needTable: 'Choisissez votre table pour envoyer la commande', tableExpired: 'Plus d’une heure s’est écoulée : merci de choisir à nouveau votre table.',
+      nameLabel: 'Votre nom (à écrire en anglais ou en thaï · facultatif)', namePh: 'ex. : Somchai', nameHint: 'Vous partagez la table avec un autre groupe ? Chaque groupe indique son propre nom pour que le personnel distingue les commandes.',
+      cancel: 'Annuler', needTable: 'Choisissez votre table pour envoyer la commande', tableExpired: 'Plus de 3 heures se sont écoulées : merci de choisir à nouveau votre table.',
     },
     id: {
       title: 'Menu',
@@ -218,12 +218,12 @@
       stCancelled: 'Dibatalkan',
       cancelledHint: 'Pesanan ini dibatalkan dan tidak dihitung dalam total.',
       demo: 'Mode demo: hanya tersimpan di peramban ini. Jalankan server.js untuk terhubung ke layar staf lewat Wi-Fi.',
-      nameLabel: 'Nama Anda (opsional)',
+      nameLabel: 'Nama Anda (isi dalam bahasa Inggris atau Thai · opsional)',
       namePh: 'mis. Somchai',
       nameHint: 'Berbagi meja dengan rombongan lain? Setiap rombongan memakai nama sendiri agar staf dapat memisahkan pesanan.',
       cancel: 'Batal',
       needTable: 'Pilih meja Anda untuk mengirim pesanan',
-      tableExpired: 'Sudah lebih dari satu jam — silakan pilih meja Anda lagi.',
+      tableExpired: 'Sudah lebih dari 3 jam — silakan pilih meja Anda lagi.',
     },
   };
 
@@ -250,15 +250,26 @@
   Object.assign(DICT["id"], {"rateTitle":"Terlalu banyak permintaan pesanan","rateWait":"Tunggu {s} detik, lalu coba lagi. Keranjang Anda tersimpan."});
 
   // Public website (ordering through a table QR code): notices and the no-connection message.
-  Object.assign(DICT["th"], {"qrNeeded": "สั่งอาหารได้โดยสแกน QR code ที่โต๊ะในร้าน", "qrInvalid": "QR code ของโต๊ะนี้ใช้ไม่ได้แล้ว กรุณาแจ้งพนักงาน", "orderOffline": "ขณะนี้ยังสั่งอาหารออนไลน์ไม่ได้ กรุณาสั่งกับพนักงาน", "qrExpired": "ผ่านไปเกิน 1 ชั่วโมงแล้ว กรุณาสแกน QR code ที่โต๊ะอีกครั้ง", "errNetTitlePub": "เชื่อมต่อกับร้านไม่ได้", "errNetPub": "ออเดอร์ยังไม่ถูกส่ง เพราะอินเทอร์เน็ตของโทรศัพท์หรือระบบของร้านไม่ตอบสนอง รายการที่เลือกยังอยู่ครบ ลองส่งอีกครั้ง หรือสั่งกับพนักงาน"});
-  Object.assign(DICT["en"], {"qrNeeded": "To order, scan the QR code on your table at the restaurant.", "qrInvalid": "This table’s QR code is no longer valid. Please ask our staff.", "orderOffline": "Online ordering isn’t available right now. Please order with our staff.", "qrExpired": "It’s been over an hour — please scan your table’s QR code again.", "errNetTitlePub": "Can’t reach the restaurant", "errNetPub": "The order was not sent: your phone’s internet or the restaurant’s system is not responding. Your items are still here. Try again, or order with our staff."});
-  Object.assign(DICT["zh-Hans"], {"qrNeeded": "请在店内扫描桌上的二维码点餐。", "qrInvalid": "此桌的二维码已失效，请联系店员。", "orderOffline": "目前无法在线点餐，请向店员点餐。", "qrExpired": "已超过 1 小时，请重新扫描桌上的二维码。", "errNetTitlePub": "无法连接餐厅", "errNetPub": "订单尚未送出：手机网络或餐厅系统没有响应。已选餐点仍然保留。请再试一次，或直接向店员点餐。"});
-  Object.assign(DICT["ja"], {"qrNeeded": "ご注文は、店内のテーブルにあるQRコードを読み取ってください。", "qrInvalid": "このテーブルのQRコードは無効になっています。スタッフにお声がけください。", "orderOffline": "ただいまオンライン注文をご利用いただけません。スタッフにご注文ください。", "qrExpired": "1時間以上たったため、テーブルのQRコードをもう一度読み取ってください。", "errNetTitlePub": "お店のシステムに接続できません", "errNetPub": "注文はまだ送信されていません。スマートフォンの通信、またはお店のシステムが応答していません。選んだ料理はそのまま残っています。もう一度お試しいただくか、スタッフにご注文ください。"});
-  Object.assign(DICT["my"], {"qrNeeded": "အော်ဒါမှာရန် ဆိုင်ရှိ သင့်စားပွဲပေါ်က QR ကုဒ်ကို စကင်ဖတ်ပါ။", "qrInvalid": "ဤစားပွဲ၏ QR ကုဒ်သည် အသုံးမပြုနိုင်တော့ပါ။ ဝန်ထမ်းကို ပြောပါ။", "orderOffline": "ယခုအချိန်တွင် အွန်လိုင်းမှ အော်ဒါမမှာနိုင်ပါ။ ဝန်ထမ်းထံ မှာယူပါ။", "qrExpired": "တစ်နာရီကျော်သွားပါပြီ။ စားပွဲပေါ်က QR ကုဒ်ကို ထပ်မံစကင်ဖတ်ပါ။", "errNetTitlePub": "ဆိုင်စနစ်နှင့် ချိတ်ဆက်၍မရပါ", "errNetPub": "အော်ဒါ မပို့ရသေးပါ။ သင့်ဖုန်းအင်တာနက် သို့မဟုတ် ဆိုင်စနစ်က တုံ့ပြန်မှုမရှိပါ။ ရွေးထားသောဟင်းပွဲများ ကျန်ရှိနေပါသည်။ ထပ်မံကြိုးစားပါ သို့မဟုတ် ဝန်ထမ်းထံ မှာယူပါ။"});
-  Object.assign(DICT["ko"], {"qrNeeded": "주문하시려면 매장 테이블의 QR 코드를 스캔해 주세요.", "qrInvalid": "이 테이블의 QR 코드는 더 이상 사용할 수 없습니다. 직원에게 문의해 주세요.", "orderOffline": "지금은 온라인 주문을 이용할 수 없습니다. 직원에게 주문해 주세요.", "qrExpired": "1시간이 지났습니다. 테이블의 QR 코드를 다시 스캔해 주세요.", "errNetTitlePub": "매장 시스템에 연결할 수 없습니다", "errNetPub": "주문이 아직 전송되지 않았습니다. 휴대폰 인터넷 또는 매장 시스템이 응답하지 않습니다. 담은 메뉴는 그대로 있습니다. 다시 시도하거나 직원에게 주문해 주세요."});
-  Object.assign(DICT["es"], {"qrNeeded": "Para pedir, escanea el código QR de tu mesa en el restaurante.", "qrInvalid": "El código QR de esta mesa ya no es válido. Avisa al personal, por favor.", "orderOffline": "Ahora mismo no se puede pedir en línea. Pide al personal, por favor.", "qrExpired": "Ha pasado más de una hora: vuelve a escanear el código QR de tu mesa.", "errNetTitlePub": "No se puede conectar con el restaurante", "errNetPub": "El pedido no se ha enviado: no responde la conexión de tu teléfono o el sistema del restaurante. Tus platos siguen aquí. Inténtalo de nuevo o pide al personal."});
-  Object.assign(DICT["fr"], {"qrNeeded": "Pour commander, scannez le code QR de votre table au restaurant.", "qrInvalid": "Le code QR de cette table n’est plus valable. Merci de prévenir le personnel.", "orderOffline": "La commande en ligne n’est pas disponible pour le moment. Merci de commander auprès du personnel.", "qrExpired": "Plus d’une heure s’est écoulée : merci de scanner à nouveau le code QR de votre table.", "errNetTitlePub": "Impossible de joindre le restaurant", "errNetPub": "La commande n’a pas été envoyée : la connexion de votre téléphone ou le système du restaurant ne répond pas. Vos plats sont toujours là. Réessayez ou commandez auprès du personnel."});
-  Object.assign(DICT["id"], {"qrNeeded":"Untuk memesan, pindai kode QR di meja Anda di restoran.","qrInvalid":"Kode QR meja ini sudah tidak berlaku. Silakan tanyakan kepada staf kami.","orderOffline":"Pemesanan online sedang tidak tersedia. Silakan pesan melalui staf kami.","qrExpired":"Sudah lebih dari satu jam — silakan pindai kembali kode QR meja Anda.","errNetTitlePub":"Tidak dapat terhubung ke restoran","errNetPub":"Pesanan tidak terkirim: internet ponsel Anda atau sistem restoran tidak merespons. Pesanan Anda masih tersimpan di sini. Coba lagi, atau pesan melalui staf kami."});
+  Object.assign(DICT["th"], {"qrNeeded": "สั่งอาหารได้โดยสแกน QR code ที่โต๊ะในร้าน", "qrInvalid": "QR code ของโต๊ะนี้ใช้ไม่ได้แล้ว กรุณาแจ้งพนักงาน", "orderOffline": "ขณะนี้ยังสั่งอาหารออนไลน์ไม่ได้ กรุณาสั่งกับพนักงาน", "qrExpired": "ผ่านไปเกิน 3 ชั่วโมงแล้ว กรุณาสแกน QR code ที่โต๊ะอีกครั้ง", "errNetTitlePub": "เชื่อมต่อกับร้านไม่ได้", "errNetPub": "ออเดอร์ยังไม่ถูกส่ง เพราะอินเทอร์เน็ตของโทรศัพท์หรือระบบของร้านไม่ตอบสนอง รายการที่เลือกยังอยู่ครบ ลองส่งอีกครั้ง หรือสั่งกับพนักงาน"});
+  Object.assign(DICT["en"], {"qrNeeded": "To order, scan the QR code on your table at the restaurant.", "qrInvalid": "This table’s QR code is no longer valid. Please ask our staff.", "orderOffline": "Online ordering isn’t available right now. Please order with our staff.", "qrExpired": "It’s been over 3 hours — please scan your table’s QR code again.", "errNetTitlePub": "Can’t reach the restaurant", "errNetPub": "The order was not sent: your phone’s internet or the restaurant’s system is not responding. Your items are still here. Try again, or order with our staff."});
+  Object.assign(DICT["zh-Hans"], {"qrNeeded": "请在店内扫描桌上的二维码点餐。", "qrInvalid": "此桌的二维码已失效，请联系店员。", "orderOffline": "目前无法在线点餐，请向店员点餐。", "qrExpired": "已超过 3 小时，请重新扫描桌上的二维码。", "errNetTitlePub": "无法连接餐厅", "errNetPub": "订单尚未送出：手机网络或餐厅系统没有响应。已选餐点仍然保留。请再试一次，或直接向店员点餐。"});
+  Object.assign(DICT["ja"], {"qrNeeded": "ご注文は、店内のテーブルにあるQRコードを読み取ってください。", "qrInvalid": "このテーブルのQRコードは無効になっています。スタッフにお声がけください。", "orderOffline": "ただいまオンライン注文をご利用いただけません。スタッフにご注文ください。", "qrExpired": "3時間以上たったため、テーブルのQRコードをもう一度読み取ってください。", "errNetTitlePub": "お店のシステムに接続できません", "errNetPub": "注文はまだ送信されていません。スマートフォンの通信、またはお店のシステムが応答していません。選んだ料理はそのまま残っています。もう一度お試しいただくか、スタッフにご注文ください。"});
+  Object.assign(DICT["my"], {"qrNeeded": "အော်ဒါမှာရန် ဆိုင်ရှိ သင့်စားပွဲပေါ်က QR ကုဒ်ကို စကင်ဖတ်ပါ။", "qrInvalid": "ဤစားပွဲ၏ QR ကုဒ်သည် အသုံးမပြုနိုင်တော့ပါ။ ဝန်ထမ်းကို ပြောပါ။", "orderOffline": "ယခုအချိန်တွင် အွန်လိုင်းမှ အော်ဒါမမှာနိုင်ပါ။ ဝန်ထမ်းထံ မှာယူပါ။", "qrExpired": "၃ နာရီကျော်သွားပါပြီ။ စားပွဲပေါ်က QR ကုဒ်ကို ထပ်မံစကင်ဖတ်ပါ။", "errNetTitlePub": "ဆိုင်စနစ်နှင့် ချိတ်ဆက်၍မရပါ", "errNetPub": "အော်ဒါ မပို့ရသေးပါ။ သင့်ဖုန်းအင်တာနက် သို့မဟုတ် ဆိုင်စနစ်က တုံ့ပြန်မှုမရှိပါ။ ရွေးထားသောဟင်းပွဲများ ကျန်ရှိနေပါသည်။ ထပ်မံကြိုးစားပါ သို့မဟုတ် ဝန်ထမ်းထံ မှာယူပါ။"});
+  Object.assign(DICT["ko"], {"qrNeeded": "주문하시려면 매장 테이블의 QR 코드를 스캔해 주세요.", "qrInvalid": "이 테이블의 QR 코드는 더 이상 사용할 수 없습니다. 직원에게 문의해 주세요.", "orderOffline": "지금은 온라인 주문을 이용할 수 없습니다. 직원에게 주문해 주세요.", "qrExpired": "3시간이 지났습니다. 테이블의 QR 코드를 다시 스캔해 주세요.", "errNetTitlePub": "매장 시스템에 연결할 수 없습니다", "errNetPub": "주문이 아직 전송되지 않았습니다. 휴대폰 인터넷 또는 매장 시스템이 응답하지 않습니다. 담은 메뉴는 그대로 있습니다. 다시 시도하거나 직원에게 주문해 주세요."});
+  Object.assign(DICT["es"], {"qrNeeded": "Para pedir, escanea el código QR de tu mesa en el restaurante.", "qrInvalid": "El código QR de esta mesa ya no es válido. Avisa al personal, por favor.", "orderOffline": "Ahora mismo no se puede pedir en línea. Pide al personal, por favor.", "qrExpired": "Han pasado más de 3 horas: vuelve a escanear el código QR de tu mesa.", "errNetTitlePub": "No se puede conectar con el restaurante", "errNetPub": "El pedido no se ha enviado: no responde la conexión de tu teléfono o el sistema del restaurante. Tus platos siguen aquí. Inténtalo de nuevo o pide al personal."});
+  Object.assign(DICT["fr"], {"qrNeeded": "Pour commander, scannez le code QR de votre table au restaurant.", "qrInvalid": "Le code QR de cette table n’est plus valable. Merci de prévenir le personnel.", "orderOffline": "La commande en ligne n’est pas disponible pour le moment. Merci de commander auprès du personnel.", "qrExpired": "Plus de 3 heures se sont écoulées : merci de scanner à nouveau le code QR de votre table.", "errNetTitlePub": "Impossible de joindre le restaurant", "errNetPub": "La commande n’a pas été envoyée : la connexion de votre téléphone ou le système du restaurant ne répond pas. Vos plats sont toujours là. Réessayez ou commandez auprès du personnel."});
+  Object.assign(DICT["id"], {"qrNeeded":"Untuk memesan, pindai kode QR di meja Anda di restoran.","qrInvalid":"Kode QR meja ini sudah tidak berlaku. Silakan tanyakan kepada staf kami.","orderOffline":"Pemesanan online sedang tidak tersedia. Silakan pesan melalui staf kami.","qrExpired":"Sudah lebih dari 3 jam — silakan pindai kembali kode QR meja Anda.","errNetTitlePub":"Tidak dapat terhubung ke restoran","errNetPub":"Pesanan tidak terkirim: internet ponsel Anda atau sistem restoran tidak merespons. Pesanan Anda masih tersimpan di sini. Coba lagi, atau pesan melalui staf kami."});
+
+  // Guest name: shown under the box when a character that is not English or Thai was removed.
+  Object.assign(DICT["th"], {"nameRule": "กรุณาใช้ตัวอักษรภาษาอังกฤษหรือภาษาไทยเท่านั้น"});
+  Object.assign(DICT["en"], {"nameRule": "Please use English or Thai letters only."});
+  Object.assign(DICT["zh-Hans"], {"nameRule": "请只使用英文或泰文字母。"});
+  Object.assign(DICT["ja"], {"nameRule": "英語またはタイ語の文字のみでご入力ください。"});
+  Object.assign(DICT["my"], {"nameRule": "အင်္ဂလိပ် သို့မဟုတ် ထိုင်းစာလုံးများကိုသာ အသုံးပြုပါ။"});
+  Object.assign(DICT["ko"], {"nameRule": "영어 또는 태국어 문자만 사용해 주세요."});
+  Object.assign(DICT["es"], {"nameRule": "Usa solo letras en inglés o tailandés."});
+  Object.assign(DICT["fr"], {"nameRule": "Merci d’utiliser uniquement des lettres anglaises ou thaïes."});
+  Object.assign(DICT["id"], {"nameRule": "Gunakan huruf bahasa Inggris atau Thai saja."});
 
   // ---------- Persistent state ----------
   const store = {
@@ -282,15 +293,17 @@
   // also carries that table's key. Until the shop computer has confirmed the key the page is a
   // menu to look at: no table picker, no "+ Add", no order bar (site.css: html.view-only).
   const PUBLIC = Boolean(THL.PUBLIC);
+  // While ordering without a QR code is open (THL.orderWithoutQr(): site-config.js, opening hours
+  // only) a visitor with no code can order too, by picking the table on the page as on the shop Wi-Fi.
   let ordering = !PUBLIC;
   let tableKey = '';
   const KEY_RE = /^[a-z0-9]{8,40}$/;
 
   // ---------- Table (this browser tab only) ----------
-  // The chosen table expires an hour after it was set — e.g. a phone left open after the guests
+  // The chosen table expires 3 hours after it was set (long enough for a slow meal) — e.g. a phone left open after the guests
   // have gone — and the guest has to pick it again. Scanning the table's QR code counts as picking it.
-  const TABLE_TTL_MS = 3600e3;
-  let expiredOnLoad = false; // page reopened after the hour ran out → say why we ask again
+  const TABLE_TTL_MS = 3 * 3600e3;
+  let expiredOnLoad = false; // page reopened after the time ran out → say why we ask again
   const validTable = (n) => Number.isInteger(n) && n >= 1 && n <= THL.SITE.tables;
   function initTable() {
     const params = new URLSearchParams(location.search);
@@ -333,8 +346,8 @@
     clearTimeout(statusTimer); statusTimer = null; // no more status polling for the old table
     renderTableChip();
     if ($('#orderSheet').open) renderCart();
-    if (PUBLIC) setOrdering(false, 'qrExpired'); // the guest scans the table's code again
-    else openTablePicker(true);
+    if (PUBLIC && !THL.orderWithoutQr()) setOrdering(false, 'qrExpired'); // the guest scans the table's code again
+    else { if (PUBLIC) setOrdering(true); openTablePicker(true); }
     return true;
   }
   // Optional guest name, sent with each order so staff can total up per name when two groups share
@@ -344,7 +357,9 @@
     set(k, v) { try { v == null || v === '' ? sessionStorage.removeItem(k) : sessionStorage.setItem(k, v); } catch (e) {} },
   };
   const nameKey = (n) => 'thl-name-' + n;
-  const cleanName = (s) => String(s || '').replace(/\s+/g, ' ').trim().slice(0, 40);
+  // Names are English or Thai letters only, so staff can read them (the order server applies the same rule).
+  const NAME_STRIP = /[^A-Za-z0-9\u0E00-\u0E7F .'-]+/g;
+  const cleanName = (s) => String(s || '').replace(NAME_STRIP, '').replace(/\s+/g, ' ').trim().slice(0, 40);
   let guestName = '';
   function setGuestName(name) {
     guestName = cleanName(name);
@@ -356,7 +371,7 @@
     if (n !== table) guestName = cleanName(session.get(nameKey(n)));
     table = n;
     session.set('thl-table', String(n));
-    session.set('thl-table-at', String(setAt)); // picking (or re-picking) a table starts a new hour
+    session.set('thl-table-at', String(setAt)); // picking (or re-picking) a table starts the time again
     renderTableChip();
     if (notify) toast(`${t('table')} ${n}`);
     if (notify) checkStatus();
@@ -601,7 +616,7 @@
   }
 
   function openTablePicker(expired = false) {
-    if (PUBLIC) return; // the table comes from the QR code
+    if (PUBLIC && (tableKey || !ordering)) return; // scanned a QR code: the table comes from it
     $('#tableExpired').hidden = !expired;
     const grid = $('#tables');
     grid.textContent = '';
@@ -693,8 +708,9 @@
     } catch (e) {
       // Cart, note and clientId are all kept, so "Try sending again" resends the very same order
       sending = false;
-      // The table's QR code was replaced while this phone was ordering: back to the look-only menu.
-      if (PUBLIC && e.status === 403) { sendError = null; renderSendState(); clearTable(); setOrdering(false, 'qrInvalid'); return; }
+      // The table's QR code was replaced while this phone was ordering, or ordering without a code
+      // has just closed for the day. The basket is kept.
+      if (PUBLIC && e.status === 403) { const hadKey = Boolean(tableKey); sendError = null; renderSendState(); clearTable(); denied(hadKey); return; }
       sendError = { kind: e.kind || 'network', code: e.status || '', retryAfter: e.retryAfter || 60 };
       renderSendState();
       $('#sendError').scrollIntoView({ block: 'nearest' });
@@ -716,10 +732,21 @@
   // Ask the shop computer whether the scanned table key is good. No key → look-only menu;
   // no answer (shop closed, computer off) → look-only menu, asking again every 30 seconds.
   let verifyTimer = null, verifying = false;
+  // The order server said no (403). With a QR key that no longer works: the guest picks the table
+  // instead while ordering without a code is open, else is told the code is not valid. Without a
+  // key: ordering without a code is closed right now.
+  function denied(hadKey) {
+    if (hadKey && THL.orderWithoutQr()) { setOrdering(true); openTablePicker(); }
+    else setOrdering(false, hadKey ? 'qrInvalid' : 'qrNeeded');
+  }
   async function verifyTable() {
     clearTimeout(verifyTimer);
     if (!PUBLIC || verifying) return;
-    if (!table || !tableKey) return setOrdering(false, expiredOnLoad ? 'qrExpired' : 'qrNeeded');
+    if (!table || !tableKey) {
+      // No QR code: ordering is on while ordering without a code is open (never when the order server is not set up).
+      if (THL.orderWithoutQr()) return setOrdering(true);
+      return setOrdering(false, expiredOnLoad ? 'qrExpired' : 'qrNeeded');
+    }
     if (!THL.API_READY) return setOrdering(false, 'orderOffline');
     verifying = true;
     try {
@@ -727,7 +754,7 @@
       setOrdering(true);
       checkStatus();
     } catch (e) {
-      if (e.status === 403) { clearTable(); setOrdering(false, 'qrInvalid'); }
+      if (e.status === 403) { clearTable(); denied(true); }
       else { if (!ordering) setOrdering(false, 'orderOffline'); verifyTimer = setTimeout(verifyTable, 30000); }
     } finally { verifying = false; }
   }
@@ -840,8 +867,29 @@
   // The name is part of the order too: changing it after a failed send makes it a new order (fresh clientId)
   $('#orderName').addEventListener('input', (e) => { setGuestName(e.target.value); if (clientId || sendError) { newAttempt(); renderSendState(); } });
 
+  // Names must be English or Thai letters: anything else is removed as it is typed and a line under
+  // the box says why. (Waits for an IME composition to finish before removing anything.)
+  ['tableName', 'orderName'].forEach((id) => {
+    const input = $('#' + id);
+    const rule = h('small', { class: 'name-rule', 'data-i18n': 'nameRule', hidden: '' }, t('nameRule'));
+    input.after(rule);
+    const fix = (e) => {
+      if (e.isComposing) return;
+      const clean = input.value.replace(NAME_STRIP, '');
+      rule.hidden = clean === input.value;
+      if (clean !== input.value) input.value = clean;
+    };
+    input.addEventListener('input', fix);
+    input.addEventListener('compositionend', fix);
+  });
+
   if (PUBLIC) { spotlightDish(); verifyTable(); }
   else if (!table) openTablePicker(expiredOnLoad); else spotlightDish();
   checkStatus(); // pick up anything that changed while the page was closed
-  setInterval(() => { if (!document.hidden) expireTable(); }, 30000);
+  setInterval(() => {
+    if (document.hidden) return;
+    expireTable();
+    // Ordering without a QR code opens and closes with the shop's hours.
+    if (PUBLIC && !tableKey && !sending && ordering !== THL.orderWithoutQr()) verifyTable();
+  }, 30000);
 })();
