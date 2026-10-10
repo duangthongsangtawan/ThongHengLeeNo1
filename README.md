@@ -25,4 +25,4 @@ that is empty, or the server is off, the site shows the menu only.
 
 These files are the same as in the restaurant's working copy; change both together.
 
-The site is plain HTML, CSS and JavaScript with no build step, served by GitHub Pages from the `gh-pages` branch (`main` holds the same files).
+The site is plain HTML, CSS and JavaScript with no build step, served by GitHub Pages from the `main` branch.
