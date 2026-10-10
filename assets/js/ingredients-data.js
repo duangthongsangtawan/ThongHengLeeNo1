@@ -8,7 +8,6 @@ window.THL_INGREDIENTS = {
     "ja": "商品ラベルの原材料を確認中",
     "my": "ကုန်ပစ္စည်းတံဆိပ်မှ ပါဝင်ပစ္စည်းများ စစ်ဆေးရန်",
     "ko": "제품 라벨 성분 확인 예정",
-    "es": "Ingredientes pendientes de la etiqueta",
     "fr": "Ingrédients à confirmer sur l’étiquette",
     "id": "Bahan menunggu konfirmasi dari label produk"
   },
@@ -19,7 +18,6 @@ window.THL_INGREDIENTS = {
     "ja": "主な材料のみです。食物アレルギーはスタッフへお知らせください。",
     "my": "အဓိကပါဝင်ပစ္စည်းများသာ။ အစားအစာဓာတ်မတည့်မှုရှိပါက ဝန်ထမ်းကိုပြောပါ။",
     "ko": "주요 재료만 표시합니다. 음식 알레르기가 있으면 직원에게 알려 주세요.",
-    "es": "Solo ingredientes principales. Informe al personal de alergias.",
     "fr": "Principaux ingrédients uniquement. Signalez vos allergies au personnel.",
     "id": "Hanya bahan utama, bukan daftar lengkap. Beri tahu staf jika Anda memiliki alergi makanan."
   },
@@ -50,10 +48,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "쌀밥",
           "물"
-        ],
-        "es": [
-          "Arroz",
-          "Agua"
         ],
         "fr": [
           "Riz",
@@ -103,12 +97,6 @@ window.THL_INGREDIENTS = {
           "달걀",
           "숙주",
           "땅콩"
-        ],
-        "es": [
-          "Fideos de arroz",
-          "Huevo",
-          "Brotes de soja",
-          "Cacahuetes"
         ],
         "fr": [
           "Nouilles de riz",
@@ -163,12 +151,6 @@ window.THL_INGREDIENTS = {
           "달걀",
           "땅콩"
         ],
-        "es": [
-          "Fideos de arroz",
-          "Pollo",
-          "Huevo",
-          "Cacahuetes"
-        ],
         "fr": [
           "Nouilles de riz",
           "Poulet",
@@ -221,12 +203,6 @@ window.THL_INGREDIENTS = {
           "새우",
           "달걀",
           "땅콩"
-        ],
-        "es": [
-          "Fideos de arroz",
-          "Gambas",
-          "Huevo",
-          "Cacahuetes"
         ],
         "fr": [
           "Nouilles de riz",
@@ -281,12 +257,6 @@ window.THL_INGREDIENTS = {
           "달걀",
           "땅콩"
         ],
-        "es": [
-          "Fideos de arroz",
-          "Pescado, gambas y calamar",
-          "Huevo",
-          "Cacahuetes"
-        ],
         "fr": [
           "Nouilles de riz",
           "Poisson, crevettes et calamar",
@@ -296,6 +266,59 @@ window.THL_INGREDIENTS = {
         "id": [
           "Mi beras",
           "Ikan, udang & cumi",
+          "Telur",
+          "Kacang tanah"
+        ]
+      }
+    },
+    "10005": {
+      "review": "Draft",
+      "lists": {
+        "th": [
+          "เส้นจันท์",
+          "หมู",
+          "ไข่",
+          "ถั่ว"
+        ],
+        "en": [
+          "Rice noodles",
+          "Pork",
+          "Egg",
+          "Peanuts"
+        ],
+        "zs": [
+          "米粉",
+          "猪肉",
+          "鸡蛋",
+          "花生"
+        ],
+        "ja": [
+          "米麺",
+          "豚肉",
+          "卵",
+          "ピーナッツ"
+        ],
+        "my": [
+          "ဆန်ခေါက်ဆွဲ",
+          "ဝက်သား",
+          "ကြက်ဥ",
+          "မြေပဲ"
+        ],
+        "ko": [
+          "쌀국수",
+          "돼지고기",
+          "달걀",
+          "땅콩"
+        ],
+        "fr": [
+          "Nouilles de riz",
+          "Porc",
+          "Œuf",
+          "Cacahuètes"
+        ],
+        "id": [
+          "Mi beras",
+          "Babi",
           "Telur",
           "Kacang tanah"
         ]
@@ -339,12 +362,6 @@ window.THL_INGREDIENTS = {
           "생선·새우·오징어",
           "카레 가루",
           "달걀"
-        ],
-        "es": [
-          "Arroz",
-          "Pescado, gambas y calamar",
-          "Curry en polvo",
-          "Huevo"
         ],
         "fr": [
           "Riz",
@@ -399,12 +416,6 @@ window.THL_INGREDIENTS = {
           "달걀",
           "마늘"
         ],
-        "es": [
-          "Arroz",
-          "Gambas",
-          "Huevo",
-          "Ajo"
-        ],
         "fr": [
           "Riz",
           "Crevettes",
@@ -458,12 +469,6 @@ window.THL_INGREDIENTS = {
           "당근",
           "육수"
         ],
-        "es": [
-          "Arroz",
-          "Cartílago de cerdo",
-          "Zanahoria",
-          "Caldo"
-        ],
         "fr": [
           "Riz",
           "Cartilage de porc",
@@ -475,6 +480,112 @@ window.THL_INGREDIENTS = {
           "Tulang rawan babi",
           "Wortel",
           "Kaldu"
+        ]
+      }
+    },
+    "18310": {
+      "review": "Draft",
+      "lists": {
+        "th": [
+          "ข้าว",
+          "หมู",
+          "ไข่",
+          "กระเทียม"
+        ],
+        "en": [
+          "Rice",
+          "Pork",
+          "Egg",
+          "Garlic"
+        ],
+        "zs": [
+          "米饭",
+          "猪肉",
+          "鸡蛋",
+          "大蒜"
+        ],
+        "ja": [
+          "ごはん",
+          "豚肉",
+          "卵",
+          "にんにく"
+        ],
+        "my": [
+          "ထမင်း",
+          "ဝက်သား",
+          "ကြက်ဥ",
+          "ကြက်သွန်ဖြူ"
+        ],
+        "ko": [
+          "쌀밥",
+          "돼지고기",
+          "달걀",
+          "마늘"
+        ],
+        "fr": [
+          "Riz",
+          "Porc",
+          "Œuf",
+          "Ail"
+        ],
+        "id": [
+          "Nasi",
+          "Babi",
+          "Telur",
+          "Bawang putih"
+        ]
+      }
+    },
+    "19100": {
+      "review": "Draft",
+      "lists": {
+        "th": [
+          "ข้าว",
+          "ไก่",
+          "ไข่",
+          "กระเทียม"
+        ],
+        "en": [
+          "Rice",
+          "Chicken",
+          "Egg",
+          "Garlic"
+        ],
+        "zs": [
+          "米饭",
+          "鸡肉",
+          "鸡蛋",
+          "大蒜"
+        ],
+        "ja": [
+          "ごはん",
+          "鶏肉",
+          "卵",
+          "にんにく"
+        ],
+        "my": [
+          "ထမင်း",
+          "ကြက်သား",
+          "ကြက်ဥ",
+          "ကြက်သွန်ဖြူ"
+        ],
+        "ko": [
+          "쌀밥",
+          "닭고기",
+          "달걀",
+          "마늘"
+        ],
+        "fr": [
+          "Riz",
+          "Poulet",
+          "Œuf",
+          "Ail"
+        ],
+        "id": [
+          "Nasi",
+          "Ayam",
+          "Telur",
+          "Bawang putih"
         ]
       }
     },
@@ -516,12 +627,6 @@ window.THL_INGREDIENTS = {
           "닭고기",
           "볶은 쌀가루",
           "고추"
-        ],
-        "es": [
-          "Arroz",
-          "Pollo",
-          "Arroz tostado molido",
-          "Chile"
         ],
         "fr": [
           "Riz",
@@ -576,12 +681,6 @@ window.THL_INGREDIENTS = {
           "카레 가루",
           "달걀"
         ],
-        "es": [
-          "Arroz",
-          "Pechuga de pollo",
-          "Curry en polvo",
-          "Huevo"
-        ],
         "fr": [
           "Riz",
           "Blanc de poulet",
@@ -629,11 +728,6 @@ window.THL_INGREDIENTS = {
           "닭가슴살",
           "레드 커리 페이스트"
         ],
-        "es": [
-          "Arroz",
-          "Pechuga de pollo",
-          "Pasta de curry rojo"
-        ],
         "fr": [
           "Riz",
           "Blanc de poulet",
@@ -678,11 +772,6 @@ window.THL_INGREDIENTS = {
           "쌀밥",
           "닭가슴살",
           "그린 커리 페이스트"
-        ],
-        "es": [
-          "Arroz",
-          "Pechuga de pollo",
-          "Pasta de curry verde"
         ],
         "fr": [
           "Riz",
@@ -735,12 +824,6 @@ window.THL_INGREDIENTS = {
           "마늘",
           "후추"
         ],
-        "es": [
-          "Arroz",
-          "Pollo",
-          "Ajo",
-          "Pimienta"
-        ],
         "fr": [
           "Riz",
           "Poulet",
@@ -788,11 +871,6 @@ window.THL_INGREDIENTS = {
           "닭가슴살",
           "흑후추"
         ],
-        "es": [
-          "Arroz",
-          "Pechuga de pollo",
-          "Pimienta negra"
-        ],
         "fr": [
           "Riz",
           "Blanc de poulet",
@@ -825,9 +903,6 @@ window.THL_INGREDIENTS = {
         ],
         "ko": [
           "얼음"
-        ],
-        "es": [
-          "Hielo"
         ],
         "fr": [
           "Glace"
@@ -869,11 +944,6 @@ window.THL_INGREDIENTS = {
           "로젤",
           "대추",
           "설탕"
-        ],
-        "es": [
-          "Rosella",
-          "Azufaifa",
-          "Azúcar"
         ],
         "fr": [
           "Roselle",
@@ -920,11 +990,6 @@ window.THL_INGREDIENTS = {
           "우유",
           "설탕"
         ],
-        "es": [
-          "Té tailandés",
-          "Leche",
-          "Azúcar"
-        ],
         "fr": [
           "Thé thaï",
           "Lait",
@@ -963,10 +1028,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "국화",
           "설탕"
-        ],
-        "es": [
-          "Crisantemo",
-          "Azúcar"
         ],
         "fr": [
           "Chrysanthème",
@@ -1010,11 +1071,6 @@ window.THL_INGREDIENTS = {
           "절인 매실",
           "설탕",
           "물"
-        ],
-        "es": [
-          "Ciruela salada",
-          "Azúcar",
-          "Agua"
         ],
         "fr": [
           "Prune salée",
@@ -1061,11 +1117,6 @@ window.THL_INGREDIENTS = {
           "설탕",
           "물"
         ],
-        "es": [
-          "Fruta de bael",
-          "Azúcar",
-          "Agua"
-        ],
         "fr": [
           "Fruit de bael",
           "Sucre",
@@ -1110,11 +1161,6 @@ window.THL_INGREDIENTS = {
           "오렌지 농축액",
           "물",
           "얼음"
-        ],
-        "es": [
-          "Concentrado de naranja",
-          "Agua",
-          "Hielo"
         ],
         "fr": [
           "Concentré d’orange",
@@ -1161,11 +1207,6 @@ window.THL_INGREDIENTS = {
           "라임",
           "설탕"
         ],
-        "es": [
-          "Flor de guisante mariposa",
-          "Lima",
-          "Azúcar"
-        ],
         "fr": [
           "Fleurs de pois papillon",
           "Citron vert",
@@ -1210,11 +1251,6 @@ window.THL_INGREDIENTS = {
           "커피",
           "설탕",
           "물"
-        ],
-        "es": [
-          "Café",
-          "Azúcar",
-          "Agua"
         ],
         "fr": [
           "Café",
@@ -1261,11 +1297,6 @@ window.THL_INGREDIENTS = {
           "우유",
           "설탕"
         ],
-        "es": [
-          "Café",
-          "Leche",
-          "Azúcar"
-        ],
         "fr": [
           "Café",
           "Lait",
@@ -1287,7 +1318,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1301,7 +1331,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1315,7 +1344,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1329,7 +1357,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1343,7 +1370,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1357,7 +1383,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1371,7 +1396,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1385,7 +1409,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1399,7 +1422,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1413,7 +1435,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1427,7 +1448,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1441,7 +1461,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1455,7 +1474,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1469,7 +1487,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1483,7 +1500,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1497,7 +1513,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1511,7 +1526,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1525,7 +1539,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1539,7 +1552,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1576,11 +1588,6 @@ window.THL_INGREDIENTS = {
           "수박",
           "얼음",
           "시럽"
-        ],
-        "es": [
-          "Sandía",
-          "Hielo",
-          "Almíbar"
         ],
         "fr": [
           "Pastèque",
@@ -1627,11 +1634,6 @@ window.THL_INGREDIENTS = {
           "얼음",
           "시럽"
         ],
-        "es": [
-          "Mango",
-          "Hielo",
-          "Almíbar"
-        ],
         "fr": [
           "Mangue",
           "Glace",
@@ -1677,11 +1679,6 @@ window.THL_INGREDIENTS = {
           "우유",
           "얼음"
         ],
-        "es": [
-          "Coco",
-          "Leche",
-          "Hielo"
-        ],
         "fr": [
           "Noix de coco",
           "Lait",
@@ -1703,7 +1700,6 @@ window.THL_INGREDIENTS = {
         "ja": [],
         "my": [],
         "ko": [],
-        "es": [],
         "fr": [],
         "id": []
       }
@@ -1728,9 +1724,6 @@ window.THL_INGREDIENTS = {
         ],
         "ko": [
           "물"
-        ],
-        "es": [
-          "Agua"
         ],
         "fr": [
           "Eau"
@@ -1760,9 +1753,6 @@ window.THL_INGREDIENTS = {
         ],
         "ko": [
           "물"
-        ],
-        "es": [
-          "Agua"
         ],
         "fr": [
           "Eau"
@@ -1810,12 +1800,6 @@ window.THL_INGREDIENTS = {
           "레몬그라스",
           "라임",
           "고추"
-        ],
-        "es": [
-          "Pescado, gambas y calamar",
-          "Hierba limón",
-          "Lima",
-          "Chile"
         ],
         "fr": [
           "Poisson, crevettes et calamar",
@@ -1870,12 +1854,6 @@ window.THL_INGREDIENTS = {
           "라임",
           "고추"
         ],
-        "es": [
-          "Pollo",
-          "Hierba limón",
-          "Lima",
-          "Chile"
-        ],
         "fr": [
           "Poulet",
           "Citronnelle",
@@ -1923,11 +1901,6 @@ window.THL_INGREDIENTS = {
           "육수",
           "마늘"
         ],
-        "es": [
-          "Cartílago de cerdo",
-          "Caldo",
-          "Ajo"
-        ],
         "fr": [
           "Cartilage de porc",
           "Bouillon",
@@ -1973,11 +1946,6 @@ window.THL_INGREDIENTS = {
           "돼지고기",
           "육수"
         ],
-        "es": [
-          "Tofu",
-          "Cerdo",
-          "Caldo"
-        ],
         "fr": [
           "Tofu",
           "Porc",
@@ -2017,10 +1985,6 @@ window.THL_INGREDIENTS = {
           "달걀",
           "기름"
         ],
-        "es": [
-          "Huevo",
-          "Aceite"
-        ],
         "fr": [
           "Œuf",
           "Huile"
@@ -2057,10 +2021,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "달걀",
           "기름"
-        ],
-        "es": [
-          "Huevo",
-          "Aceite"
         ],
         "fr": [
           "Œuf",
@@ -2099,10 +2059,6 @@ window.THL_INGREDIENTS = {
           "선초 젤리",
           "우유"
         ],
-        "es": [
-          "Gelatina de hierba",
-          "Leche"
-        ],
         "fr": [
           "Gelée d’herbe",
           "Lait"
@@ -2139,10 +2095,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "선초 젤리",
           "시럽"
-        ],
-        "es": [
-          "Gelatina de hierba",
-          "Almíbar"
         ],
         "fr": [
           "Gelée d’herbe",
@@ -2181,10 +2133,6 @@ window.THL_INGREDIENTS = {
           "아이스크림",
           "코코넛"
         ],
-        "es": [
-          "Helado",
-          "Coco"
-        ],
         "fr": [
           "Glace",
           "Noix de coco"
@@ -2221,10 +2169,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "아이스크림",
           "잭프루트"
-        ],
-        "es": [
-          "Helado",
-          "Yaca"
         ],
         "fr": [
           "Glace",
@@ -2263,10 +2207,6 @@ window.THL_INGREDIENTS = {
           "아이스크림",
           "두리안"
         ],
-        "es": [
-          "Helado",
-          "Durián"
-        ],
         "fr": [
           "Glace",
           "Durian"
@@ -2303,10 +2243,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "아이스크림",
           "옥수수"
-        ],
-        "es": [
-          "Helado",
-          "Maíz"
         ],
         "fr": [
           "Glace",
@@ -2345,10 +2281,6 @@ window.THL_INGREDIENTS = {
           "아이스크림",
           "검은콩"
         ],
-        "es": [
-          "Helado",
-          "Frijoles negros"
-        ],
         "fr": [
           "Glace",
           "Haricots noirs"
@@ -2385,10 +2317,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "아이스크림",
           "타로"
-        ],
-        "es": [
-          "Helado",
-          "Taro"
         ],
         "fr": [
           "Glace",
@@ -2427,10 +2355,6 @@ window.THL_INGREDIENTS = {
           "아이스크림",
           "타이 티"
         ],
-        "es": [
-          "Helado",
-          "Té tailandés"
-        ],
         "fr": [
           "Glace",
           "Thé thaï"
@@ -2468,10 +2392,6 @@ window.THL_INGREDIENTS = {
           "아이스크림",
           "녹차"
         ],
-        "es": [
-          "Helado",
-          "Té verde"
-        ],
         "fr": [
           "Glace",
           "Thé vert"
@@ -2508,10 +2428,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "코코넛 밀크",
           "설탕"
-        ],
-        "es": [
-          "Leche de coco",
-          "Azúcar"
         ],
         "fr": [
           "Lait de coco",
@@ -2556,11 +2472,6 @@ window.THL_INGREDIENTS = {
           "설탕",
           "아이스크림 콘"
         ],
-        "es": [
-          "Leche de coco",
-          "Azúcar",
-          "Cucurucho de helado"
-        ],
         "fr": [
           "Lait de coco",
           "Sucre",
@@ -2599,10 +2510,6 @@ window.THL_INGREDIENTS = {
         "ko": [
           "아이스크림",
           "코코아"
-        ],
-        "es": [
-          "Helado",
-          "Cacao"
         ],
         "fr": [
           "Glace",
@@ -2646,11 +2553,6 @@ window.THL_INGREDIENTS = {
           "망고",
           "찹쌀밥",
           "코코넛 밀크"
-        ],
-        "es": [
-          "Mango",
-          "Arroz glutinoso",
-          "Leche de coco"
         ],
         "fr": [
           "Mangue",
@@ -2696,11 +2598,6 @@ window.THL_INGREDIENTS = {
           "돼지고기",
           "완탕 피",
           "기름"
-        ],
-        "es": [
-          "Cerdo",
-          "Masa de wonton",
-          "Aceite"
         ],
         "fr": [
           "Porc",
@@ -2752,12 +2649,6 @@ window.THL_INGREDIENTS = {
           "닭고기",
           "홀리 바질",
           "고추"
-        ],
-        "es": [
-          "Arroz",
-          "Pollo",
-          "Albahaca sagrada",
-          "Chile"
         ],
         "fr": [
           "Riz",
@@ -2812,12 +2703,6 @@ window.THL_INGREDIENTS = {
           "홀리 바질",
           "고추"
         ],
-        "es": [
-          "Arroz",
-          "Cerdo",
-          "Albahaca sagrada",
-          "Chile"
-        ],
         "fr": [
           "Riz",
           "Porc",
@@ -2870,12 +2755,6 @@ window.THL_INGREDIENTS = {
           "소고기",
           "홀리 바질",
           "고추"
-        ],
-        "es": [
-          "Arroz",
-          "Ternera",
-          "Albahaca sagrada",
-          "Chile"
         ],
         "fr": [
           "Riz",
@@ -2930,12 +2809,6 @@ window.THL_INGREDIENTS = {
           "홀리 바질",
           "고추"
         ],
-        "es": [
-          "Arroz",
-          "Cartílago de cerdo",
-          "Albahaca sagrada",
-          "Chile"
-        ],
         "fr": [
           "Riz",
           "Cartilage de porc",
@@ -2989,12 +2862,6 @@ window.THL_INGREDIENTS = {
           "마늘",
           "후추"
         ],
-        "es": [
-          "Arroz",
-          "Cerdo",
-          "Ajo",
-          "Pimienta"
-        ],
         "fr": [
           "Riz",
           "Porc",
@@ -3042,11 +2909,6 @@ window.THL_INGREDIENTS = {
           "생선·새우·오징어",
           "홀리 바질"
         ],
-        "es": [
-          "Arroz",
-          "Pescado, gambas y calamar",
-          "Albahaca sagrada"
-        ],
         "fr": [
           "Riz",
           "Poisson, crevettes et calamar",
@@ -3092,11 +2954,6 @@ window.THL_INGREDIENTS = {
           "생선·새우·오징어",
           "볶은 고추 페이스트"
         ],
-        "es": [
-          "Arroz",
-          "Pescado, gambas y calamar",
-          "Pasta de chile tostado"
-        ],
         "fr": [
           "Riz",
           "Poisson, crevettes et calamar",
@@ -3141,11 +2998,6 @@ window.THL_INGREDIENTS = {
           "쌀밥",
           "생선·새우·오징어",
           "레드 커리 페이스트"
-        ],
-        "es": [
-          "Arroz",
-          "Pescado, gambas y calamar",
-          "Pasta de curry rojo"
         ],
         "fr": [
           "Riz",

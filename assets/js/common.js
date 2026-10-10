@@ -39,14 +39,14 @@
   //  Anything left as null / [] shows "(to be added)" on the site.
   //  Text shown to guests has one entry per language:
   //    th = Thai, en = English, zs = Chinese (Simplified), ja = Japanese, my = Burmese (Myanmar),
-  //    ko = Korean, id = Indonesian, es = Spanish, fr = French
+  //    ko = Korean, id = Indonesian, fr = French
   //  (If a language is missing, English is shown instead.)
   //
   //  The STAFF PASSWORD is NOT here (this file is sent to every guest's phone).
   //  It is in data/settings.json.
   // ===========================================================================
   // Placeholder name for team members not yet chosen ("under development"), one per language
-  const TBD_NAME = { th: 'อยู่ระหว่างพัฒนา', en: 'In development', zs: '开发中', ja: '開発中', my: 'ဖန်တီးဆဲ', ko: '개발 중', es: 'En desarrollo', fr: 'En développement', id: 'Dalam pengembangan' };
+  const TBD_NAME = { th: 'อยู่ระหว่างพัฒนา', en: 'In development', zs: '开发中', ja: '開発中', my: 'ဖန်တီးဆဲ', ko: '개발 중', fr: 'En développement', id: 'Dalam pengembangan' };
 
   const SITE = {
     // ---- Name ----
@@ -63,7 +63,6 @@
       ja: 'バンコク・プラナコーン区 マハラート通り 192–194（ターチャン）10200',
       my: 'အမှတ် 192–194 မဟာရတ်လမ်း၊ ဖရာနခွန်ခရိုင်၊ ဘန်ကောက် 10200 (ထာချန်)',
       ko: '방콕 프라나콘구 마하랏 로드 192–194 (타창) 10200',
-      es: 'Maha Rat Road 192–194, Phra Borommaharatchawang, Phra Nakhon, Bangkok 10200 (Tha Chang)',
       fr: '192–194 Maha Rat Road, Phra Borommaharatchawang, Phra Nakhon, Bangkok 10200 (Tha Chang)',
       id: 'Jl. Maha Rat 192–194, Phra Borommaharatchawang, Phra Nakhon, Bangkok 10200 (Tha Chang)',
     },
@@ -71,9 +70,9 @@
 
     // ---- Opening hours: one row per line shown in the footer ----
     hours: [
-      { days: { th: 'อังคาร–อาทิตย์', en: 'Tue–Sun', zs: '周二至周日', ja: '火〜日', my: 'အင်္ဂါ–တနင်္ဂနွေ', ko: '화–일', es: 'mar.–dom.', fr: 'mar.–dim.', id: 'Sel–Min' }, time: '08:30–16:30' },
+      { days: { th: 'อังคาร–อาทิตย์', en: 'Tue–Sun', zs: '周二至周日', ja: '火〜日', my: 'အင်္ဂါ–တနင်္ဂနွေ', ko: '화–일', fr: 'mar.–dim.', id: 'Sel–Min' }, time: '08:30–16:30' },
     ],
-    closedNote: { th: 'หยุดทุกวันจันทร์', en: 'Closed Mondays', zs: '每周一休息', ja: '月曜定休', my: 'တနင်္လာနေ့ ပိတ်သည်', ko: '매주 월요일 휴무', es: 'Cerrado los lunes', fr: 'Fermé le lundi', id: 'Tutup setiap Senin' },
+    closedNote: { th: 'หยุดทุกวันจันทร์', en: 'Closed Mondays', zs: '每周一休息', ja: '月曜定休', my: 'တနင်္လာနေ့ ပိတ်သည်', ko: '매주 월요일 휴무', fr: 'Fermé le lundi', id: 'Tutup setiap Senin' },
 
     // ---- Contact (leave null to hide a line) ----
     phone: '+66 81-649-4890', // International format omits the domestic leading zero.
@@ -94,7 +93,6 @@
       "ja": "店長",
       "my": "စားသောက်ဆိုင်မန်နေဂျာ",
       "ko": "매니저",
-      "es": "Gerente del restaurante",
       "fr": "Responsable du restaurant",
       "id":"Manajer restoran"
     },
@@ -110,7 +108,6 @@
       "ja": "副店長",
       "my": "လက်ထောက်မန်နေဂျာ",
       "ko": "부점장",
-      "es": "Subgerente del restaurante",
       "fr": "Responsable adjoint(e) du restaurant",
       "id": "Wakil manajer restoran"
     },
@@ -126,7 +123,6 @@
       "ja": "特任シェフ",
       "my": "အထူးစားဖိုမှူး",
       "ko": "스페셜 셰프",
-      "es": "Chef especial",
       "fr": "Chef spécial",
       "id":"Chef spesial"
     },
@@ -142,7 +138,6 @@
       "ja": "ウェブ開発者（沼津高専卒）",
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
-      "es": "Desarrollador web",
       "fr": "Développeur web",
       "id":"Pengembang web"
     },
@@ -161,7 +156,6 @@
       "ja": "ウェブ開発者（タイ高専卒）",
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
-      "es": "Desarrollador web",
       "fr": "Développeur web",
       "id":"Pengembang web（Lulusan KOSEN Thailand）"
     },
@@ -180,7 +174,6 @@
       "ja": "中国語",
       "my": "တရုတ်ဘာသာ",
       "ko": "중국어",
-      "es": "Chino",
       "fr": "Chinois",
       "id": "Bahasa Mandarin"
     },
@@ -195,7 +188,6 @@
       "ja": "日本語",
       "my": "ဂျပန်ဘာသာ",
       "ko": "일본어",
-      "es": "Japonés",
       "fr": "Japonais",
       "id": "Bahasa Jepang"
     },
@@ -210,7 +202,6 @@
       "ja": "韓国語",
       "my": "ကိုးရီးယားဘာသာ",
       "ko": "한국어",
-      "es": "Coreano",
       "fr": "Coréen",
       "id": "Bahasa Korea"
     },
@@ -225,7 +216,6 @@
       "ja": "ミャンマー語",
       "my": "မြန်မာဘာသာ",
       "ko": "미얀마어",
-      "es": "Birmano",
       "fr": "Birman",
       "id": "Bahasa Burma"
     },
@@ -240,7 +230,6 @@
       "ja": "インドネシア語",
       "my": "အင်ဒိုနီးရှားဘာသာ",
       "ko": "인도네시아어",
-      "es": "Indonesio",
       "fr": "Indonésien",
       "id": "Bahasa Indonesia"
     },
@@ -255,7 +244,6 @@
       "ja": "フランス語",
       "my": "ပြင်သစ်ဘာသာ",
       "ko": "프랑스어",
-      "es": "Francés",
       "fr": "Français",
       "id": "Bahasa Prancis"
     },
@@ -272,7 +260,6 @@
       "ja": "レストランマネージャー",
       "my": "စားသောက်ဆိုင်မန်နေဂျာ",
       "ko": "매니저",
-      "es": "Gerente del restaurante",
       "fr": "Responsable du restaurant",
       "id":"Manajer restoran"
     }
@@ -286,7 +273,6 @@
       "ja": "特任シェフ",
       "my": "အထူးစားဖိုမှူး",
       "ko": "스페셜 셰프",
-      "es": "Chef especial",
       "fr": "Chef spécial",
       "id":"Chef spesial"
     }
@@ -300,7 +286,6 @@
       "ja": "ウェブ開発者",
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
-      "es": "Desarrollador web",
       "fr": "Développeur web",
       "id":"Pengembang web"
     }
@@ -313,7 +298,6 @@
       "ja": "校正",
       "my": "စာစစ်သူ",
       "ko": "교정",
-      "es": "Revisor",
       "fr": "Relecteur",
       "id":"Korektor"
     }
@@ -326,8 +310,8 @@
     samplePrices: true,  // set to false once real prices are in menu-data.js (hides the "sample prices" notice)
   };
 
-  const LANGS = ['th', 'en', 'zh-Hans', 'ja', 'ko', 'my', 'id', 'fr', 'es'];
-  const KEY = { th: 'th', en: 'en', 'zh-Hans': 'zs', ja: 'ja', my: 'my', ko: 'ko', es: 'es', fr: 'fr', id: 'id' };
+  const LANGS = ['th', 'en', 'zh-Hans', 'ja', 'ko', 'my', 'id', 'fr'];
+  const KEY = { th: 'th', en: 'en', 'zh-Hans': 'zs', ja: 'ja', my: 'my', ko: 'ko', fr: 'fr', id: 'id' };
 
   const COMMON = {
     th: {
@@ -371,13 +355,6 @@
       fAddress: '주소', fHours: '영업시간', fContact: '연락처', fTeam: '우리 팀',
       fMap: '지도 보기', fTodo: '(추가 예정)', fMember: '팀원', fReplay: '오프닝 애니메이션 다시 보기',
       phone: '전화', line: 'LINE', email: '이메일', facebook: 'Facebook', instagram: 'Instagram',
-    },
-    es: {
-      staffLink: 'Personal', staffAria: 'Pantalla del personal',
-      fAbout: 'Restaurante tailandés en el barrio de Tha Chang, llevado por una familia tailandesa de origen chino.',
-      fAddress: 'Dirección', fHours: 'Horario', fContact: 'Contacto', fTeam: 'Nuestro equipo',
-      fMap: 'Ver mapa', fTodo: '(por añadir)', fMember: 'Miembro del equipo', fReplay: 'Ver otra vez la animación de entrada',
-      phone: 'Teléfono', line: 'LINE', email: 'Correo', facebook: 'Facebook', instagram: 'Instagram',
     },
     fr: {
       staffLink: 'Personnel', staffAria: 'Écran du personnel',
@@ -454,7 +431,6 @@
     if (nav.startsWith('my')) return 'my';
     if (nav.startsWith('ko')) return 'ko';
     if (nav.startsWith('id') || nav.startsWith('in')) return 'id';
-    if (nav.startsWith('es')) return 'es';
     if (nav.startsWith('fr')) return 'fr';
     if (nav.startsWith('en')) return 'en';
     return 'th';
@@ -492,9 +468,9 @@
   // Hovering (PC), focusing or tapping (phone) a card with "social" makes the two icons fan out
   // above it, like picking an item in a game. LINE opens a QR window; Facebook opens the profile.
   const SOCIAL_TEXT = {
-    soon: { th: 'เร็ว ๆ นี้', en: 'Coming soon', zs: '即将推出', ja: '近日公開', my: 'မကြာမီ', ko: '곧 공개', es: 'Próximamente', fr: 'Bientôt disponible', id: 'Segera hadir' },
-    scan: { th: 'สแกน QR เพื่อเพิ่มเพื่อนใน LINE', en: 'Scan the QR code to add on LINE', zs: '扫描二维码添加 LINE 好友', ja: 'QRコードを読み取ってLINEで友だち追加', my: 'LINE တွင် မိတ်ဆွေထည့်ရန် QR ကို စကင်ဖတ်ပါ', ko: 'QR 코드를 스캔해 LINE 친구 추가', es: 'Escanea el código QR para añadir en LINE', fr: 'Scannez le QR code pour ajouter sur LINE', id: 'Pindai kode QR untuk menambahkan di LINE' },
-    close: { th: 'ปิด', en: 'Close', zs: '关闭', ja: '閉じる', my: 'ပိတ်ရန်', ko: '닫기', es: 'Cerrar', fr: 'Fermer', id: 'Tutup' },
+    soon: { th: 'เร็ว ๆ นี้', en: 'Coming soon', zs: '即将推出', ja: '近日公開', my: 'မကြာမီ', ko: '곧 공개', fr: 'Bientôt disponible', id: 'Segera hadir' },
+    scan: { th: 'สแกน QR เพื่อเพิ่มเพื่อนใน LINE', en: 'Scan the QR code to add on LINE', zs: '扫描二维码添加 LINE 好友', ja: 'QRコードを読み取ってLINEで友だち追加', my: 'LINE တွင် မိတ်ဆွေထည့်ရန် QR ကို စကင်ဖတ်ပါ', ko: 'QR 코드를 스캔해 LINE 친구 추가', fr: 'Scannez le QR code pour ajouter sur LINE', id: 'Pindai kode QR untuk menambahkan di LINE' },
+    close: { th: 'ปิด', en: 'Close', zs: '关闭', ja: '閉じる', my: 'ပိတ်ရန်', ko: '닫기', fr: 'Fermer', id: 'Tutup' },
   };
   const LINE_ICON = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#06C755"/><path fill="#fff" d="M20 8.5c-7.7 0-14 5-14 11.1 0 5.5 5 10.1 11.7 11 .5.1 1.1.3 1.2.7.1.4.1.9 0 1.3l-.2 1.2c-.1.4-.3 1.4 1.2.8 1.5-.6 8.1-4.8 11-8.2 2-2.2 3.1-4.4 3.1-6.8 0-6.1-6.3-11.1-14-11.1z"/><text x="20" y="22.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.6" fill="#06C755">LINE</text></svg>';
   const FB_ICON = '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#1877F2"/><path fill="#fff" d="M22.2 32V21.8h3.4l.5-4h-3.9v-2.5c0-1.1.3-1.9 2-1.9h2.1V9.8c-.4 0-1.6-.2-3-.2-3 0-5 1.8-5 5.2v3h-3.4v4h3.4V32z"/></svg>';

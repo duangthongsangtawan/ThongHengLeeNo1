@@ -134,27 +134,6 @@
       nameLabel: '이름 (영어 또는 태국어로 입력 · 선택)', namePh: '예: Somchai', nameHint: '다른 일행과 합석했다면 일행마다 각자 이름을 입력해 주세요. 직원이 주문을 구분할 수 있습니다.',
       cancel: '취소', needTable: '주문하려면 테이블을 먼저 선택하세요', tableExpired: '3시간이 지났습니다. 테이블을 다시 선택해 주세요.',
     },
-    es: {
-      title: 'Carta', sample: 'Precios de ejemplo, solo para la vista previa.',
-      myOrder: 'Mi pedido', keepBrowsing: 'Seguir mirando', send: 'Enviar pedido a cocina',
-      placeOrder: 'Pedir', note: 'Nota para la cocina', notePh: 'p. ej.: sin picante, sin verduras',
-      viewPhoto: 'Foto', addShort: '+ Añadir', add: '+ Añadir al pedido',
-      table: 'Mesa', noTable: 'Elegir mesa', pickTable: '¿En qué mesa estás?', pickTableHint: 'El número está en el cartel de tu mesa.',
-      added: 'Añadido: {name}', emptyCart: 'Aún no has añadido nada: toca “+ Añadir” en un plato.', total: 'Total',
-      eggFried: 'Huevo frito', eggOmelette: 'Tortilla',
-      sentTitle: 'Ya enviado a cocina', sentTotal: 'Pedido hasta ahora',
-      orderOkTitle: '¡Pedido enviado!', orderOkText: 'La cocina ha recibido el pedido de la mesa {t}. Espera un momento, por favor.', orderNo: 'Pedido n.º {n}', ok: 'Vale',
-      sending: 'Enviando…', retrySend: 'Volver a enviar',
-      errNetTitle: 'No estás conectado al Wi-Fi del restaurante', errNet: 'Tu teléfono no está conectado al Wi-Fi del restaurante (o se cortó la señal), así que el pedido no se ha enviado. Tus platos siguen aquí: revisa el Wi-Fi y toca “Volver a enviar”.',
-      errTimeoutTitle: 'El sistema del restaurante tarda en responder', errTimeout: 'Enviamos tu pedido pero no hubo respuesta, así que puede que haya llegado a cocina o no. Toca “Volver a enviar”: no se enviará dos veces.',
-      errServerTitle: 'El sistema del restaurante no pudo aceptar el pedido', errServer: 'El sistema devolvió un error (código {code}) y el pedido no se envió. Inténtalo de nuevo o enseña esta pantalla a alguien del personal.',
-      backOnline: 'Ya estás conectado: toca “Volver a enviar” para enviar tu pedido.',
-      stNew: 'Recibido', stPreparing: 'Preparando', stServed: 'Servido', stCancelled: 'Cancelado',
-      cancelledHint: 'Este pedido se canceló y no cuenta en el total.',
-      demo: 'Modo demo: se guarda solo en este navegador.',
-      nameLabel: 'Tu nombre (escríbelo en inglés o tailandés · opcional)', namePh: 'p. ej.: Somchai', nameHint: '¿Compartes mesa con otro grupo? Que cada grupo use su propio nombre para que el personal separe los pedidos.',
-      cancel: 'Cancelar', needTable: 'Elige tu mesa para poder enviar el pedido', tableExpired: 'Han pasado más de 3 horas: vuelve a elegir tu mesa, por favor.',
-    },
     fr: {
       title: 'Carte', sample: 'Prix d’exemple, pour l’aperçu uniquement.',
       myOrder: 'Ma commande', keepBrowsing: 'Continuer', send: 'Envoyer en cuisine',
@@ -235,7 +214,6 @@
   Object.assign(DICT["ja"], {"optionHint": "追加を選択、またはそのまま追加", "editOptions": "オプション変更", "saveOptions": "変更を保存"});
   Object.assign(DICT["my"], {"optionHint": "ထပ်ထည့်လိုသည်များ ရွေးပါ သို့မဟုတ် မရွေးဘဲ ထည့်ပါ", "editOptions": "ရွေးချယ်မှု ပြင်ရန်", "saveOptions": "ရွေးချယ်မှု သိမ်းရန်"});
   Object.assign(DICT["ko"], {"optionHint": "추가 옵션을 선택하거나 그대로 담으세요", "editOptions": "옵션 수정", "saveOptions": "옵션 저장"});
-  Object.assign(DICT["es"], {"optionHint": "Elige extras o añade sin extras", "editOptions": "Editar opciones", "saveOptions": "Guardar opciones"});
   Object.assign(DICT["fr"], {"optionHint": "Choisissez des options ou ajoutez sans supplément", "editOptions": "Modifier les options", "saveOptions": "Enregistrer les options"});
   Object.assign(DICT["id"], {"optionHint":"Pilih tambahan, atau pesan tanpa tambahan","editOptions":"Ubah pilihan","saveOptions":"Simpan pilihan"});
 
@@ -245,7 +223,6 @@
   Object.assign(DICT["ja"], {"rateTitle": "注文リクエストが多すぎます", "rateWait": "{s}秒待ってから再送してください。カートは保存されています。"});
   Object.assign(DICT["my"], {"rateTitle": "အော်ဒါတင်ခြင်း များလွန်းနေသည်", "rateWait": "{s} စက္ကန့်စောင့်ပြီး ပြန်ပို့ပါ။ အမှာစာကို သိမ်းဆည်းထားသည်။"});
   Object.assign(DICT["ko"], {"rateTitle": "주문 요청이 너무 많습니다", "rateWait": "{s}초 후 다시 시도하세요. 장바구니는 저장되어 있습니다."});
-  Object.assign(DICT["es"], {"rateTitle": "Demasiadas solicitudes", "rateWait": "Espera {s} segundos y vuelve a intentarlo. Tu cesta está guardada."});
   Object.assign(DICT["fr"], {"rateTitle": "Trop de demandes", "rateWait": "Attendez {s} secondes avant de réessayer. Votre panier est conservé."});
   Object.assign(DICT["id"], {"rateTitle":"Terlalu banyak permintaan pesanan","rateWait":"Tunggu {s} detik, lalu coba lagi. Keranjang Anda tersimpan."});
 
@@ -256,7 +233,6 @@
   Object.assign(DICT["ja"], {"qrNeeded": "ご注文は、店内のテーブルにあるQRコードを読み取ってください。", "qrInvalid": "このテーブルのQRコードは無効になっています。スタッフにお声がけください。", "orderOffline": "ただいまオンライン注文をご利用いただけません。スタッフにご注文ください。", "qrExpired": "3時間以上たったため、テーブルのQRコードをもう一度読み取ってください。", "errNetTitlePub": "お店のシステムに接続できません", "errNetPub": "注文はまだ送信されていません。スマートフォンの通信、またはお店のシステムが応答していません。選んだ料理はそのまま残っています。もう一度お試しいただくか、スタッフにご注文ください。"});
   Object.assign(DICT["my"], {"qrNeeded": "အော်ဒါမှာရန် ဆိုင်ရှိ သင့်စားပွဲပေါ်က QR ကုဒ်ကို စကင်ဖတ်ပါ။", "qrInvalid": "ဤစားပွဲ၏ QR ကုဒ်သည် အသုံးမပြုနိုင်တော့ပါ။ ဝန်ထမ်းကို ပြောပါ။", "orderOffline": "ယခုအချိန်တွင် အွန်လိုင်းမှ အော်ဒါမမှာနိုင်ပါ။ ဝန်ထမ်းထံ မှာယူပါ။", "qrExpired": "၃ နာရီကျော်သွားပါပြီ။ စားပွဲပေါ်က QR ကုဒ်ကို ထပ်မံစကင်ဖတ်ပါ။", "errNetTitlePub": "ဆိုင်စနစ်နှင့် ချိတ်ဆက်၍မရပါ", "errNetPub": "အော်ဒါ မပို့ရသေးပါ။ သင့်ဖုန်းအင်တာနက် သို့မဟုတ် ဆိုင်စနစ်က တုံ့ပြန်မှုမရှိပါ။ ရွေးထားသောဟင်းပွဲများ ကျန်ရှိနေပါသည်။ ထပ်မံကြိုးစားပါ သို့မဟုတ် ဝန်ထမ်းထံ မှာယူပါ။"});
   Object.assign(DICT["ko"], {"qrNeeded": "주문하시려면 매장 테이블의 QR 코드를 스캔해 주세요.", "qrInvalid": "이 테이블의 QR 코드는 더 이상 사용할 수 없습니다. 직원에게 문의해 주세요.", "orderOffline": "지금은 온라인 주문을 이용할 수 없습니다. 직원에게 주문해 주세요.", "qrExpired": "3시간이 지났습니다. 테이블의 QR 코드를 다시 스캔해 주세요.", "errNetTitlePub": "매장 시스템에 연결할 수 없습니다", "errNetPub": "주문이 아직 전송되지 않았습니다. 휴대폰 인터넷 또는 매장 시스템이 응답하지 않습니다. 담은 메뉴는 그대로 있습니다. 다시 시도하거나 직원에게 주문해 주세요."});
-  Object.assign(DICT["es"], {"qrNeeded": "Para pedir, escanea el código QR de tu mesa en el restaurante.", "qrInvalid": "El código QR de esta mesa ya no es válido. Avisa al personal, por favor.", "orderOffline": "Ahora mismo no se puede pedir en línea. Pide al personal, por favor.", "qrExpired": "Han pasado más de 3 horas: vuelve a escanear el código QR de tu mesa.", "errNetTitlePub": "No se puede conectar con el restaurante", "errNetPub": "El pedido no se ha enviado: no responde la conexión de tu teléfono o el sistema del restaurante. Tus platos siguen aquí. Inténtalo de nuevo o pide al personal."});
   Object.assign(DICT["fr"], {"qrNeeded": "Pour commander, scannez le code QR de votre table au restaurant.", "qrInvalid": "Le code QR de cette table n’est plus valable. Merci de prévenir le personnel.", "orderOffline": "La commande en ligne n’est pas disponible pour le moment. Merci de commander auprès du personnel.", "qrExpired": "Plus de 3 heures se sont écoulées : merci de scanner à nouveau le code QR de votre table.", "errNetTitlePub": "Impossible de joindre le restaurant", "errNetPub": "La commande n’a pas été envoyée : la connexion de votre téléphone ou le système du restaurant ne répond pas. Vos plats sont toujours là. Réessayez ou commandez auprès du personnel."});
   Object.assign(DICT["id"], {"qrNeeded":"Untuk memesan, pindai kode QR di meja Anda di restoran.","qrInvalid":"Kode QR meja ini sudah tidak berlaku. Silakan tanyakan kepada staf kami.","orderOffline":"Pemesanan online sedang tidak tersedia. Silakan pesan melalui staf kami.","qrExpired":"Sudah lebih dari 3 jam — silakan pindai kembali kode QR meja Anda.","errNetTitlePub":"Tidak dapat terhubung ke restoran","errNetPub":"Pesanan tidak terkirim: internet ponsel Anda atau sistem restoran tidak merespons. Pesanan Anda masih tersimpan di sini. Coba lagi, atau pesan melalui staf kami."});
 
@@ -267,13 +243,12 @@
   Object.assign(DICT["ja"], {"nameRule": "英語またはタイ語の文字のみでご入力ください。"});
   Object.assign(DICT["my"], {"nameRule": "အင်္ဂလိပ် သို့မဟုတ် ထိုင်းစာလုံးများကိုသာ အသုံးပြုပါ။"});
   Object.assign(DICT["ko"], {"nameRule": "영어 또는 태국어 문자만 사용해 주세요."});
-  Object.assign(DICT["es"], {"nameRule": "Usa solo letras en inglés o tailandés."});
   Object.assign(DICT["fr"], {"nameRule": "Merci d’utiliser uniquement des lettres anglaises ou thaïes."});
   Object.assign(DICT["id"], {"nameRule": "Gunakan huruf bahasa Inggris atau Thai saja."});
 
   // Shown while ordering is closed (publicSite.orderHours in site-config.js); the times come from there.
   const ORDER_HOURS = (window.THL_CONFIG && window.THL_CONFIG.publicSite && window.THL_CONFIG.publicSite.orderHours) || {};
-  Object.entries({"th":"สั่งอาหารออนไลน์ได้เวลา {from}–{to} น. (เวลาประเทศไทย) ตอนนี้ดูเมนูได้อย่างเดียว","en":"Online ordering is open {from}–{to} (Thailand time). For now you can only look at the menu.","zh-Hans":"在线点餐时间为 {from}–{to}（泰国时间）。现在只能浏览菜单。","ja":"オンライン注文の受付は {from}〜{to}（タイ時間）です。現在はメニューの閲覧のみできます。","my":"အွန်လိုင်းအော်ဒါကို {from}–{to} (ထိုင်းစံတော်ချိန်) အတွင်းသာ လက်ခံပါသည်။ ယခု မီနူးကိုသာ ကြည့်နိုင်ပါသည်။","ko":"온라인 주문은 {from}–{to}(태국 시간)에만 가능합니다. 지금은 메뉴만 보실 수 있습니다.","es":"Los pedidos en línea están abiertos de {from} a {to} (hora de Tailandia). Ahora solo puedes ver el menú.","fr":"La commande en ligne est ouverte de {from} à {to} (heure de Thaïlande). Pour l’instant, vous pouvez seulement consulter le menu.","id":"Pemesanan online dibuka pukul {from}–{to} (waktu Thailand). Saat ini Anda hanya dapat melihat menu."})
+  Object.entries({"th":"สั่งอาหารออนไลน์ได้เวลา {from}–{to} น. (เวลาประเทศไทย) ตอนนี้ดูเมนูได้อย่างเดียว","en":"Online ordering is open {from}–{to} (Thailand time). For now you can only look at the menu.","zh-Hans":"在线点餐时间为 {from}–{to}（泰国时间）。现在只能浏览菜单。","ja":"オンライン注文の受付は {from}〜{to}（タイ時間）です。現在はメニューの閲覧のみできます。","my":"အွန်လိုင်းအော်ဒါကို {from}–{to} (ထိုင်းစံတော်ချိန်) အတွင်းသာ လက်ခံပါသည်။ ယခု မီနူးကိုသာ ကြည့်နိုင်ပါသည်။","ko":"온라인 주문은 {from}–{to}(태국 시간)에만 가능합니다. 지금은 메뉴만 보실 수 있습니다.","fr":"La commande en ligne est ouverte de {from} à {to} (heure de Thaïlande). Pour l’instant, vous pouvez seulement consulter le menu.","id":"Pemesanan online dibuka pukul {from}–{to} (waktu Thailand). Saat ini Anda hanya dapat melihat menu."})
     .forEach(([k, text]) => { DICT[k].orderClosed = fmt(text, ORDER_HOURS); });
 
   // ---------- Persistent state ----------
@@ -562,7 +537,7 @@
     renderSent();
   }
 
-  const PAID_LABELS = {"th":"ชำระเงินแล้ว","en":"Bill completed","zh-Hans":"已结账","ja":"会計済み","my":"ငွေရှင်းပြီး","ko":"결제 완료","es":"Cuenta pagada","fr":"Addition réglée","id":"Tagihan lunas"};
+  const PAID_LABELS = {"th":"ชำระเงินแล้ว","en":"Bill completed","zh-Hans":"已结账","ja":"会計済み","my":"ငွေရှင်းပြီး","ko":"결제 완료","fr":"Addition réglée","id":"Tagihan lunas"};
   Object.keys(PAID_LABELS).forEach(k => DICT[k].stPaid = PAID_LABELS[k]);
   const STATUS_LABEL = { new: 'stNew', preparing: 'stPreparing', served: 'stServed', paid: 'stPaid', cancelled: 'stCancelled' };
   const orderTotal = (o) => o.lines.reduce((s, l) => s + l.price * l.qty, 0);

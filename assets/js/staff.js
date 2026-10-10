@@ -213,7 +213,7 @@
   Object.assign(DICT.th, { noQr: 'ไม่ได้สแกน QR · ยืนยันที่โต๊ะก่อน' });
   Object.assign(DICT.en, { noQr: 'No QR · confirm at table' });
 
-  const LANG_NAMES = { th: 'Thai / ไทย', en: 'English', 'zh-Hans': 'Chinese', ja: 'Japanese', my: 'Burmese', id: 'Indonesian', ko: 'Korean', es: 'Spanish', fr: 'French' };
+  const LANG_NAMES = { th: 'Thai / ไทย', en: 'English', 'zh-Hans': 'Chinese', ja: 'Japanese', my: 'Burmese', id: 'Indonesian', ko: 'Korean', fr: 'French' };
   const LATE_MIN = 15; // waiting this long turns the ticket's timer red
 
   const $ = (s) => document.querySelector(s);
