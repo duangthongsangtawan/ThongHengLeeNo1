@@ -147,7 +147,7 @@
     },
     "group": "development",
     "photo": "assets/images/team/Theeraphat_profile.jpg",
-    "social": { "line": null, "facebook": null }
+    "social": { "line": null, "facebook": "https://www.facebook.com/thir.phathr.phinic.kic" }
   },  {
     "name": "Ye Yint Tun",
     "role": {
