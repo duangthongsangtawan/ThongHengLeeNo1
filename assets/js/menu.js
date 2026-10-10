@@ -271,6 +271,11 @@
   Object.assign(DICT["fr"], {"nameRule": "Merci d’utiliser uniquement des lettres anglaises ou thaïes."});
   Object.assign(DICT["id"], {"nameRule": "Gunakan huruf bahasa Inggris atau Thai saja."});
 
+  // Shown while ordering is closed (publicSite.orderHours in site-config.js); the times come from there.
+  const ORDER_HOURS = (window.THL_CONFIG && window.THL_CONFIG.publicSite && window.THL_CONFIG.publicSite.orderHours) || {};
+  Object.entries({"th":"สั่งอาหารออนไลน์ได้เวลา {from}–{to} น. (เวลาประเทศไทย) ตอนนี้ดูเมนูได้อย่างเดียว","en":"Online ordering is open {from}–{to} (Thailand time). For now you can only look at the menu.","zh-Hans":"在线点餐时间为 {from}–{to}（泰国时间）。现在只能浏览菜单。","ja":"オンライン注文の受付は {from}〜{to}（タイ時間）です。現在はメニューの閲覧のみできます。","my":"အွန်လိုင်းအော်ဒါကို {from}–{to} (ထိုင်းစံတော်ချိန်) အတွင်းသာ လက်ခံပါသည်။ ယခု မီနူးကိုသာ ကြည့်နိုင်ပါသည်။","ko":"온라인 주문은 {from}–{to}(태국 시간)에만 가능합니다. 지금은 메뉴만 보실 수 있습니다.","es":"Los pedidos en línea están abiertos de {from} a {to} (hora de Tailandia). Ahora solo puedes ver el menú.","fr":"La commande en ligne est ouverte de {from} à {to} (heure de Thaïlande). Pour l’instant, vous pouvez seulement consulter le menu.","id":"Pemesanan online dibuka pukul {from}–{to} (waktu Thailand). Saat ini Anda hanya dapat melihat menu."})
+    .forEach(([k, text]) => { DICT[k].orderClosed = fmt(text, ORDER_HOURS); });
+
   // ---------- Persistent state ----------
   const store = {
     get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
@@ -327,7 +332,7 @@
     else { expiredOnLoad = validTable(saved); clearTable(); }
   }
   function clearTable() {
-    if (table) session.set(nameKey(table), null);
+    if (table) { session.set(nameKey(table), null); session.set(visitKey(table), null); }
     table = null; guestName = '';
     session.set('thl-table', null); session.set('thl-table-at', null);
     setTableKey('');
@@ -357,6 +362,17 @@
     set(k, v) { try { v == null || v === '' ? sessionStorage.removeItem(k) : sessionStorage.setItem(k, v); } catch (e) {} },
   };
   const nameKey = (n) => 'thl-name-' + n;
+  // A random id for this phone's sitting at this table, sent with each order. Staff use it to add up a
+  // guest's separate orders into one bill when no name was typed. Forgotten together with the table.
+  const visitKey = (n) => 'thl-visit-' + n;
+  function visitId() {
+    let id = session.get(visitKey(table));
+    if (!/^[a-z0-9]{12,32}$/.test(id || '')) {
+      id = (Math.random().toString(36).slice(2, 12) + Math.random().toString(36).slice(2, 12)).padEnd(12, '0');
+      session.set(visitKey(table), id);
+    }
+    return id;
+  }
   // Names are English or Thai letters only, so staff can read them (the order server applies the same rule).
   const NAME_STRIP = /[^A-Za-z0-9\u0E00-\u0E7F .'-]+/g;
   const cleanName = (s) => String(s || '').replace(NAME_STRIP, '').replace(/\s+/g, ' ').trim().slice(0, 40);
@@ -679,6 +695,7 @@
 
   async function sendOrder() {
     if (!ordering || !cart.length || sending) return;
+    if (PUBLIC && !THL.orderOpen()) return setOrdering(false, 'orderClosed'); // closing time passed while the basket was open
     if (expireTable()) return;
     if (!table) return openTablePicker();
     const items = cart.map((l) => {
@@ -692,7 +709,7 @@
     sending = true; sendError = null;
     renderSendState();
     try {
-      const payload = { table, customerName: guestName, items, note: $('#orderNote').value.trim(), lang: THL.lang, clientId };
+      const payload = { table, customerName: guestName, items, note: $('#orderNote').value.trim(), lang: THL.lang, clientId, visit: visitId() };
       if (PUBLIC) payload.tableKey = tableKey;
       const order = await THL.post('/api/orders', payload);
       // The cart is only cleared here, after the kitchen has confirmed the order
@@ -715,6 +732,8 @@
       sending = false;
       // The table's QR code was replaced while this phone was ordering, or ordering without a code
       // has just closed for the day. The basket is kept.
+      // Sent just after closing time: the basket and the table are kept, the page becomes a menu to look at.
+      if (PUBLIC && e.status === 403 && !THL.orderOpen()) { sendError = null; renderSendState(); setOrdering(false, 'orderClosed'); return; }
       if (PUBLIC && e.status === 403) { const hadKey = Boolean(tableKey); sendError = null; renderSendState(); clearTable(); denied(hadKey); return; }
       sendError = { kind: e.kind || 'network', code: e.status || '', retryAfter: e.retryAfter || 60 };
       renderSendState();
@@ -747,6 +766,7 @@
   async function verifyTable() {
     clearTimeout(verifyTimer);
     if (!PUBLIC || verifying) return;
+    if (!THL.orderOpen()) return setOrdering(false, 'orderClosed'); // outside opening hours nobody orders, QR code or not
     if (!table || !tableKey) {
       // No QR code: ordering is on while ordering without a code is open (never when the order server is not set up).
       if (THL.orderWithoutQr()) return setOrdering(true);
@@ -894,7 +914,7 @@
   setInterval(() => {
     if (document.hidden) return;
     expireTable();
-    // Ordering without a QR code opens and closes with the shop's hours.
-    if (PUBLIC && !tableKey && !sending && ordering !== THL.orderWithoutQr()) verifyTable();
+    // Ordering opens and closes with the shop's hours (with a QR code: orderHours; without: its own hours too).
+    if (PUBLIC && !sending && ordering !== (tableKey ? THL.orderOpen() : THL.orderWithoutQr())) verifyTable();
   }, 30000);
 })();

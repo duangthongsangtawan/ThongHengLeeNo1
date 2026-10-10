@@ -23,8 +23,15 @@
       // false = only a scanned table QR code can order. After changing either setting: publish the
       // website AND run `npm run deploy` in cloud/ (the order server enforces the same rule).
       orderWithoutQr: true,
-      // Bangkok time. days: 0 = Sunday, 1 = Monday … 6 = Saturday (closed Mondays). QR orders are not limited.
+      // Bangkok time. days: 0 = Sunday, 1 = Monday … 6 = Saturday (closed Mondays). Never wider than orderHours below.
       orderWithoutQrHours: Object.freeze({ days: Object.freeze([0, 2, 3, 4, 5, 6]), from: '08:00', to: '17:00' }),
+
+      // When the order server takes orders AT ALL, with a table QR code or without. The restaurant
+      // is open Tue–Sun 08:30–16:30, so an order at any other time does not come from a guest at a
+      // table and is refused (the page then shows the menu only). Bangkok time, days as above.
+      // Remove the line for no limit. After a change: publish the website AND run `npm run deploy`
+      // in cloud/ (the order server enforces the same rule).
+      orderHours: Object.freeze({ days: Object.freeze([0, 2, 3, 4, 5, 6]), from: '08:30', to: '17:00' }),
     }),
   });
   if (typeof module === 'object' && module.exports) module.exports = config;

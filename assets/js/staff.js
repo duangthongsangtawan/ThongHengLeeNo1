@@ -202,6 +202,13 @@
 
   const WORKFLOW = {"th":{"colNew":"รับออเดอร์แล้ว","colPrep":"เสิร์ฟครบแล้ว","colDone":"ชำระเงินแล้ววันนี้","served":"เสิร์ฟครบแล้ว","stServed":"เสิร์ฟครบแล้ว","paid":"ชำระเงินแล้ว","emptyNew":"ไม่มีออเดอร์รอเสิร์ฟ","emptyPrep":"ไม่มีออเดอร์รอชำระเงิน","emptyDone":"ยังไม่มีรายการชำระเงินหรือยกเลิกวันนี้","doneSum":"ชำระเงินแล้ว {n} ออเดอร์ · {sum}","confirmPaid":"ยืนยันว่าได้รับเงิน {sum} สำหรับออเดอร์ #{n} โต๊ะ {t} แล้ว?","confirmReopen":"ย้อนสถานะออเดอร์ #{n} ที่ชำระเงินแล้ว?","note":"กรุณาออกจากระบบเมื่อใช้เสร็จ ต้องเข้าสู่ระบบใหม่เมื่อเปิดหน้านี้","totalSales":"ยอดสั่งรวม","collected":"ชำระแล้ว","outstanding":"ค้างชำระ","tablesEmpty":"ไม่มีออเดอร์ค้างชำระ","tableTotal":"ยอดค้างชำระ","tablesNote":"รวมออเดอร์ที่ยังไม่ชำระเงินของแต่ละชื่อและโต๊ะ รวมวันก่อนหน้า ไม่รวมออเดอร์ที่ยกเลิก","salesNote":"วันขายนับตั้งแต่ 18:00 เมื่อวานถึง 17:59 วันนี้ ยอดสั่งรวมไม่รวมรายการยกเลิก ยอดชำระแล้วและค้างชำระเป็นสถานะล่าสุดของออเดอร์ที่สั่งในวันนั้น"},"en":{"colNew":"Ordered","colPrep":"All served","colDone":"Bill completed today","served":"All served","stServed":"All served","paid":"Bill completed","emptyNew":"No orders waiting to be served","emptyPrep":"No served orders awaiting payment","emptyDone":"No completed bills or cancellations today","doneSum":"{n} bills completed · {sum}","confirmPaid":"Confirm payment of {sum} received for order #{n}, table {t}?","confirmReopen":"Reopen paid order #{n}?","note":"Sign out when finished. Opening this page requires a new sign-in.","totalSales":"Order value","collected":"Paid","outstanding":"Outstanding","tablesEmpty":"No unpaid orders","tableTotal":"Outstanding","tablesNote":"Unpaid orders grouped by name and table, including earlier days. Cancelled orders are excluded.","salesNote":"Business day: 18:00 the previous evening to 17:59. Order value excludes cancellations. Paid and outstanding show the current status of orders placed on the selected day."}};
   Object.keys(WORKFLOW).forEach(k => Object.assign(DICT[k], WORKFLOW[k]));
+  // One bill per guest: served orders of the same table and name are added up (see "Bills" below).
+  Object.assign(DICT.th, { billOrders: '{n} ออเดอร์', billTotal: 'รวมทั้งบิล', payOne: 'ชำระเฉพาะออเดอร์นี้',
+    billWait: 'ยังไม่เสิร์ฟ: {list} · ยังไม่รวมในยอดนี้', moreOrder: 'สั่งเพิ่ม · เสิร์ฟไปแล้ว: {list}',
+    confirmPaidBill: 'ยืนยันว่าได้รับเงิน {sum} สำหรับบิลโต๊ะ {t} · {who} แล้ว?\n{list}', confirmPaidWait: 'ยังมีออเดอร์ที่ยังไม่เสิร์ฟ (ไม่รวมในยอดนี้): {list}' });
+  Object.assign(DICT.en, { billOrders: '{n} orders', billTotal: 'Bill total', payOne: 'Paid this one only',
+    billWait: 'Not served yet: {list} · not in this total', moreOrder: 'Additional order · already served: {list}',
+    confirmPaidBill: 'Confirm payment of {sum} received for the bill of table {t} · {who}?\n{list}', confirmPaidWait: 'Still not served (not in this total): {list}' });
   // Orders sent from the public website without a table QR code (the guest picked the table).
   Object.assign(DICT.th, { noQr: 'ไม่ได้สแกน QR · ยืนยันที่โต๊ะก่อน' });
   Object.assign(DICT.en, { noQr: 'No QR · confirm at table' });
@@ -311,22 +318,11 @@
     if (o.qr === false) who.append(el('span', 't-noqr', t('noQr'))); // the guest picked the table on the page: check with them first
     head.append(who, meta);
 
-    const ul = el('ul', 't-items');
-    o.items.forEach((it) => {
-      const li = el('li');
-      const name = el('div');
-      const th = el('span', 'th', it.nameTh || it.name);
-      name.append(th);
-      if (it.id) name.append(el('span', 'no', menuNo(it.id)));
-      if (it.opt) name.append(el('span', 'opt', it.opt));
-      const subs = [it.nameEn].filter(Boolean);
-      if (!subs.length && it.name && it.name !== it.nameTh) subs.push(it.name); // orders saved before names were stored
-      if (subs.length) name.append(el('span', 'sub', subs.join(' · ')));
-      li.append(el('span', 'q', `${it.qty}×`), name);
-      ul.append(li);
-    });
-    card.append(head, ul);
+    card.append(head, itemList(o));
     if (o.note) card.append(el('div', 't-note', '📝 ' + o.note));
+    const bill = bills.get(billKey(o));
+    if (o.status === 'new' && bill && bill.served.length) card.append(el('div', 't-more', '➕ ' + fmt(t('moreOrder'), { list: orderList(bill.served) })));
+    if (o.status === 'served') waitNote(card, bill);
 
     const acts = el('div', 't-actions');
     if (o.status === 'new') {
@@ -346,6 +342,121 @@
     }
     card.append(acts);
     return card;
+  }
+
+  function itemList(o) {
+    const ul = el('ul', 't-items');
+    o.items.forEach((it) => {
+      const li = el('li');
+      const name = el('div');
+      const th = el('span', 'th', it.nameTh || it.name);
+      name.append(th);
+      if (it.id) name.append(el('span', 'no', menuNo(it.id)));
+      if (it.opt) name.append(el('span', 'opt', it.opt));
+      const subs = [it.nameEn].filter(Boolean);
+      if (!subs.length && it.name && it.name !== it.nameTh) subs.push(it.name); // orders saved before names were stored
+      if (subs.length) name.append(el('span', 'sub', subs.join(' · ')));
+      li.append(el('span', 'q', `${it.qty}×`), name);
+      ul.append(li);
+    });
+    return ul;
+  }
+
+  // ---------- Bills: one card per guest once the food is out ----------
+  // Orders are cooked and served one at a time (another table may order in between), but a guest who
+  // orders again later pays once. Open orders of the same sales day, table and guest name therefore
+  // share one bill. With no name they share one only when they came from the same phone visit
+  // (o.visit, set by menu.js), so two unnamed parties at a table are never added together.
+  const nameGroup = (o) => String(o.customerName || '').trim().replace(/\s+/g, ' ').toLowerCase();
+  const billKey = (o) => `${THL.businessDay(o.time)}|${o.table}|${nameGroup(o) ? 'n:' + nameGroup(o) : o.visit ? 'v:' + o.visit : 'o:' + o.id}`;
+  const orderList = (list) => list.map((o) => `#${o.id} ${baht(o.total)}`).join(' + ');
+  let bills = new Map(); // billKey → { served: [orders], waiting: [orders] }, oldest first
+  function groupBills(orders) {
+    const map = new Map();
+    orders.filter((o) => o.status === 'new' || o.status === 'served').sort((a, b) => a.time - b.time).forEach((o) => {
+      const k = billKey(o);
+      if (!map.has(k)) map.set(k, { served: [], waiting: [] });
+      map.get(k)[o.status === 'served' ? 'served' : 'waiting'].push(o);
+    });
+    return map;
+  }
+  // Shown on a bill while the same guest still has food coming, so it is not closed short.
+  function waitNote(card, bill) {
+    if (bill && bill.waiting.length) card.append(el('div', 't-wait', '⏳ ' + fmt(t('billWait'), { list: orderList(bill.waiting) })));
+  }
+
+  // "Bill completed" for a whole bill: every served order on it is marked paid, after one question.
+  async function payBill(bill) {
+    if (!authenticated) return;
+    const epoch = authEpoch, list = bill.served.filter((o) => o.status === 'served');
+    if (!list.length) return;
+    let ask = fmt(t('confirmPaidBill'), { sum: baht(list.reduce((s, o) => s + o.total, 0)), t: list[0].table, who: list[0].customerName || t('noName'), list: orderList(list) });
+    if (bill.waiting.length) ask += '\n\n' + fmt(t('confirmPaidWait'), { list: orderList(bill.waiting) });
+    if (!confirm(ask)) return;
+    const before = list.map((o) => ({ o, status: o.status, statusTime: o.statusTime }));
+    before.forEach(({ o }) => { o.status = 'paid'; o.statusTime = Date.now(); }); // show it straight away
+    render(last);
+    for (const b of before) {
+      try {
+        await THL.post(`/api/orders/${b.o.id}/status`, { status: 'paid', expectedStatus: b.status });
+      } catch (e) {
+        if (!authenticated || epoch !== authEpoch) return;
+        b.o.status = b.status; b.o.statusTime = b.statusTime;
+        render(last);
+        if (e.status === 401) { showLogin(t('expired')); return; }
+        THL.toast(t('saveErr'));
+      }
+    }
+  }
+
+  // A guest's served orders as one bill: each order keeps its own lines and sub-total, then the sum.
+  // One order on its own looks like any other ticket.
+  function billCard(bill, fresh) {
+    const orders = bill.served, first = orders[0];
+    if (orders.length === 1) return ticket(first, fresh.has(first.id));
+    const total = orders.reduce((s, o) => s + o.total, 0);
+    const card = el('article', 'ticket s-served bill');
+    const head = el('div', 't-head');
+    const who = el('span', 't-who');
+    who.append(el('span', 't-table', `${t('table')} ${first.table}`));
+    if (first.customerName) who.append(el('span', 't-name', '👤 ' + first.customerName));
+    if (orders.some((o) => o.qr === false)) who.append(el('span', 't-noqr', t('noQr')));
+    const from = clock(first.time), to = clock(orders[orders.length - 1].time);
+    head.append(who, el('span', 't-meta', `${fmt(t('billOrders'), { n: orders.length })} · ${from === to ? from : `${from}–${to}`}`));
+    card.append(head);
+    orders.forEach((o) => {
+      const part = el('div', 'b-order');
+      const line = el('div', 'b-head');
+      line.append(el('span', null, `#${o.id} · ${clock(o.time)}`), el('b', null, baht(o.total)));
+      part.append(line, itemList(o));
+      if (o.note) part.append(el('div', 't-note', '📝 ' + o.note));
+      const acts = el('div', 't-actions');
+      acts.append(action('✓ ' + t('payOne'), 'act-undo', o, 'paid'), action('↩ ' + t('undo'), 'act-undo', o, 'new'));
+      part.append(acts);
+      card.append(part);
+    });
+    waitNote(card, bill);
+    const foot = el('div', 't-foot');
+    foot.append(el('span', 't-total', `${t('billTotal')} ${baht(total)}`));
+    if (first.lang && LANG_NAMES[first.lang]) foot.append(el('span', null, `${t('guest')}: ${LANG_NAMES[first.lang]}`));
+    const pay = el('button', 'btn act-served', `✓ ${t('paid')} · ${fmt(t('billOrders'), { n: orders.length })} ${baht(total)}`);
+    pay.type = 'button';
+    pay.addEventListener('click', async () => { pay.disabled = true; try { await payBill(bill); } finally { pay.disabled = false; } });
+    const acts = el('div', 't-actions t-pay');
+    acts.append(pay);
+    card.append(foot, acts);
+    return card;
+  }
+
+  function fillBills(listEl, list, fresh) {
+    listEl.textContent = '';
+    if (!list.length) { listEl.append(el('div', 'empty', t('emptyPrep'))); return; }
+    let lastTable = null;
+    list.forEach((bill) => {
+      const tableNo = bill.served[0].table;
+      if (groupByTable && tableNo !== lastTable) { listEl.append(el('div', 'group', `${t('table')} ${tableNo}`)); lastTable = tableNo; }
+      listEl.append(billCard(bill, fresh));
+    });
   }
 
   function fill(listEl, orders, emptyKey, fresh) {
@@ -376,11 +487,12 @@
     const oldestFirst = byTableThen((a, b) => a.time - b.time);
     const newestFirst = byTableThen((a, b) => b.statusTime - a.statusTime);
     const newOnes = orders.filter((o) => o.status === 'new').sort(oldestFirst);
-    const prep = orders.filter((o) => o.status === 'served').sort(oldestFirst);
+    bills = groupBills(orders);
+    const prep = [...bills.values()].filter((bill) => bill.served.length).sort((a, b) => oldestFirst(a.served[0], b.served[0]));
     const done = orders.filter((o) => (o.status === 'paid' || o.status === 'cancelled') && THL.businessDay(o.statusTime) === today).sort(newestFirst);
 
     fill($('#newList'), newOnes, 'emptyNew', fresh);
-    fill($('#prepList'), prep, 'emptyPrep', fresh);
+    fillBills($('#prepList'), prep, fresh);
     fill($('#doneList'), done, 'emptyDone', fresh);
     $('#newCount').textContent = newOnes.length;
     $('#prepCount').textContent = prep.length;
@@ -460,7 +572,6 @@
   // For each table, this business day's orders grouped by the name the guests typed, so staff can
   // answer "how much does Somchai owe?" at a glance — several orders under one name add up to one line.
   // Names match ignoring case and extra spaces. Cancelled orders don't count. Staff-only view.
-  const nameGroup = (o) => String(o.customerName || '').trim().replace(/\s+/g, ' ').toLowerCase();
   function renderTables() {
     if (!authenticated) return;
     const body = $('#tablesBody');

@@ -12,18 +12,25 @@
   const PUBLIC = Array.isArray(PUB.hosts) && PUB.hosts.includes(String(location.hostname || '').toLowerCase());
   const API_BASE = PUBLIC ? String(PUB.api || '').replace(/\/+$/, '') : '';
   const API_READY = !PUBLIC || Boolean(API_BASE);
-  // Ordering without a table QR code (publicSite.orderWithoutQr): the guest picks the table on the
-  // page. Open only during publicSite.orderWithoutQrHours, Bangkok time (fixed UTC+7, whatever the
-  // phone's own timezone). Same rule as cloud/src/hours.mjs — keep the two in step.
-  function orderWithoutQr(now = Date.now()) {
-    if (!PUBLIC || !API_READY || PUB.orderWithoutQr !== true) return false;
-    const hrs = PUB.orderWithoutQrHours;
-    if (!hrs) return true;
+  // Opening hours are Bangkok time (fixed UTC+7, whatever the phone's own timezone): is `now`
+  // inside { days, from, to }? Same rules as cloud/src/hours.mjs — keep the two in step.
+  function withinHours(hrs, now) {
     const mins = (v) => { const m = /^(\d{1,2}):(\d{2})$/.exec(String(v)); return m ? Number(m[1]) * 60 + Number(m[2]) : NaN; };
     const local = new Date(now + 7 * 3600e3), at = local.getUTCHours() * 60 + local.getUTCMinutes();
     const from = mins(hrs.from), to = mins(hrs.to);
     if (!Array.isArray(hrs.days) || Number.isNaN(from) || Number.isNaN(to)) return false; // unreadable setting: stay closed
     return hrs.days.includes(local.getUTCDay()) && at >= from && at < to;
+  }
+  // The order server takes orders only during publicSite.orderHours, with a table QR code or
+  // without (no setting: no limit). Outside those hours the page is a menu to look at.
+  const orderOpen = (now = Date.now()) => (PUB.orderHours ? withinHours(PUB.orderHours, now) : true);
+  // Ordering without a table QR code (publicSite.orderWithoutQr): the guest picks the table on the
+  // page. Open only during publicSite.orderWithoutQrHours, Bangkok time (fixed UTC+7, whatever the
+  // phone's own timezone). Same rule as cloud/src/hours.mjs — keep the two in step.
+  function orderWithoutQr(now = Date.now()) {
+    if (!PUBLIC || !API_READY || PUB.orderWithoutQr !== true || !orderOpen(now)) return false;
+    const hrs = PUB.orderWithoutQrHours;
+    return hrs ? withinHours(hrs, now) : true;
   }
   if (PUBLIC) document.documentElement.classList.add('public-site', 'view-only');
 
@@ -843,7 +850,7 @@
   window.THL = {
     catIcon,
     SITE, LANGS, init, t, pick, baht, money, imgFallback, toast, post, subscribe, LIVE, businessDay,
-    PUBLIC, API_READY, orderWithoutQr, checkTable,
+    PUBLIC, API_READY, orderOpen, orderWithoutQr, checkTable,
     login, logout, getStaffState, forgetStaffToken, getSales, orderStatus, hasToken: () => Boolean(getToken()),
     get lang() { return lang; },
     setLang,

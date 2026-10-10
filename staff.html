@@ -78,6 +78,18 @@
   .act-cancel:hover { color: var(--crimson); border-color: var(--crimson); }
   .s-served .t-actions, .s-cancelled .t-actions { margin-top: 6px; }
   .s-served .t-actions .btn, .s-cancelled .t-actions .btn { padding: 6px 12px; font-size: 0.8rem; }
+  /* Bill card: one guest's served orders added up (billCard in staff.js) */
+  .b-order { padding: 8px 0 4px; border-top: 1px dashed var(--hairline); }
+  .t-head + .b-order { border-top: 0; }
+  .b-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 0.85rem; color: rgba(43,29,20,0.65); }
+  .b-head b { font-size: 0.95rem; color: var(--teak-dark); }
+  .b-order .t-items { margin: 4px 0 2px; }
+  .bill .t-foot { margin-top: 10px; padding-top: 10px; border-top: 2px solid var(--ochre); }
+  .bill .t-total { font-size: 1.2rem; }
+  .bill .t-pay .btn { padding: 11px 14px; font-size: 0.95rem; }
+  .t-more, .t-wait { margin: 8px 0 2px; padding: 6px 10px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; overflow-wrap: anywhere; }
+  .t-more { background: var(--sky-soft); color: var(--sky-deep); }
+  .t-wait { background: #FBEFD2; border: 1px solid #EBCB84; color: var(--teak-dark); }
   .empty { padding: 28px; text-align: center; border: 2px dashed var(--hairline); border-radius: 14px; color: rgba(43,29,20,0.55); }
   .note { margin-top: 22px; font-size: 0.85rem; color: rgba(43,29,20,0.6); }
 
@@ -273,6 +285,6 @@
 <script src="assets/js/site-config.js"></script>
 <script src="assets/js/common.js?v=staff-login-2"></script>
 <script src="assets/js/menu-data.js"></script>
-<script src="assets/js/staff.js?v=menu-no-1"></script>
+<script src="assets/js/staff.js?v=bills-1"></script>
 </body>
 </html>
