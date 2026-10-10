@@ -48,7 +48,9 @@
   @keyframes spot { 0% { box-shadow: 0 0 0 0 rgba(226,168,56,0.9); } 100% { box-shadow: 0 0 0 16px rgba(226,168,56,0); } }
   .card .body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
   .card .name { margin: 0; font-weight: 600; font-size: 0.98rem; line-height: 1.3; }
-  .card .price { margin: 0; font-weight: 700; color: var(--teak); font-size: 1.05rem; }
+  .card .price { margin: 0; font-weight: 700; color: var(--teak); font-size: 1.05rem; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  /* Menu number: small, the same digits in every language */
+  .menu-no { font-size: 0.75rem; font-weight: 500; color: rgba(43,29,20,0.62); white-space: nowrap; font-variant-numeric: tabular-nums; }
   .card .actions { display: grid; grid-template-columns: 1fr 1.25fr; gap: 10px; margin-top: auto; padding-top: 4px; }
   .card .actions .btn { padding: 10px 6px; font-size: 0.85rem; border-radius: 10px; }
   .card .actions .btn-secondary { border-width: 1.5px; }
@@ -119,6 +121,7 @@
   .photo-img { width: 100%; aspect-ratio: 4 / 3; max-height: 62dvh; object-fit: contain; background: #111; display: block; } /* fixed box: no jump while the photo loads */
   .photo-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 20px 20px; }
   .photo-meta strong { font-size: 1.05rem; }
+  .photo-price { display: inline-flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 
   /* Table picker */
   .tables { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -266,7 +269,7 @@
     <div id="photoIngredients" class="ingredient-overlay" hidden></div>
   </div>
   <p id="ingredientNote" class="ingredient-note" hidden></p>
-  <div class="photo-meta"><strong id="photoPrice"></strong><button class="btn btn-primary" type="button" id="photoAdd"></button></div>
+  <div class="photo-meta"><span class="photo-price"><strong id="photoPrice"></strong><span class="menu-no" id="photoNo"></span></span><button class="btn btn-primary" type="button" id="photoAdd"></button></div>
 </dialog>
 
 <!-- Table picker -->

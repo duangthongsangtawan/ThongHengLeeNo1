@@ -4,6 +4,10 @@
    Rice-dish names follow the printed menu (Newmenu_A4). `egg: true` lets guests
    add optional eggs before adding the dish to their basket.
 
+   Menu number: guests and staff see `no` when a dish has one, otherwise its `id` (numberOf, at the
+   end of this file). The eight oldest rice dishes keep their R.. id for photos and saved orders,
+   so they carry the number from the restaurant's own list in `no`.
+
    Names: th, en, zs (Chinese Simplified), ja, my (Burmese), ko (Korean), id (Indonesian), es (Spanish), fr (French).
    ⚠ The my / ko / es / fr dish names are machine-translated drafts — have a native speaker
    check them (see PROGRESS.md §5).
@@ -39,14 +43,14 @@ window.THL_MENU = {
   ],
   items: [
     // ---- Rice dishes (optional egg add-ons) ----
-    { id: 'R02', cat: 'rice', price: 60, egg: true, fav: true, name: { th: 'ข้าวกะเพราไก่', en: 'Stir-fried chicken with holy basil on rice', zs: '九层塔炒鸡肉盖饭', ja: '鶏肉のガパオライス', my: 'ကြက်သားပင်စိမ်းကြော် ထမင်း', ko: '닭고기 바질 볶음 덮밥', es: 'Pollo salteado con albahaca sagrada y arroz', fr: 'Poulet sauté au basilic sacré sur riz', id: 'Nasi ayam tumis kemangi suci' } },
-    { id: 'R01', cat: 'rice', price: 60, egg: true, name: { th: 'ข้าวกะเพราหมูสับ', en: 'Stir-fried minced pork with holy basil on rice', zs: '香料肉末盖饭', ja: '豚ひき肉のガパオライス', my: 'ဝက်သားစင်းကောပင်စိမ်းကြော် ထမင်း', ko: '다진 돼지고기 바질 볶음 덮밥', es: 'Cerdo picado salteado con albahaca sagrada y arroz', fr: 'Porc haché sauté au basilic sacré sur riz', id: 'Nasi babi cincang tumis kemangi suci' } },
-    { id: 'R03', cat: 'rice', price: 70, egg: true, name: { th: 'ข้าวกะเพราเนื้อสับ', en: 'Stir-fried minced beef with holy basil on rice', zs: '罗勒叶炒牛肉末盖饭', ja: '牛ひき肉のガパオライス', my: 'အမဲသားစင်းကောပင်စိမ်းကြော် ထမင်း', ko: '다진 소고기 바질 볶음 덮밥', es: 'Ternera picada salteada con albahaca sagrada y arroz', fr: 'Bœuf haché sauté au basilic sacré sur riz', id: 'Nasi daging sapi cincang tumis kemangi suci' } },
-    { id: 'R05', cat: 'rice', price: 70, egg: true, name: { th: 'ข้าวกะเพรากระดูกอ่อนหมูตุ๋น', en: 'Holy basil stir-fry with stewed pork cartilage on rice', zs: '打抛炖猪软骨盖饭', ja: '豚軟骨煮込みのガパオライス', my: 'ဝက်နံရိုးနူးပြုတ်ပင်စိမ်းကြော် ထမင်း', ko: '돼지 연골찜 바질 볶음 덮밥', es: 'Cartílago de cerdo guisado con albahaca sagrada y arroz', fr: 'Cartilage de porc mijoté au basilic sacré sur riz', id: 'Nasi tumis kemangi suci dengan tulang rawan babi rebus' } },
-    { id: 'R04', cat: 'rice', price: 60, egg: true, name: { th: 'ข้าวหมูกระเทียม', en: 'Fried pork with garlic & pepper on rice', zs: '泰式蒜香炒猪肉饭', ja: 'タイ風豚肉のガーリック炒めごはん', my: 'ဝက်သားကြက်သွန်ဖြူငရုတ်ကောင်းကြော် ထမင်း', ko: '마늘 후추 돼지고기 볶음 덮밥', es: 'Cerdo frito con ajo y pimienta con arroz', fr: 'Porc frit à l’ail et au poivre sur riz', id: 'Nasi babi goreng bawang putih & lada' } },
-    { id: 'R06', cat: 'rice', price: 80, egg: true, name: { th: 'ข้าวกะเพราทะเล (ปลา กุ้ง ปลาหมึก)', en: 'Seafood (fish, shrimp, squid) with holy basil on rice', zs: '罗勒叶炒海鲜盖饭（鱼、虾、鱿鱼）', ja: 'シーフードガパオライス（魚・エビ・イカ）', my: 'ပင်လယ်စာ(ငါး၊ ပုစွန်၊ ပြည်ကြီးငါး)ပင်စိမ်းကြော် ထမင်း', ko: '해산물(생선·새우·오징어) 바질 볶음 덮밥', es: 'Marisco (pescado, gambas, calamar) con albahaca sagrada y arroz', fr: 'Fruits de mer (poisson, crevettes, calamar) au basilic sacré sur riz', id: 'Nasi seafood (ikan, udang, cumi) tumis kemangi suci' } },
-    { id: 'R07', cat: 'rice', price: 80, egg: true, name: { th: 'ข้าวทะเลผัดพริกเผา', en: 'Seafood stir-fried with chilli paste on rice', zs: '泰式甜辣酱炒海鲜饭', ja: '海鮮の甘辛チリペースト炒めごはん', my: 'ပင်လယ်စာငရုတ်ဆီအနှစ်ကြော် ထမင်း', ko: '해산물 칠리 페이스트 볶음 덮밥', es: 'Marisco salteado con pasta de chile y arroz', fr: 'Fruits de mer sautés à la pâte de piment sur riz', id: 'Nasi seafood tumis pasta cabai' } },
-    { id: 'R08', cat: 'rice', price: 80, egg: true, name: { th: 'ข้าวทะเลผัดพริกแกง', en: 'Seafood stir-fried with red curry paste on rice', zs: '红咖喱炒海鲜饭', ja: '海鮮のレッドカレー炒めごはん', my: 'ပင်လယ်စာဟင်းအနီကြော် ထမင်း', ko: '해산물 레드 커리 페이스트 볶음 덮밥', es: 'Marisco salteado con pasta de curry rojo y arroz', fr: 'Fruits de mer sautés à la pâte de curry rouge sur riz', id: 'Nasi seafood tumis pasta kari merah' } },
+    { id: 'R02', no: '19110', cat: 'rice', price: 60, egg: true, fav: true, name: { th: 'ข้าวกะเพราไก่', en: 'Stir-fried chicken with holy basil on rice', zs: '九层塔炒鸡肉盖饭', ja: '鶏肉のガパオライス', my: 'ကြက်သားပင်စိမ်းကြော် ထမင်း', ko: '닭고기 바질 볶음 덮밥', es: 'Pollo salteado con albahaca sagrada y arroz', fr: 'Poulet sauté au basilic sacré sur riz', id: 'Nasi ayam tumis kemangi suci' } },
+    { id: 'R01', no: '18210', cat: 'rice', price: 60, egg: true, name: { th: 'ข้าวกะเพราหมูสับ', en: 'Stir-fried minced pork with holy basil on rice', zs: '香料肉末盖饭', ja: '豚ひき肉のガパオライス', my: 'ဝက်သားစင်းကောပင်စိမ်းကြော် ထမင်း', ko: '다진 돼지고기 바질 볶음 덮밥', es: 'Cerdo picado salteado con albahaca sagrada y arroz', fr: 'Porc haché sauté au basilic sacré sur riz', id: 'Nasi babi cincang tumis kemangi suci' } },
+    { id: 'R03', no: '13110', cat: 'rice', price: 70, egg: true, name: { th: 'ข้าวกะเพราเนื้อสับ', en: 'Stir-fried minced beef with holy basil on rice', zs: '罗勒叶炒牛肉末盖饭', ja: '牛ひき肉のガパオライス', my: 'အမဲသားစင်းကောပင်စိမ်းကြော် ထမင်း', ko: '다진 소고기 바질 볶음 덮밥', es: 'Ternera picada salteada con albahaca sagrada y arroz', fr: 'Bœuf haché sauté au basilic sacré sur riz', id: 'Nasi daging sapi cincang tumis kemangi suci' } },
+    { id: 'R05', no: '18120', cat: 'rice', price: 70, egg: true, name: { th: 'ข้าวกะเพรากระดูกอ่อนหมูตุ๋น', en: 'Holy basil stir-fry with stewed pork cartilage on rice', zs: '打抛炖猪软骨盖饭', ja: '豚軟骨煮込みのガパオライス', my: 'ဝက်နံရိုးနူးပြုတ်ပင်စိမ်းကြော် ထမင်း', ko: '돼지 연골찜 바질 볶음 덮밥', es: 'Cartílago de cerdo guisado con albahaca sagrada y arroz', fr: 'Cartilage de porc mijoté au basilic sacré sur riz', id: 'Nasi tumis kemangi suci dengan tulang rawan babi rebus' } },
+    { id: 'R04', no: '18410', cat: 'rice', price: 60, egg: true, name: { th: 'ข้าวหมูกระเทียม', en: 'Fried pork with garlic & pepper on rice', zs: '泰式蒜香炒猪肉饭', ja: 'タイ風豚肉のガーリック炒めごはん', my: 'ဝက်သားကြက်သွန်ဖြူငရုတ်ကောင်းကြော် ထမင်း', ko: '마늘 후추 돼지고기 볶음 덮밥', es: 'Cerdo frito con ajo y pimienta con arroz', fr: 'Porc frit à l’ail et au poivre sur riz', id: 'Nasi babi goreng bawang putih & lada' } },
+    { id: 'R06', no: '14020', cat: 'rice', price: 80, egg: true, name: { th: 'ข้าวกะเพราทะเล (ปลา กุ้ง ปลาหมึก)', en: 'Seafood (fish, shrimp, squid) with holy basil on rice', zs: '罗勒叶炒海鲜盖饭（鱼、虾、鱿鱼）', ja: 'シーフードガパオライス（魚・エビ・イカ）', my: 'ပင်လယ်စာ(ငါး၊ ပုစွန်၊ ပြည်ကြီးငါး)ပင်စိမ်းကြော် ထမင်း', ko: '해산물(생선·새우·오징어) 바질 볶음 덮밥', es: 'Marisco (pescado, gambas, calamar) con albahaca sagrada y arroz', fr: 'Fruits de mer (poisson, crevettes, calamar) au basilic sacré sur riz', id: 'Nasi seafood (ikan, udang, cumi) tumis kemangi suci' } },
+    { id: 'R07', no: '14310', cat: 'rice', price: 80, egg: true, name: { th: 'ข้าวทะเลผัดพริกเผา', en: 'Seafood stir-fried with chilli paste on rice', zs: '泰式甜辣酱炒海鲜饭', ja: '海鮮の甘辛チリペースト炒めごはん', my: 'ပင်လယ်စာငရုတ်ဆီအနှစ်ကြော် ထမင်း', ko: '해산물 칠리 페이스트 볶음 덮밥', es: 'Marisco salteado con pasta de chile y arroz', fr: 'Fruits de mer sautés à la pâte de piment sur riz', id: 'Nasi seafood tumis pasta cabai' } },
+    { id: 'R08', no: '14410', cat: 'rice', price: 80, egg: true, name: { th: 'ข้าวทะเลผัดพริกแกง', en: 'Seafood stir-fried with red curry paste on rice', zs: '红咖喱炒海鲜饭', ja: '海鮮のレッドカレー炒めごはん', my: 'ပင်လယ်စာဟင်းအနီကြော် ထမင်း', ko: '해산물 레드 커리 페이스트 볶음 덮밥', es: 'Marisco salteado con pasta de curry rojo y arroz', fr: 'Fruits de mer sautés à la pâte de curry rouge sur riz', id: 'Nasi seafood tumis pasta kari merah' } },
     // Added from the Food Drink photo folder (placeholder prices).
     { id: '14210', cat: 'rice', price: 80, egg: true, name: { th: 'ข้าวทะเลผัดผงกะหรี่', en: 'Seafood stir-fried with curry powder on rice', zs: '咖喱粉炒海鲜盖饭', ja: '海鮮のカレー粉炒めごはん', my: 'ပင်လယ်စာကာရီမှုန့်ကြော် ထမင်း', ko: '해산물 카레 가루 볶음 덮밥', es: 'Marisco salteado con curry en polvo y arroz', fr: 'Fruits de mer sautés au curry en poudre sur riz', id: 'Nasi seafood tumis bubuk kari' } },
     { id: '16100', cat: 'rice', price: 70, egg: true, name: { th: 'ข้าวผัดกุ้ง', en: 'Shrimp fried rice', zs: '鲜虾炒饭', ja: 'エビチャーハン', my: 'ပုစွန်ထမင်းကြော်', ko: '새우 볶음밥', es: 'Arroz frito con gambas', fr: 'Riz sauté aux crevettes', id: 'Nasi goreng udang' } },
@@ -1506,6 +1510,10 @@ window.THL_MENU.optionText = function (ids, lang = 'th', item = null) {
       + (omitted.length ? ' · ' + name(this.optionLabels.without) + ': ' + omitted.map(o => name(o.name)).join(', ') : '');
   }
   return chosen.map(o => name(o.name)).join(' · ');
+};
+// The number guests and staff say or point at. `no` wins where a dish's id is not its menu number.
+window.THL_MENU.numberOf = function (item) {
+  return item ? item.no || item.id : '';
 };
 window.THL_MENU.unitPrice = function (item, ids) {
   const selected = this.normalizeOptions(item, ids);

@@ -468,6 +468,10 @@
     return e;
   };
 
+  // Small menu number beside each dish: the same digits in every language, so a guest and the staff can point at one dish.
+  const menuNoText = (it) => 'No. ' + MENU.numberOf(it);
+  const menuNo = (it) => h('span', { class: 'menu-no' }, menuNoText(it));
+
   function renderMenu() {
     const catsRow = $('#cats');
     const menu = $('#menu');
@@ -487,7 +491,7 @@
             h('span', { class: 'qty', 'aria-hidden': 'true' })),
           h('div', { class: 'body' },
             h('h3', { class: 'name' }, name),
-            h('p', { class: 'price' }, money(it.price)),
+            h('p', { class: 'price' }, money(it.price), menuNo(it)),
             h('div', { class: 'actions' },
               h('button', { class: 'btn btn-secondary', type: 'button', onclick: () => openPhoto(it.id) }, t('viewPhoto')),
               h('button', { class: 'btn btn-primary', type: 'button', 'aria-label': `${t('add')}: ${name}`, onclick: () => addToCart(it.id) }, t('addShort'))))));
@@ -521,7 +525,7 @@
     cart.forEach((l, i) => {
       const it = byId[l.id];
       const info = h('div', {},
-        h('div', { class: 'ln' }, pick(it.name)),
+        h('div', { class: 'ln' }, pick(it.name), ' ', menuNo(it)),
         h('div', { class: 'lp' }, `${money(unitPrice(l))} × ${l.qty} = ${money(lineTotal(l))}`));
       if (optionText(l)) info.append(h('div', { class: 'lp option-summary' }, optionText(l)));
       if (MENU.optionsFor(it).length) info.append(h('button', {
@@ -560,7 +564,7 @@
           h('span', {}, `${fmt(t('orderNo'), { n: o.id })} · ${new Date(o.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}${o.name ? ' · ' + o.name : ''}`),
           h('span', { class: 'badge' }, t(STATUS_LABEL[status]))),
         h('ul', {}, o.lines.map((l) => h('li', {},
-          h('span', {}, `${byId[l.id] ? pick(byId[l.id].name) : l.id}${l.options && optionText(l) ? ' · ' + optionText(l) : l.egg ? ' · ' + t(l.egg === 'fried' ? 'eggFried' : 'eggOmelette') : ''} × ${l.qty}`),
+          h('span', {}, menuNo(byId[l.id] || l), ` ${byId[l.id] ? pick(byId[l.id].name) : l.id}${l.options && optionText(l) ? ' · ' + optionText(l) : l.egg ? ' · ' + t(l.egg === 'fried' ? 'eggFried' : 'eggOmelette') : ''} × ${l.qty}`),
           h('span', {}, money(l.price * l.qty))))),
         status === 'cancelled' ? h('p', { class: 'cancel-hint' }, t('cancelledHint')) : null));
     });
@@ -588,6 +592,7 @@
     img.src = `assets/images/menu/full/${id}.jpg`;
     img.alt = pick(it.name);
     $('#photoPrice').textContent = money(it.price);
+    $('#photoNo').textContent = menuNoText(it);
     renderPhotoAnnotations(it);
     const add = $('#photoAdd');
     add.textContent = t('add');

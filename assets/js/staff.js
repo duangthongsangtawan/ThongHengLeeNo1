@@ -291,6 +291,10 @@
     return m < 1 ? t('justNow') : fmt(t('mins'), { n: m });
   }
 
+  // Menu number exactly as the guest sees it on menu.html (staff.html loads menu-data.js for this lookup only).
+  const MENU_BY_ID = new Map(((window.THL_MENU || {}).items || []).map((m) => [m.id, m]));
+  const menuNo = (id) => 'No. ' + (MENU_BY_ID.has(id) ? window.THL_MENU.numberOf(MENU_BY_ID.get(id)) : id);
+
   function ticket(o, isFresh) {
     const card = el('article', 'ticket s-' + o.status + (isFresh ? ' fresh' : ''));
     const head = el('div', 't-head');
@@ -313,6 +317,7 @@
       const name = el('div');
       const th = el('span', 'th', it.nameTh || it.name);
       name.append(th);
+      if (it.id) name.append(el('span', 'no', menuNo(it.id)));
       if (it.opt) name.append(el('span', 'opt', it.opt));
       const subs = [it.nameEn].filter(Boolean);
       if (!subs.length && it.name && it.name !== it.nameTh) subs.push(it.name); // orders saved before names were stored
