@@ -1,5 +1,5 @@
 /* Staff screen: sign-in, Kitchen tab (live order board New → Preparing → Done, sound alert)
-   and Sales tab (daily 売上集計). Orders arrive by polling the server every 2 seconds. */
+   and Sales tab (daily 売上集計). Orders arrive by polling the server every 2–3 seconds. */
 (function () {
   'use strict';
   const { t, baht } = THL;

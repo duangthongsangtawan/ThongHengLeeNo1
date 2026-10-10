@@ -751,9 +751,10 @@
     return request('/api/table/check', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ table, key }) }, POLL_TIMEOUT_MS);
   }
 
-  // Staff screen feed: polls every 2 seconds. Calls onChange(state) whenever the
+  // Staff screen feed: polls every 2 seconds on the shop Wi-Fi, every 3 on the public website (the
+  // cloud order server has a free daily request limit). Calls onChange(state) whenever the
   // orders change and onStatus('live' | 'demo' | 'offline' | 'auth'). Returns a function that stops it.
-  const POLL_MS = 2000;
+  const POLL_MS = PUBLIC ? 3000 : 2000;
   function subscribe(onChange, onStatus) {
     let version = null, timer, stopped = false, busy = false;
     const stop = () => { stopped = true; clearTimeout(timer); };

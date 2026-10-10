@@ -12,10 +12,10 @@
       url: 'https://duangthongsangtawan.github.io/ThongHengLeeNo1/',
       // Every host name the public website answers on (add a custom domain here).
       hosts: Object.freeze(['duangthongsangtawan.github.io']),
-      // Internet address of the shop computer's order server (the tunnel address), for example
-      // 'https://shop-pc.example.ts.net'. Leave '' until the tunnel is set up: the public
-      // website then shows the menu only.
-      api: 'https://introduction-qty-backup-reader.trycloudflare.com',
+      // Internet address of the order server: the Cloudflare Worker in cloud/ (always on), or a
+      // tunnel address to the shop computer. No trailing slash. With '' the public website
+      // shows the menu only.
+      api: 'https://thong-heng-lee-orders.thong-heng-lee-orders-cloud.workers.dev',
     }),
   });
   if (typeof module === 'object' && module.exports) module.exports = config;

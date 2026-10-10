@@ -736,7 +736,8 @@
   // ---------- Live status of sent orders ----------
   // Asks the server about this phone's own unfinished orders (id + key) and stops as soon as
   // every one is served or cancelled. Paused while the page is hidden (phone locked, other app).
-  const STATUS_POLL_MS = 6000;
+  // Slower on the public website: the cloud order server has a free daily request limit.
+  const STATUS_POLL_MS = THL.PUBLIC ? 15000 : 6000;
   let statusTimer = null;
   const unresolved = () => getSent().filter((o) => o.key && (o.status === 'new' || o.status === 'preparing' || o.status === 'served'));
   function watchStatus() {
