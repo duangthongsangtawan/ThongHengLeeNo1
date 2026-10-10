@@ -130,7 +130,7 @@
     "photo": "assets/images/team/Sangtawan_profile.jpg",
     // LINE / Facebook icons that pop out of the card. line = path of a LINE QR picture,
     // facebook = profile URL. Leave null to show "coming soon".
-    "social": { "line": null, "facebook": null }
+    "social": { "line": "assets/images/team/Sangtawan_line.jpg", "facebook": "https://www.facebook.com/sangtawan.duangthong" }
   },
   {
     "name": "Teerapat Phinitkit",
