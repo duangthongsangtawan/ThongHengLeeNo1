@@ -166,7 +166,7 @@ dialog.sheet[open] { animation: sheetIn 0.25s ease-out; }
 @media (max-width: 560px) {
   .team-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .team-group-management, .team-group-kitchen, .team-group-development, .team-group-proofreader { grid-column: 1; grid-row: auto; }
-  .team-group.team-group-proofreader .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Proofreaders stay in one column on phones too, so their order reads top to bottom. */
   .team-group-kitchen .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .member .avatar { width: 88px; height: 88px; }
 }

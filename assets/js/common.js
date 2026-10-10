@@ -148,93 +148,96 @@
     "group": "development",
     "photo": "assets/images/team/Theeraphat_profile.jpg",
     "social": { "line": "assets/images/team/Teerapat_line.jpg", "facebook": "https://www.facebook.com/thir.phathr.phinic.kic" }
-  },  {
-    "name": "Ye Yint Tun",
-    "role": {
-      "th": "ผู้ตรวจทานภาษาพม่า",
-      "en": "Burmese proofreader",
-      "zs": "缅甸语校对",
-      "ja": "ミャンマー語校正",
-      "my": "မြန်မာစာစစ်သူ",
-      "ko": "미얀마어 교정",
-      "es": "Revisor de birmano",
-      "fr": "Relecteur birman",
-      "id":"Korektor bahasa Burma"
-    },
-    "group": "proofreader"
   },
+  // Proofreaders: listed under the "Proofreader" heading, so each line shows only the language the
+  // person checks. Keep them in the order of the language buttons (Chinese, Japanese, Korean, Burmese, Indonesian, French).
   {
     "name": "Lee Jun Lin",
     "role": {
-      "th": "ผู้ตรวจทานภาษาจีน",
-      "en": "Chinese proofreader",
-      "zs": "中文校对",
-      "ja": "中国語校正",
-      "my": "တရုတ်စာစစ်သူ",
-      "ko": "중국어 교정",
-      "es": "Revisor de chino",
-      "fr": "Relecteur chinois",
-      "id":"Korektor bahasa Mandarin"
+      "th": "ภาษาจีน",
+      "en": "Chinese",
+      "zs": "中文",
+      "ja": "中国語",
+      "my": "တရုတ်ဘာသာ",
+      "ko": "중국어",
+      "es": "Chino",
+      "fr": "Chinois",
+      "id": "Bahasa Mandarin"
     },
     "group": "proofreader"
   },
   {
     "name": TBD_NAME,
     "role": {
-      "th": "ผู้ตรวจทานภาษาญี่ปุ่น",
-      "en": "Japanese proofreader",
-      "zs": "日语校对",
-      "ja": "日本語校正",
-      "my": "ဂျပန်စာစစ်သူ",
-      "ko": "일본어 교정",
-      "es": "Revisor de japonés",
-      "fr": "Relecteur japonais",
-      "id":"Korektor bahasa Jepang"
+      "th": "ภาษาญี่ปุ่น",
+      "en": "Japanese",
+      "zs": "日语",
+      "ja": "日本語",
+      "my": "ဂျပန်ဘာသာ",
+      "ko": "일본어",
+      "es": "Japonés",
+      "fr": "Japonais",
+      "id": "Bahasa Jepang"
     },
     "group": "proofreader"
   },
   {
     "name": TBD_NAME,
     "role": {
-      "th": "ผู้ตรวจทานภาษาเกาหลี",
-      "en": "Korean proofreader",
-      "zs": "韩语校对",
-      "ja": "韓国語校正",
-      "my": "ကိုးရီးယားစာစစ်သူ",
-      "ko": "한국어 교정",
-      "es": "Revisor de coreano",
-      "fr": "Relecteur coréen",
-      "id":"Korektor bahasa Korea"
+      "th": "ภาษาเกาหลี",
+      "en": "Korean",
+      "zs": "韩语",
+      "ja": "韓国語",
+      "my": "ကိုးရီးယားဘာသာ",
+      "ko": "한국어",
+      "es": "Coreano",
+      "fr": "Coréen",
+      "id": "Bahasa Korea"
+    },
+    "group": "proofreader"
+  },
+  {
+    "name": "Ye Yint Tun",
+    "role": {
+      "th": "ภาษาพม่า",
+      "en": "Burmese",
+      "zs": "缅甸语",
+      "ja": "ミャンマー語",
+      "my": "မြန်မာဘာသာ",
+      "ko": "미얀마어",
+      "es": "Birmano",
+      "fr": "Birman",
+      "id": "Bahasa Burma"
     },
     "group": "proofreader"
   },
   {
     "name": TBD_NAME,
     "role": {
-      "th": "ผู้ตรวจทานภาษาฝรั่งเศส",
-      "en": "French proofreader",
-      "zs": "法语校对",
-      "ja": "フランス語校正",
-      "my": "ပြင်သစ်စာစစ်သူ",
-      "ko": "프랑스어 교정",
-      "es": "Revisor de francés",
-      "fr": "Relecteur français",
-      "id":"Korektor bahasa Prancis"
+      "th": "ภาษาอินโดนีเซีย",
+      "en": "Indonesian",
+      "zs": "印尼语",
+      "ja": "インドネシア語",
+      "my": "အင်ဒိုနီးရှားဘာသာ",
+      "ko": "인도네시아어",
+      "es": "Indonesio",
+      "fr": "Indonésien",
+      "id": "Bahasa Indonesia"
     },
     "group": "proofreader"
   },
   {
     "name": TBD_NAME,
     "role": {
-      "th": "ผู้ตรวจทานภาษาอินโดนีเซีย",
-      "en": "Indonesian proofreader",
-      "zs": "印尼语校对",
-      "ja": "インドネシア語校正",
-      "my": "အင်ဒိုနီးရှားစာစစ်သူ",
-      "ko": "인도네시아어 교정",
-      "es": "Revisor de indonesio",
-      "fr": "Relecteur indonésien",
-      "id":"Korektor bahasa Indonesia"
+      "th": "ภาษาฝรั่งเศส",
+      "en": "French",
+      "zs": "法语",
+      "ja": "フランス語",
+      "my": "ပြင်သစ်ဘာသာ",
+      "ko": "프랑스어",
+      "es": "Francés",
+      "fr": "Français",
+      "id": "Bahasa Prancis"
     },
     "group": "proofreader"
   }
