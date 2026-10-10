@@ -418,6 +418,8 @@
     return img;
   }
 
+  // Shorter names for the phone language button, where the full name would push it onto a second row.
+  const LANG_SHORT = { id: 'Indonesia' };
   let allowedLangs = LANGS, languageStorageKey = 'thl-lang';
   function detectLang() {
     const param = new URLSearchParams(location.search).get('lang');
@@ -443,6 +445,10 @@
     document.querySelectorAll('[data-i18n-ph]').forEach((el) => el.setAttribute('placeholder', t(el.dataset.i18nPh)));
     document.querySelectorAll('[data-name-zh]').forEach((el) => { el.textContent = zhName(); });
     document.querySelectorAll('.langs button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    document.querySelectorAll('.lang-toggle').forEach((tg) => {
+      const cur = tg.nextElementSibling.querySelector('button[aria-pressed="true"]');
+      if (cur) tg.querySelector('span').textContent = LANG_SHORT[cur.dataset.lang] || cur.textContent;
+    });
     renderFooter();
   }
 
@@ -778,6 +784,23 @@
     return stop;
   }
 
+  // ---------- Compact language menu (phones) ----------
+  // A list of more than three languages gets a button showing the current language. On phones the
+  // list is hidden until that button is tapped (see .lang-toggle / .langs-menu in site.css).
+  function langMenu(nav) {
+    const btn = el('button', 'lang-toggle'); btn.type = 'button';
+    btn.setAttribute('aria-label', nav.getAttribute('aria-label') || 'Language');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span></span>'
+      + '<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+    nav.classList.add('langs-menu'); nav.before(btn);
+    const close = () => { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); };
+    btn.addEventListener('click', () => btn.setAttribute('aria-expanded', String(nav.classList.toggle('open'))));
+    nav.addEventListener('click', (e) => { if (e.target.closest('button')) close(); });
+    document.addEventListener('click', (e) => { if (!nav.contains(e.target) && !btn.contains(e.target)) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  }
+
   // ---------- Init ----------
   function init(dict, options = {}) {
     pageDict = dict || {};
@@ -786,6 +809,7 @@
     lang = detectLang();
     if (!allowedLangs.includes(lang)) lang = allowedLangs.includes('en') ? 'en' : allowedLangs[0];
     document.querySelectorAll('.langs button').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
+    document.querySelectorAll('.langs').forEach((nav) => { if (nav.querySelectorAll('button').length > 3) langMenu(nav); });
     apply();
   }
 

@@ -68,11 +68,19 @@ img { max-width: 100%; }
 
 .staff-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; font-size: 0.8rem; font-weight: 500; color: rgba(58,36,20,0.6); text-decoration: none; border: 1px solid transparent; border-radius: 8px; transition: color 0.2s, border-color 0.2s; }
 .staff-link:hover { color: var(--teak-dark); border-color: var(--hairline); }
+.lang-toggle { display: none; }
 @media (max-width: 700px) {
   .staff-link { margin-left: auto; }
-  /* 8 languages: two even rows of four instead of a ragged wrap */
-  .langs { order: 3; width: 100%; margin-left: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .langs button { padding: 7px 2px; min-height: 36px; white-space: nowrap; font-size: 0.78rem; overflow: hidden; text-overflow: ellipsis; }
+  /* Phones: a long language list folds into one button beside the logo and opens as a small menu,
+     so the sticky header stays one row tall. A short list (staff: 2 languages) stays inline. */
+  .bar { position: relative; }
+  .langs { flex-wrap: nowrap; }
+  .lang-toggle { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; min-height: 40px; padding: 0 8px; border: 1px solid var(--hairline); background: var(--paper); color: var(--teak); border-radius: 10px; font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
+  .lang-toggle[aria-expanded="true"] { background: var(--sky-soft); }
+  .lang-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  .langs-menu { display: none; position: absolute; top: calc(100% - 4px); right: 16px; z-index: 5; width: min(340px, calc(100% - 32px)); max-height: calc(100vh - 90px); overflow-y: auto; margin: 0; padding: 6px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; box-shadow: 0 10px 28px rgba(43,29,20,0.22); }
+  .langs-menu.open { display: grid; }
+  .langs-menu button { min-height: 42px; padding: 8px 10px; font-size: 0.9rem; line-height: 1.2; text-align: left; }
 }
 
 /* ---------- Buttons ---------- */
@@ -171,7 +179,6 @@ dialog.sheet[open] { animation: sheetIn 0.25s ease-out; }
 .view-only #tableChip,
 .view-only #photoAdd,
 .view-only .card .actions .btn-primary { display: none !important; }
-@media (max-width: 340px) { .langs button { font-size: 0.7rem; } }
 
 /* Developer cards: LINE / Facebook icons fan out above the card on hover, focus or tap. */
 .member.has-social { position: relative; cursor: pointer; transition: box-shadow .3s ease, background-color .3s ease; }
