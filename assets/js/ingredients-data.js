@@ -377,6 +377,59 @@ window.THL_INGREDIENTS = {
         ]
       }
     },
+    "15100": {
+      "review": "Draft",
+      "lists": {
+        "th": [
+          "ข้าว",
+          "ไข่",
+          "แครอท",
+          "หอมใหญ่"
+        ],
+        "en": [
+          "Rice",
+          "Egg",
+          "Carrot",
+          "Onion"
+        ],
+        "zs": [
+          "米饭",
+          "鸡蛋",
+          "胡萝卜",
+          "洋葱"
+        ],
+        "ja": [
+          "ごはん",
+          "卵",
+          "にんじん",
+          "玉ねぎ"
+        ],
+        "my": [
+          "ထမင်း",
+          "ကြက်ဥ",
+          "မုန်လာဥနီ",
+          "ကြက်သွန်နီ"
+        ],
+        "ko": [
+          "쌀밥",
+          "달걀",
+          "당근",
+          "양파"
+        ],
+        "fr": [
+          "Riz",
+          "Œuf",
+          "Carotte",
+          "Oignon"
+        ],
+        "id": [
+          "Nasi",
+          "Telur",
+          "Wortel",
+          "Bawang bombai"
+        ]
+      }
+    },
     "16100": {
       "review": "Draft",
       "lists": {
@@ -1036,6 +1089,35 @@ window.THL_INGREDIENTS = {
         "id": [
           "Krisan",
           "Gula"
+        ]
+      }
+    },
+    "30912": {
+      "review": "Draft",
+      "lists": {
+        "th": [
+          "น้ำ"
+        ],
+        "en": [
+          "Water"
+        ],
+        "zs": [
+          "水"
+        ],
+        "ja": [
+          "水"
+        ],
+        "my": [
+          "ရေ"
+        ],
+        "ko": [
+          "물"
+        ],
+        "fr": [
+          "Eau"
+        ],
+        "id": [
+          "Air"
         ]
       }
     },
@@ -2029,6 +2111,104 @@ window.THL_INGREDIENTS = {
         "id": [
           "Telur",
           "Minyak"
+        ]
+      }
+    },
+    "40070": {
+      "review": "Draft",
+      "lists": {
+        "th": [
+          "ไก่",
+          "ผักกาดขาว",
+          "แครอท",
+          "หอมใหญ่"
+        ],
+        "en": [
+          "Chicken",
+          "Chinese cabbage",
+          "Carrot",
+          "Onion"
+        ],
+        "zs": [
+          "鸡肉",
+          "大白菜",
+          "胡萝卜",
+          "洋葱"
+        ],
+        "ja": [
+          "鶏肉",
+          "白菜",
+          "にんじん",
+          "玉ねぎ"
+        ],
+        "my": [
+          "ကြက်သား",
+          "မုန်ညင်းဖြူ",
+          "မုန်လာဥနီ",
+          "ကြက်သွန်နီ"
+        ],
+        "ko": [
+          "닭고기",
+          "배추",
+          "당근",
+          "양파"
+        ],
+        "fr": [
+          "Poulet",
+          "Chou chinois",
+          "Carotte",
+          "Oignon"
+        ],
+        "id": [
+          "Ayam",
+          "Sawi putih",
+          "Wortel",
+          "Bawang bombai"
+        ]
+      }
+    },
+    "40080": {
+      "review": "Draft",
+      "lists": {
+        "th": [
+          "ผักกาดขาว",
+          "แครอท",
+          "หอมใหญ่"
+        ],
+        "en": [
+          "Chinese cabbage",
+          "Carrot",
+          "Onion"
+        ],
+        "zs": [
+          "大白菜",
+          "胡萝卜",
+          "洋葱"
+        ],
+        "ja": [
+          "白菜",
+          "にんじん",
+          "玉ねぎ"
+        ],
+        "my": [
+          "မုန်ညင်းဖြူ",
+          "မုန်လာဥနီ",
+          "ကြက်သွန်နီ"
+        ],
+        "ko": [
+          "배추",
+          "당근",
+          "양파"
+        ],
+        "fr": [
+          "Chou chinois",
+          "Carotte",
+          "Oignon"
+        ],
+        "id": [
+          "Sawi putih",
+          "Wortel",
+          "Bawang bombai"
         ]
       }
     },
