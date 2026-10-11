@@ -271,59 +271,6 @@ window.THL_INGREDIENTS = {
         ]
       }
     },
-    "10005": {
-      "review": "Draft",
-      "lists": {
-        "th": [
-          "เส้นจันท์",
-          "หมู",
-          "ไข่",
-          "ถั่ว"
-        ],
-        "en": [
-          "Rice noodles",
-          "Pork",
-          "Egg",
-          "Peanuts"
-        ],
-        "zs": [
-          "米粉",
-          "猪肉",
-          "鸡蛋",
-          "花生"
-        ],
-        "ja": [
-          "米麺",
-          "豚肉",
-          "卵",
-          "ピーナッツ"
-        ],
-        "my": [
-          "ဆန်ခေါက်ဆွဲ",
-          "ဝက်သား",
-          "ကြက်ဥ",
-          "မြေပဲ"
-        ],
-        "ko": [
-          "쌀국수",
-          "돼지고기",
-          "달걀",
-          "땅콩"
-        ],
-        "fr": [
-          "Nouilles de riz",
-          "Porc",
-          "Œuf",
-          "Cacahuètes"
-        ],
-        "id": [
-          "Mi beras",
-          "Babi",
-          "Telur",
-          "Kacang tanah"
-        ]
-      }
-    },
     "14210": {
       "review": "Draft",
       "lists": {

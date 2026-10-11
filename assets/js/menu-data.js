@@ -68,7 +68,6 @@ window.THL_MENU = {
 
     // ---- Pad Thai ----
     { id: '10001', cat: 'noodles', price: 60, fav: true, name: { th: 'ผัดไทยธรรมดา', en: 'Pad Thai (classic)', zs: '泰式炒河粉（原味）', ja: 'パッタイ（プレーン）', my: 'ပဒ်ထိုင်း (ရိုးရိုး)', ko: '팟타이 (기본)', fr: 'Pad thaï (classique)', id: 'Pad Thai (klasik)' } },
-    { id: '10005', cat: 'noodles', price: 95, name: { th: 'ผัดไทยหมู', en: 'Pad Thai with pork', zs: '猪肉泰式炒河粉', ja: '豚肉のパッタイ', my: 'ဝက်သားပဒ်ထိုင်း', ko: '돼지고기 팟타이', fr: 'Pad thaï au porc', id: 'Pad Thai babi' } },
     { id: '10002', cat: 'noodles', price: 95, name: { th: 'ผัดไทยไก่', en: 'Pad Thai with chicken', zs: '鸡肉泰式炒河粉', ja: '鶏肉のパッタイ', my: 'ကြက်သားပဒ်ထိုင်း', ko: '닭고기 팟타이', fr: 'Pad thaï au poulet', id: 'Pad Thai ayam' } },
     { id: '10003', cat: 'noodles', price: 115, name: { th: 'ผัดไทยกุ้ง', en: 'Pad Thai with shrimp', zs: '鲜虾泰式炒河粉', ja: 'エビのパッタイ', my: 'ပုစွန်ပဒ်ထိုင်း', ko: '새우 팟타이', fr: 'Pad thaï aux crevettes', id: 'Pad Thai udang' } },
     { id: '10004', cat: 'noodles', price: 150, name: { th: 'ผัดไทยทะเล', en: 'Seafood Pad Thai', zs: '海鲜泰式炒河粉', ja: 'シーフードパッタイ', my: 'ပင်လယ်စာပဒ်ထိုင်း', ko: '해산물 팟타이', fr: 'Pad thaï aux fruits de mer', id: 'Pad Thai seafood' } },
