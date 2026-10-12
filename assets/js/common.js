@@ -148,7 +148,7 @@
     "social": { "line": "assets/images/team/Sangtawan_line.jpg", "instagram": "https://www.instagram.com/sangtawanduangthong/" }
   },
   {
-    "name": { "th": "ธีรภัทร์ พินิจกิจ", "en": "Teerapat Phinitkit" },
+    "name": { "th": "ธีรภัทร์ พินิจกิจ", "en": "Teerapat Phinitkit", "ja": "テアーアパト フィニトキト" },
     "role": {
       "th": "ผู้พัฒนาเว็บไซต์（ศิษย์เก่า KOSEN-KMITL）",
       "en": "Web developer（Thai KOSEN Grad.）",
