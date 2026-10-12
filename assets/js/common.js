@@ -130,7 +130,7 @@
     "photo": "assets/images/team/Sayan_profile.png"
   },
   {
-    "name": "Sangtawan Duangthong",
+    "name": { "th": "แสงตะวัน ดวงทอง", "en": "Sangtawan Duangthong", "ja": "ドゥアントン サンタワン" },
     "role": {
       "th": "ผู้พัฒนาเว็บไซต์（OSK143・ศิษย์เก่า KOSEN-KMITL）",
       "en": "Web developer",
@@ -148,7 +148,7 @@
     "social": { "line": "assets/images/team/Sangtawan_line.jpg", "facebook": "https://www.facebook.com/sangtawan.duangthong" }
   },
   {
-    "name": "Teerapat Phinitkit",
+    "name": { "th": "ธีรภัทร์ พินิจกิจ", "en": "Teerapat Phinitkit" },
     "role": {
       "th": "ผู้พัฒนาเว็บไซต์（ศิษย์เก่า KOSEN-KMITL）",
       "en": "Web developer（Thai KOSEN Grad.）",
