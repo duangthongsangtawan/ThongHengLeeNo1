@@ -133,7 +133,7 @@
     "name": { "th": "แสงตะวัน ดวงทอง", "en": "Sangtawan Duangthong", "ja": "ドゥアントン サンタワン" },
     "role": {
       "th": "ผู้พัฒนาเว็บไซต์（OSK143・ศิษย์เก่า KOSEN-KMITL）",
-      "en": "Web developer",
+      "en": "Web developer（Thai KOSEN Grad.）",
       "zs": "网站开发者",
       "ja": "ウェブ開発者（沼津高専卒）",
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
@@ -143,9 +143,9 @@
     },
     "group": "development",
     "photo": "assets/images/team/Sangtawan_profile.jpg",
-    // LINE / Facebook icons that pop out of the card. line = path of a LINE QR picture,
-    // facebook = profile URL. Leave null to show "coming soon".
-    "social": { "line": "assets/images/team/Sangtawan_line.jpg", "facebook": "https://www.facebook.com/sangtawan.duangthong" }
+    // LINE / Instagram icons that pop out of the card. line = path of a LINE QR picture,
+    // instagram = profile URL. Leave null to show "coming soon".
+    "social": { "line": "assets/images/team/Sangtawan_line.jpg", "instagram": "https://www.instagram.com/sangtawanduangthong/" }
   },
   {
     "name": { "th": "ธีรภัทร์ พินิจกิจ", "en": "Teerapat Phinitkit" },
@@ -157,11 +157,11 @@
       "my": "ဝဘ်ဆိုက်ရေးဆွဲသူ",
       "ko": "웹 개발자",
       "fr": "Développeur web",
-      "id":"Pengembang web（Lulusan KOSEN Thailand）"
+      "id":"Pengembang web"
     },
     "group": "development",
     "photo": "assets/images/team/Theeraphat_profile.jpg",
-    "social": { "line": "assets/images/team/Teerapat_line.jpg", "facebook": "https://www.facebook.com/thir.phathr.phinic.kic" }
+    "social": { "line": "assets/images/team/Teerapat_line.jpg", "instagram": "https://www.instagram.com/thiirphathrphinicchkicch/" }
   },
   // Proofreaders: listed under the "Proofreader" heading, so each line shows only the language the
   // person checks. Keep them in the order of the language buttons (Chinese, Japanese, Korean, Burmese, Indonesian, French).
@@ -464,16 +464,16 @@
   const todo = () => el('span', 'todo', t('fTodo'));
   const personIcon = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>';
 
-  // ---------- Developer social icons (LINE / Facebook) ----------
+  // ---------- Developer social icons (LINE / Instagram) ----------
   // Hovering (PC), focusing or tapping (phone) a card with "social" makes the two icons fan out
-  // above it, like picking an item in a game. LINE opens a QR window; Facebook opens the profile.
+  // above it, like picking an item in a game. LINE opens a QR window; Instagram opens the profile.
   const SOCIAL_TEXT = {
     soon: { th: 'เร็ว ๆ นี้', en: 'Coming soon', zs: '即将推出', ja: '近日公開', my: 'မကြာမီ', ko: '곧 공개', fr: 'Bientôt disponible', id: 'Segera hadir' },
     scan: { th: 'สแกน QR เพื่อเพิ่มเพื่อนใน LINE', en: 'Scan the QR code to add on LINE', zs: '扫描二维码添加 LINE 好友', ja: 'QRコードを読み取ってLINEで友だち追加', my: 'LINE တွင် မိတ်ဆွေထည့်ရန် QR ကို စကင်ဖတ်ပါ', ko: 'QR 코드를 스캔해 LINE 친구 추가', fr: 'Scannez le QR code pour ajouter sur LINE', id: 'Scan kode QR untuk menambahkan teman di LINE' },
     close: { th: 'ปิด', en: 'Close', zs: '关闭', ja: '閉じる', my: 'ပိတ်ရန်', ko: '닫기', fr: 'Fermer', id: 'Tutup' },
   };
   const LINE_ICON = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#06C755"/><path fill="#fff" d="M20 8.5c-7.7 0-14 5-14 11.1 0 5.5 5 10.1 11.7 11 .5.1 1.1.3 1.2.7.1.4.1.9 0 1.3l-.2 1.2c-.1.4-.3 1.4 1.2.8 1.5-.6 8.1-4.8 11-8.2 2-2.2 3.1-4.4 3.1-6.8 0-6.1-6.3-11.1-14-11.1z"/><text x="20" y="22.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.6" fill="#06C755">LINE</text></svg>';
-  const FB_ICON = '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#1877F2"/><path fill="#fff" d="M22.2 32V21.8h3.4l.5-4h-3.9v-2.5c0-1.1.3-1.9 2-1.9h2.1V9.8c-.4 0-1.6-.2-3-.2-3 0-5 1.8-5 5.2v3h-3.4v4h3.4V32z"/></svg>';
+  const IG_ICON = '<svg viewBox="0 0 40 40" aria-hidden="true"><defs><radialGradient id="thl-ig" cx="0.3" cy="1.07" r="1.3"><stop offset="0" stop-color="#FFDD55"/><stop offset="0.1" stop-color="#FFDD55"/><stop offset="0.5" stop-color="#FF543E"/><stop offset="1" stop-color="#C837AB"/></radialGradient></defs><rect width="40" height="40" rx="10" fill="url(#thl-ig)"/><rect x="9.5" y="9.5" width="21" height="21" rx="6" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="20" cy="20" r="5" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="26.2" cy="13.8" r="1.5" fill="#fff"/></svg>';
 
   let qrDialog;
   function showLineQr(m, name) {
@@ -501,16 +501,16 @@
     const line = el('button', 'social-ico social-line'); line.type = 'button';
     line.innerHTML = LINE_ICON; line.setAttribute('aria-label', 'LINE · ' + name);
     line.addEventListener('click', (e) => { e.stopPropagation(); showLineQr(m, name); });
-    let fb;
-    if (m.social.facebook) {
-      fb = el('a', 'social-ico social-fb'); fb.href = m.social.facebook; fb.target = '_blank'; fb.rel = 'noopener';
-      fb.addEventListener('click', (e) => e.stopPropagation());
+    let ig;
+    if (m.social.instagram) {
+      ig = el('a', 'social-ico social-ig'); ig.href = m.social.instagram; ig.target = '_blank'; ig.rel = 'noopener';
+      ig.addEventListener('click', (e) => e.stopPropagation());
     } else {
-      fb = el('button', 'social-ico social-fb'); fb.type = 'button';
-      fb.addEventListener('click', (e) => { e.stopPropagation(); toast(pick(SOCIAL_TEXT.soon)); });
+      ig = el('button', 'social-ico social-ig'); ig.type = 'button';
+      ig.addEventListener('click', (e) => { e.stopPropagation(); toast(pick(SOCIAL_TEXT.soon)); });
     }
-    fb.innerHTML = FB_ICON; fb.setAttribute('aria-label', 'Facebook · ' + name);
-    pop.append(line, fb);
+    ig.innerHTML = IG_ICON; ig.setAttribute('aria-label', 'Instagram · ' + name);
+    pop.append(line, ig);
     // Phones have no hover: a tap on the card opens / closes the icons.
     card.addEventListener('click', () => card.classList.toggle('social-open'));
     return pop;
