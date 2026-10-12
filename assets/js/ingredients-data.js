@@ -952,7 +952,7 @@ window.THL_INGREDIENTS = {
         ],
         "id": [
           "Rosela",
-          "Bidara Cina",
+          "Angco (kurma merah)",
           "Gula"
         ]
       }
@@ -2786,7 +2786,7 @@ window.THL_INGREDIENTS = {
         "id": [
           "Nasi",
           "Ayam",
-          "Kemangi suci",
+          "Kemangi Thailand",
           "Cabai"
         ]
       }
@@ -2839,7 +2839,7 @@ window.THL_INGREDIENTS = {
         "id": [
           "Nasi",
           "Babi",
-          "Kemangi suci",
+          "Kemangi Thailand",
           "Cabai"
         ]
       }
@@ -2892,7 +2892,7 @@ window.THL_INGREDIENTS = {
         "id": [
           "Nasi",
           "Daging sapi",
-          "Kemangi suci",
+          "Kemangi Thailand",
           "Cabai"
         ]
       }
@@ -2945,7 +2945,7 @@ window.THL_INGREDIENTS = {
         "id": [
           "Nasi",
           "Tulang rawan babi",
-          "Kemangi suci",
+          "Kemangi Thailand",
           "Cabai"
         ]
       }
@@ -3044,7 +3044,7 @@ window.THL_INGREDIENTS = {
         "id": [
           "Nasi",
           "Ikan, udang & cumi",
-          "Kemangi suci"
+          "Kemangi Thailand"
         ]
       }
     },

@@ -46,7 +46,7 @@
   //  It is in data/settings.json.
   // ===========================================================================
   // Placeholder name for team members not yet chosen ("under development"), one per language
-  const TBD_NAME = { th: 'อยู่ระหว่างพัฒนา', en: 'In development', zs: '开发中', ja: '開発中', my: 'ဖန်တီးဆဲ', ko: '개발 중', fr: 'En développement', id: 'Dalam pengembangan' };
+  const TBD_NAME = { th: 'อยู่ระหว่างพัฒนา', en: 'In development', zs: '开发中', ja: '開発中', my: 'ဖန်တီးဆဲ', ko: '개발 중', fr: 'En développement', id: 'Sedang disiapkan' };
 
   const SITE = {
     // ---- Name ----
@@ -70,9 +70,9 @@
 
     // ---- Opening hours: one row per line shown in the footer ----
     hours: [
-      { days: { th: 'อังคาร–อาทิตย์', en: 'Tue–Sun', zs: '周二至周日', ja: '火〜日', my: 'အင်္ဂါ–တနင်္ဂနွေ', ko: '화–일', fr: 'mar.–dim.', id: 'Sel–Min' }, time: '08:30–16:30' },
+      { days: { th: 'อังคาร–อาทิตย์', en: 'Tue–Sun', zs: '周二至周日', ja: '火〜日', my: 'အင်္ဂါ–တနင်္ဂနွေ', ko: '화–일', fr: 'mar.–dim.', id: 'Selasa–Minggu' }, time: '08:30–16:30' },
     ],
-    closedNote: { th: 'หยุดทุกวันจันทร์', en: 'Closed Mondays', zs: '每周一休息', ja: '月曜定休', my: 'တနင်္လာနေ့ ပိတ်သည်', ko: '매주 월요일 휴무', fr: 'Fermé le lundi', id: 'Tutup setiap Senin' },
+    closedNote: { th: 'หยุดทุกวันจันทร์', en: 'Closed Mondays', zs: '每周一休息', ja: '月曜定休', my: 'တနင်္လာနေ့ ပိတ်သည်', ko: '매주 월요일 휴무', fr: 'Fermé le lundi', id: 'Tutup setiap hari Senin' },
 
     // ---- Contact (leave null to hide a line) ----
     phone: '+66 81-649-4890', // International format omits the domestic leading zero.
@@ -366,13 +366,13 @@
     id: {
       staffLink: 'Staf',
       staffAria: 'Layar staf',
-      fAbout: 'Restoran Thailand di kawasan Tha Chang, dikelola oleh keluarga Thai-Tionghoa.',
+      fAbout: 'Restoran keluarga Tionghoa-Thailand di kawasan Tha Chang, Bangkok.',
       fAddress: 'Alamat',
       fHours: 'Jam buka',
-      fContact: 'Kontak',
-      fTeam: 'Tim kami',
-      fMap: 'Buka peta',
-      fTodo: '(akan ditambahkan)',
+      fContact: 'Hubungi Kami',
+      fTeam: 'Tim Kami',
+      fMap: 'Lihat peta',
+      fTodo: '(segera hadir)',
       fMember: 'Anggota tim',
       fReplay: 'Putar ulang animasi pembuka',
       phone: 'Telepon',
@@ -469,7 +469,7 @@
   // above it, like picking an item in a game. LINE opens a QR window; Facebook opens the profile.
   const SOCIAL_TEXT = {
     soon: { th: 'เร็ว ๆ นี้', en: 'Coming soon', zs: '即将推出', ja: '近日公開', my: 'မကြာမီ', ko: '곧 공개', fr: 'Bientôt disponible', id: 'Segera hadir' },
-    scan: { th: 'สแกน QR เพื่อเพิ่มเพื่อนใน LINE', en: 'Scan the QR code to add on LINE', zs: '扫描二维码添加 LINE 好友', ja: 'QRコードを読み取ってLINEで友だち追加', my: 'LINE တွင် မိတ်ဆွေထည့်ရန် QR ကို စကင်ဖတ်ပါ', ko: 'QR 코드를 스캔해 LINE 친구 추가', fr: 'Scannez le QR code pour ajouter sur LINE', id: 'Pindai kode QR untuk menambahkan di LINE' },
+    scan: { th: 'สแกน QR เพื่อเพิ่มเพื่อนใน LINE', en: 'Scan the QR code to add on LINE', zs: '扫描二维码添加 LINE 好友', ja: 'QRコードを読み取ってLINEで友だち追加', my: 'LINE တွင် မိတ်ဆွေထည့်ရန် QR ကို စကင်ဖတ်ပါ', ko: 'QR 코드를 스캔해 LINE 친구 추가', fr: 'Scannez le QR code pour ajouter sur LINE', id: 'Scan kode QR untuk menambahkan teman di LINE' },
     close: { th: 'ปิด', en: 'Close', zs: '关闭', ja: '閉じる', my: 'ပိတ်ရန်', ko: '닫기', fr: 'Fermer', id: 'Tutup' },
   };
   const LINE_ICON = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#06C755"/><path fill="#fff" d="M20 8.5c-7.7 0-14 5-14 11.1 0 5.5 5 10.1 11.7 11 .5.1 1.1.3 1.2.7.1.4.1.9 0 1.3l-.2 1.2c-.1.4-.3 1.4 1.2.8 1.5-.6 8.1-4.8 11-8.2 2-2.2 3.1-4.4 3.1-6.8 0-6.1-6.3-11.1-14-11.1z"/><text x="20" y="22.6" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7.6" fill="#06C755">LINE</text></svg>';

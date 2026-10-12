@@ -36,20 +36,20 @@ const PRICE_OVERRIDES = {        // exact real prices by dish id — these alway
 
 window.THL_MENU = {
   categories: [
-    { id: 'rice',    name: { th: 'ข้าวราดกับข้าว', en: 'Rice dishes', zs: '盖饭', ja: 'ごはんもの', my: 'ထမင်းဟင်းများ', ko: '덮밥', fr: 'Plats sur riz', id: 'Nasi dengan lauk' } },
+    { id: 'rice',    name: { th: 'ข้าวราดกับข้าว', en: 'Rice dishes', zs: '盖饭', ja: 'ごはんもの', my: 'ထမင်းဟင်းများ', ko: '덮밥', fr: 'Plats sur riz', id: 'Aneka Nasi' } },
     { id: 'noodles', name: { th: 'ผัดไทย', en: 'Pad Thai', zs: '泰式炒河粉', ja: 'パッタイ', my: 'ပဒ်ထိုင်း', ko: '팟타이', fr: 'Pad thaï', id: 'Pad Thai' } },
-    { id: 'sides',   name: { th: 'ต้ม แกง และกับข้าว', en: 'Soups & sides', zs: '汤品与小菜', ja: 'スープ・サイド', my: 'ဟင်းချို၊ ဟင်းနှင့် အရံဟင်း', ko: '수프 & 사이드', fr: 'Soupes et accompagnements', id: 'Sup & lauk' } },
-    { id: 'dessert', name: { th: 'ของหวาน', en: 'Desserts', zs: '甜点', ja: 'デザート', my: 'အချိုပွဲ', ko: '디저트', fr: 'Desserts', id: 'Hidangan penutup' } },
+    { id: 'sides',   name: { th: 'ต้ม แกง และกับข้าว', en: 'Soups & sides', zs: '汤品与小菜', ja: 'スープ・サイド', my: 'ဟင်းချို၊ ဟင်းနှင့် အရံဟင်း', ko: '수프 & 사이드', fr: 'Soupes et accompagnements', id: 'Sup & Lauk' } },
+    { id: 'dessert', name: { th: 'ของหวาน', en: 'Desserts', zs: '甜点', ja: 'デザート', my: 'အချိုပွဲ', ko: '디저트', fr: 'Desserts', id: 'Hidangan Penutup' } },
     { id: 'drinks',  name: { th: 'เครื่องดื่ม', en: 'Drinks', zs: '饮料', ja: 'ドリンク', my: 'သောက်စရာ', ko: '음료', fr: 'Boissons', id: 'Minuman' } },
   ],
   items: [
     // ---- Rice dishes (optional egg add-ons) ----
-    { id: 'R02', no: '19110', cat: 'rice', price: 60, egg: true, fav: true, name: { th: 'ข้าวกะเพราไก่', en: 'Stir-fried chicken with holy basil on rice', zs: '九层塔炒鸡肉盖饭', ja: '鶏肉のガパオライス', my: 'ကြက်သားပင်စိမ်းကြော် ထမင်း', ko: '닭고기 바질 볶음 덮밥', fr: 'Poulet sauté au basilic sacré sur riz', id: 'Nasi ayam tumis kemangi suci' } },
-    { id: 'R01', no: '18210', cat: 'rice', price: 60, egg: true, name: { th: 'ข้าวกะเพราหมูสับ', en: 'Stir-fried minced pork with holy basil on rice', zs: '香料肉末盖饭', ja: '豚ひき肉のガパオライス', my: 'ဝက်သားစင်းကောပင်စိမ်းကြော် ထမင်း', ko: '다진 돼지고기 바질 볶음 덮밥', fr: 'Porc haché sauté au basilic sacré sur riz', id: 'Nasi babi cincang tumis kemangi suci' } },
-    { id: 'R03', no: '13110', cat: 'rice', price: 85, egg: true, name: { th: 'ข้าวกะเพราเนื้อสับ', en: 'Stir-fried minced beef with holy basil on rice', zs: '罗勒叶炒牛肉末盖饭', ja: '牛ひき肉のガパオライス', my: 'အမဲသားစင်းကောပင်စိမ်းကြော် ထမင်း', ko: '다진 소고기 바질 볶음 덮밥', fr: 'Bœuf haché sauté au basilic sacré sur riz', id: 'Nasi daging sapi cincang tumis kemangi suci' } },
-    { id: 'R05', no: '18120', cat: 'rice', price: 85, egg: true, name: { th: 'ข้าวกะเพรากระดูกอ่อนหมูตุ๋น', en: 'Holy basil stir-fry with stewed pork cartilage on rice', zs: '打抛炖猪软骨盖饭', ja: '豚軟骨煮込みのガパオライス', my: 'ဝက်နံရိုးနူးပြုတ်ပင်စိမ်းကြော် ထမင်း', ko: '돼지 연골찜 바질 볶음 덮밥', fr: 'Cartilage de porc mijoté au basilic sacré sur riz', id: 'Nasi tumis kemangi suci dengan tulang rawan babi rebus' } },
+    { id: 'R02', no: '19110', cat: 'rice', price: 60, egg: true, fav: true, name: { th: 'ข้าวกะเพราไก่', en: 'Stir-fried chicken with holy basil on rice', zs: '九层塔炒鸡肉盖饭', ja: '鶏肉のガパオライス', my: 'ကြက်သားပင်စိမ်းကြော် ထမင်း', ko: '닭고기 바질 볶음 덮밥', fr: 'Poulet sauté au basilic sacré sur riz', id: 'Nasi ayam tumis kemangi Thailand' } },
+    { id: 'R01', no: '18210', cat: 'rice', price: 60, egg: true, name: { th: 'ข้าวกะเพราหมูสับ', en: 'Stir-fried minced pork with holy basil on rice', zs: '香料肉末盖饭', ja: '豚ひき肉のガパオライス', my: 'ဝက်သားစင်းကောပင်စိမ်းကြော် ထမင်း', ko: '다진 돼지고기 바질 볶음 덮밥', fr: 'Porc haché sauté au basilic sacré sur riz', id: 'Nasi babi cincang tumis kemangi Thailand' } },
+    { id: 'R03', no: '13110', cat: 'rice', price: 85, egg: true, name: { th: 'ข้าวกะเพราเนื้อสับ', en: 'Stir-fried minced beef with holy basil on rice', zs: '罗勒叶炒牛肉末盖饭', ja: '牛ひき肉のガパオライス', my: 'အမဲသားစင်းကောပင်စိမ်းကြော် ထမင်း', ko: '다진 소고기 바질 볶음 덮밥', fr: 'Bœuf haché sauté au basilic sacré sur riz', id: 'Nasi daging sapi cincang tumis kemangi Thailand' } },
+    { id: 'R05', no: '18120', cat: 'rice', price: 85, egg: true, name: { th: 'ข้าวกะเพรากระดูกอ่อนหมูตุ๋น', en: 'Holy basil stir-fry with stewed pork cartilage on rice', zs: '打抛炖猪软骨盖饭', ja: '豚軟骨煮込みのガパオライス', my: 'ဝက်နံရိုးနူးပြုတ်ပင်စိမ်းကြော် ထမင်း', ko: '돼지 연골찜 바질 볶음 덮밥', fr: 'Cartilage de porc mijoté au basilic sacré sur riz', id: 'Nasi tumis kemangi Thailand dengan tulang rawan babi rebus' } },
     { id: 'R04', no: '18410', cat: 'rice', price: 60, egg: true, name: { th: 'ข้าวหมูกระเทียม', en: 'Fried pork with garlic & pepper on rice', zs: '泰式蒜香炒猪肉饭', ja: 'タイ風豚肉のガーリック炒めごはん', my: 'ဝက်သားကြက်သွန်ဖြူငရုတ်ကောင်းကြော် ထမင်း', ko: '마늘 후추 돼지고기 볶음 덮밥', fr: 'Porc frit à l’ail et au poivre sur riz', id: 'Nasi babi goreng bawang putih & lada' } },
-    { id: 'R06', no: '14020', cat: 'rice', price: 140, egg: true, name: { th: 'ข้าวกะเพราทะเล (ปลา กุ้ง ปลาหมึก)', en: 'Seafood (fish, shrimp, squid) with holy basil on rice', zs: '罗勒叶炒海鲜盖饭（鱼、虾、鱿鱼）', ja: 'シーフードガパオライス（魚・エビ・イカ）', my: 'ပင်လယ်စာ(ငါး၊ ပုစွန်၊ ပြည်ကြီးငါး)ပင်စိမ်းကြော် ထမင်း', ko: '해산물(생선·새우·오징어) 바질 볶음 덮밥', fr: 'Fruits de mer (poisson, crevettes, calamar) au basilic sacré sur riz', id: 'Nasi seafood (ikan, udang, cumi) tumis kemangi suci' } },
+    { id: 'R06', no: '14020', cat: 'rice', price: 140, egg: true, name: { th: 'ข้าวกะเพราทะเล (ปลา กุ้ง ปลาหมึก)', en: 'Seafood (fish, shrimp, squid) with holy basil on rice', zs: '罗勒叶炒海鲜盖饭（鱼、虾、鱿鱼）', ja: 'シーフードガパオライス（魚・エビ・イカ）', my: 'ပင်လယ်စာ(ငါး၊ ပုစွန်၊ ပြည်ကြီးငါး)ပင်စိမ်းကြော် ထမင်း', ko: '해산물(생선·새우·오징어) 바질 볶음 덮밥', fr: 'Fruits de mer (poisson, crevettes, calamar) au basilic sacré sur riz', id: 'Nasi seafood (ikan, udang, cumi) tumis kemangi Thailand' } },
     { id: 'R07', no: '14310', cat: 'rice', price: 140, egg: true, name: { th: 'ข้าวทะเลผัดพริกเผา', en: 'Seafood stir-fried with chilli paste on rice', zs: '泰式甜辣酱炒海鲜饭', ja: '海鮮の甘辛チリペースト炒めごはん', my: 'ပင်လယ်စာငရုတ်ဆီအနှစ်ကြော် ထမင်း', ko: '해산물 칠리 페이스트 볶음 덮밥', fr: 'Fruits de mer sautés à la pâte de piment sur riz', id: 'Nasi seafood tumis pasta cabai' } },
     { id: 'R08', no: '14410', cat: 'rice', price: 140, egg: true, name: { th: 'ข้าวทะเลผัดพริกแกง', en: 'Seafood stir-fried with red curry paste on rice', zs: '红咖喱炒海鲜饭', ja: '海鮮のレッドカレー炒めごはん', my: 'ပင်လယ်စာဟင်းအနီကြော် ထမင်း', ko: '해산물 레드 커리 페이스트 볶음 덮밥', fr: 'Fruits de mer sautés à la pâte de curry rouge sur riz', id: 'Nasi seafood tumis pasta kari merah' } },
     // Added from the Food Drink photo folder (placeholder prices).
@@ -104,7 +104,7 @@ window.THL_MENU = {
     { id: '30200', cat: 'drinks', price: 35, name: { th: 'ชาไทยเย็น', en: 'Thai iced milk tea', zs: '泰式冰奶茶', ja: 'タイアイスミルクティー', my: 'ထိုင်းလက်ဖက်ရည်အေး', ko: '타이 아이스 밀크티', fr: 'Thé thaï glacé au lait', id: 'Es teh susu Thai' } },
     { id: '31104', cat: 'drinks', price: 30, name: { th: 'โอเลี้ยง', en: 'Oliang (Thai iced black coffee)', zs: '泰式冰黑咖啡', ja: 'オーリアン（タイ式アイスコーヒー）', my: 'အိုလျန် (ထိုင်းကော်ဖီအေး)', ko: '오리양 (태국식 아이스 블랙커피)', fr: 'Oliang (café noir glacé thaï)', id: 'Oliang (es kopi hitam Thai)' } },
     { id: '31105', cat: 'drinks', price: 35, name: { th: 'โอเลี้ยงยกล้อ', en: 'Oliang Yok Lor', zs: '泰式冰黑咖啡（Yok Lor）', ja: 'オーリアン（ヨックロー）', my: 'အိုလျန် ယော့လော်', ko: '오리양 욕러', fr: 'Oliang Yok Lor', id: 'Oliang Yok Lor' } },
-    { id: '30100', cat: 'drinks', price: 30, name: { th: 'น้ำกระเจี๊ยบพุทราจีน', en: 'Roselle & jujube drink', zs: '洛神花红枣茶', ja: 'ローゼル＆ナツメドリンク', my: 'ချဉ်ပေါင်နီနှင့်ဆီးသီးဖျော်ရည်', ko: '로젤 대추 음료', fr: 'Boisson roselle et jujube', id: 'Minuman rosela & bidara Cina' } },
+    { id: '30100', cat: 'drinks', price: 30, name: { th: 'น้ำกระเจี๊ยบพุทราจีน', en: 'Roselle & jujube drink', zs: '洛神花红枣茶', ja: 'ローゼル＆ナツメドリンク', my: 'ချဉ်ပေါင်နီနှင့်ဆီးသီးဖျော်ရည်', ko: '로젤 대추 음료', fr: 'Boisson roselle et jujube', id: 'Minuman rosela & angco (kurma merah)' } },
     { id: '30300', cat: 'drinks', price: 30, name: { th: 'น้ำเก๊กฮวย', en: 'Chrysanthemum tea', zs: '菊花茶', ja: '菊花茶', my: 'ဂန္ဓမာလက်ဖက်ရည်', ko: '국화차', fr: 'Thé au chrysanthème', id: 'Teh krisan' } },
     { id: '31100', cat: 'drinks', price: 30, name: { th: 'น้ำบ๊วย', en: 'Salted plum drink', zs: '酸梅汤', ja: '梅ジュース', my: 'ဆီးသီးဆားဖျော်ရည်', ko: '매실 음료', fr: 'Boisson à la prune salée', id: 'Minuman buah plum asin' } },
     { id: '31101', cat: 'drinks', price: 30, name: { th: 'น้ำมะตูม', en: 'Bael fruit drink', zs: '木橘茶', ja: 'ベールフルーツティー', my: 'ဥသျှစ်သီးဖျော်ရည်', ko: '벨 열매 음료', fr: 'Boisson au bael', id: 'Minuman buah maja' } },
@@ -592,7 +592,7 @@ window.THL_MENU.ingredientNames = {
     "my": "ပင်စိမ်း",
     "ko": "홀리 바질",
     "fr": "Basilic sacré",
-    "id":"Kemangi suci"
+    "id":"Kemangi Thailand"
   },
   "chilli": {
     "th": "พริก",
@@ -982,7 +982,7 @@ window.THL_MENU.ingredientNames = {
     "my": "တရုတ်ဆီးသီး",
     "ko": "대추",
     "fr": "Jujube",
-    "id":"Bidara Cina"
+    "id":"Angco (kurma merah)"
   },
   "chrysanthemum": {
     "th": "เก๊กฮวย",
