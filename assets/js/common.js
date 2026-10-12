@@ -180,7 +180,7 @@
     "group": "proofreader"
   },
   {
-    "name": TBD_NAME,
+    "name": "HOSOE Tesshu",
     "role": {
       "th": "ภาษาญี่ปุ่น",
       "en": "Japanese",
@@ -222,7 +222,7 @@
     "group": "proofreader"
   },
   {
-    "name": TBD_NAME,
+    "name": "Davina Angelica",
     "role": {
       "th": "ภาษาอินโดนีเซีย",
       "en": "Indonesian",
