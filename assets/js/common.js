@@ -180,7 +180,7 @@
     "group": "proofreader"
   },
   {
-    "name": "HOSOE Tesshu",
+    "name": { "en": "HOSOE Tesshu", "ja": "細江 哲舟" },
     "role": {
       "th": "ภาษาญี่ปุ่น",
       "en": "Japanese",
@@ -208,7 +208,7 @@
     "group": "proofreader"
   },
   {
-    "name": "Ye Yint Tun",
+    "name": { "en": "Ye Yint Tun", "my": "ရဲရင့်ထွန်း" },
     "role": {
       "th": "ภาษาพม่า",
       "en": "Burmese",
