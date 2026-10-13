@@ -157,7 +157,7 @@
     },
     id: {
       title: 'Menu',
-      sample: 'Harga hanya contoh, belum harga resmi.',
+      sample: 'Harga hanya contoh, belum harga resmi. ****',
       myOrder: 'Pesanan Saya',
       keepBrowsing: 'Lihat menu lagi',
       send: 'Kirim pesanan ke dapur',
