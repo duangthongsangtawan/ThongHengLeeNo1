@@ -222,7 +222,7 @@
     "group": "proofreader"
   },
   {
-    "name": "Davina Angelica",
+    "name": "DA",
     "role": {
       "th": "ภาษาอินโดนีเซีย",
       "en": "Indonesian",
@@ -299,7 +299,7 @@
       "my": "စာစစ်သူ",
       "ko": "교정",
       "fr": "Relecteur",
-      "id":"Korektor"
+      "id":"Penyunting Bahasa"
     }
   }
 ],
