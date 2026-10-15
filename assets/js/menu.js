@@ -75,7 +75,7 @@
       title: 'メニュー', sample: '表示価格はプレビュー用のサンプルです。',
       myOrder: 'ご注文', keepBrowsing: 'メニューに戻る', send: 'キッチンに注文を送る',
       placeOrder: '注文する', note: 'キッチンへのメモ', notePh: '例：辛さ控えめ、野菜抜き',
-      viewPhoto: '写真', addShort: '+ 追加', add: '+ 注文に追加',
+      viewPhoto: '詳細', addShort: '+ 追加', add: '+ 注文に追加',
       table: 'テーブル', noTable: 'テーブルを選択', pickTable: 'テーブル番号を選んでください', pickTableHint: 'テーブルの札に番号があります。',
       added: '追加しました：{name}', emptyCart: 'まだ何も選ばれていません。料理の「+ 追加」をタップしてください。', total: '合計',
       eggFried: '目玉焼き', eggOmelette: 'オムレツ',
